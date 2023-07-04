@@ -165,7 +165,7 @@
             <p>(123) 456-7890</p>
             <p>Social Media</p>
         </div>
-        <div class="footer__conatct">
+        <div class="footer__contact">
             <hr>
             <a href="#">Home</a>
             <a href="#">Invoices</a>

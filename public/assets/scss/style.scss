@@ -10,6 +10,23 @@ body {
   .header {
     background-color: #f9de4e;
     .nav-bar {
+      .nav-bar__link {
+        a {
+          text-decoration: none;
+          color: black;
+        }
+      }
+      .nav-bar__btn {
+        button {
+          border-style: none;
+        }
+        .nav-bar__btn--login {
+          background-color: #f9de4e;
+        }
+        .nav-bar__btn--sign {
+          border-radius: 20px;
+        }
+      }
     }
     .header__img {
       img {
@@ -25,6 +42,14 @@ body {
       }
       tr:nth-child(odd) {
         background-color: #f5f5f5;
+      }
+    }
+  }
+  footer {
+    .footer__contact {
+      a {
+        text-decoration: none;
+        color: black;
       }
     }
   }
