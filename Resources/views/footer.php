@@ -10,11 +10,17 @@
         <p>Social Media</p>
     </div>
     <div class="footer__contact">
-        <hr>
-        <a href="./Resources/views/home.php">Home</a>
-        <a href="./Resources/views/invoices.php">Invoices</a>
-        <a href="./Resources/views/companies.php">Compagnies</a>
-        <a href="./Resources/views/contacts.php">Contacts</a>
-        <a href="#">Privacy Policy</a>
+        <ul>
+            <li><a href="./Resources/views/home.php">Home</a></li>
+            <li><a href="./Resources/views/invoices.php">Invoices</a></li>
+            <li><a href="./Resources/views/companies.php">Compagnies</a></li>
+            <li><a href="./Resources/views/contacts.php">Contacts</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
     </div>
+    <div class="footer__copyright">
+        <p>Copyright © 2022 • COGIP Inc.</p>
+    </div>
+
+
 </footer>
