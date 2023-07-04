@@ -11,10 +11,10 @@
     </div>
     <div class="footer__contact">
         <hr>
-        <a href="#">Home</a>
-        <a href="#">Invoices</a>
-        <a href="#">Compagnies</a>
-        <a href="#">Contacts</a>
+        <a href="/Resources/views/home.php">Home</a>
+        <a href="/Resources/views/invoices.php">Invoices</a>
+        <a href="/Resources/views/companies.php">Compagnies</a>
+        <a href="/Resources/views/contacts.php">Contacts</a>
         <a href="#">Privacy Policy</a>
     </div>
 </footer>

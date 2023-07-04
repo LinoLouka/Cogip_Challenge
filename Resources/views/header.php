@@ -2,9 +2,9 @@
     <nav class="nav-bar">
         <h1>COGIP</h1>
         <div class="nav-bar__link">
-            <a href="/Resources/views/home.php">Home</a>
+            <a href="./Resources/views/home.php">Home</a>
             <a href="#">Invoices</a>
-            <a href="#">Compagnies</a>
+            <a href="#">Companies</a>
             <a href="#">Contacts</a>
         </div>
         <div class="nav-bar__btn">

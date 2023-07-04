@@ -14,7 +14,7 @@
 
 <body>
     <?php
-    require_once __DIR__ . '/Resources/views/header.php';
+    require __DIR__ . '/header.php';
     ?>
     <div class="header__title">
         <h2>MANAGE YOUR
@@ -22,7 +22,7 @@
             INVOICES EASLY</h2>
     </div>
     <div class="header__img">
-        <img src="./public/assets/img/img-header.png" alt="img par défault">
+        <img src="/public/assets/img/img-header.png" alt="img par défault">
     </div>
     <section class="section">
         <div class="section-invoices">
@@ -136,8 +136,9 @@
         </div>
     </section>
     <?php
-    require_once __DIR__ . '/Resources/views/footer.php';
+    require __DIR__ . '/footer.php';
     ?>
+
 </body>
 
 </html>
