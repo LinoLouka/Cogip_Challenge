@@ -22,7 +22,7 @@
             INVOICES EASLY</h2>
     </div>
     <div class="header__img">
-        <img src="/public/assets/img/img-header.png" alt="img par défault">
+        <img src="../../public/assets/img/img-header.png" alt="img par défault">
     </div>
     <section class="section">
         <div class="section-invoices">
@@ -132,7 +132,7 @@
             <h2>work better in your company</h2>
         </div>
         <div class="bot__img">
-            <img src="./public/assets/img/phone-footer.png" alt="">
+            <img src="../../public/assets/img/phone-footer.png" alt="téléphone jaune">
         </div>
     </section>
     <?php
