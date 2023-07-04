@@ -40,7 +40,7 @@
                 INVOICES EASLY</h2>
         </div>
         <div class="header__img">
-            <img src="./public/assets/img/Illustration.png" alt="img par défault">
+            <img src="./public/assets/img/img-header.png" alt="img par défault">
         </div>
     </div>
     <section class="section">
