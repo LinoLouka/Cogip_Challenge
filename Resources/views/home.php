@@ -14,7 +14,7 @@
 
 <body>
     <?php
-    require __DIR__ . '/header.php';
+    require './header.php';
     ?>
     <div class="header__title">
         <h2>MANAGE YOUR
@@ -144,7 +144,7 @@
         </div>
     </section>
     <?php
-    require __DIR__ . '/footer.php';
+    require './footer.php';
     ?>
 
 </body>

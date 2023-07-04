@@ -21,11 +21,11 @@
 
 <body>
     <?php
-    require __DIR__ . '/Resources/views/header.php';
+    require './Resources/views/header.php';
     ?>
     <hr>
     <?php
-    require __DIR__ . '/Resources/views/footer.php';
+    require './Resources/views/footer.php';
     ?>
 </body>
 
