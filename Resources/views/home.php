@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COGIP</title>
-    <link rel="stylesheet" href="/public/assets/css/reset.css">
-    <link rel="stylesheet" href="/public/assets/css/style.css">
+    <link rel="stylesheet" href="../../public/assets/css/reset.css">
+    <link rel="stylesheet" href="../../public/assets/css/style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
     </style>
