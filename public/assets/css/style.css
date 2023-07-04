@@ -1,0 +1,23 @@
+body {
+  font-family: "Inter", sans-serif;
+}
+body img {
+  max-width: 100%;
+  max-height: 100%;
+}
+body h2 {
+  font-weight: bold;
+}
+body .header {
+  background-color: #f9de4e;
+}
+body .header .header__img img {
+  max-width: 100%;
+  max-height: 100%;
+}
+body .section table th {
+  background-color: #f9de4e;
+}
+body .section table tr:nth-child(odd) {
+  background-color: #f5f5f5;
+}/*# sourceMappingURL=style.css.map */
