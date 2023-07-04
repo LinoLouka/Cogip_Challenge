@@ -7,7 +7,7 @@ body {
   h2 {
     font-weight: bold;
   }
-  .header {
+  header {
     background-color: #f9de4e;
     .nav-bar {
       .nav-bar__link {
@@ -46,6 +46,11 @@ body {
     }
   }
   footer {
+    .footer {
+      h2 {
+        border-color: #f9de4e;
+      }
+    }
     .footer__contact {
       a {
         text-decoration: none;
