@@ -55,6 +55,10 @@
                     </tr>
                 </table>
             </div>
+            <div class="section-invoices__img">
+                <img src="../../public/assets/img/hand.png" alt="hand with clipboard">
+            </div>
+
         </div>
         <div class="section-contacts">
             <h2>Last contacts</h2>
@@ -90,6 +94,10 @@
                     </tr>
                 </table>
             </div>
+            <div class="section-contacts__img">
+                <img src="../../public/assets/img/lamp.png" alt="lamp">
+            </div>
+
         </div>
         <div class="section-companies">
             <h2>Last companies</h2>
