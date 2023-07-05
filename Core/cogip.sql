@@ -46,8 +46,8 @@ CREATE TABLE `companies` (
 CREATE TABLE `contacts` (
   `id` int(11) NOT NULL,
   `company_id` int(11) DEFAULT NULL,
-  `eamil` varchar(50) NOT NULL,
-  `phhone` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` varchar(50) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
