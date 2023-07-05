@@ -16,6 +16,9 @@
 
     <section class="section">
         <h2>Last companies</h2>
+        <div class="section-companies__searchbar">
+            <input type="text" placeholder="Search...">
+        </div>
         <div class="section-companies__table">
             <table>
                 <tr>
