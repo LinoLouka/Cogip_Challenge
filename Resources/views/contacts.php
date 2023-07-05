@@ -16,6 +16,9 @@
 
     <section class="section">
         <h2>Last contacts</h2>
+        <div class="section-contacts__searchbar">
+            <input type="text" placeholder="Search...">
+        </div>
         <div class="section-contacts__table">
             <table>
                 <tr>
