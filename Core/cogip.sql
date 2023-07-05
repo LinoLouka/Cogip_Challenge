@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `companies` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `type_id` int(11) DEFAULT NULL,
   `name` varchar(50) NOT NULL,
   `country` varchar(50) NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE `companies` (
 --
 
 CREATE TABLE `contacts` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `company_id` int(11) DEFAULT NULL,
   `email` varchar(50) NOT NULL,
   `phone` varchar(50) NOT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE `contacts` (
 --
 
 CREATE TABLE `invoices` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_company` int(11) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
@@ -72,7 +72,7 @@ CREATE TABLE `invoices` (
 --
 
 CREATE TABLE `types` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
@@ -154,7 +154,7 @@ COMMIT;
 --
 
 CREATE TABLE `permission` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
@@ -167,7 +167,7 @@ CREATE TABLE `permission` (
 --
 
 CREATE TABLE `roles` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
@@ -180,7 +180,7 @@ CREATE TABLE `roles` (
 --
 
 CREATE TABLE `roles_permission` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `role_id` int(11) DEFAULT NULL,
   `permission_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -192,7 +192,7 @@ CREATE TABLE `roles_permission` (
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `role_id` int(11) DEFAULT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
