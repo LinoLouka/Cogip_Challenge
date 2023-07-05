@@ -10,6 +10,8 @@ body {
   header {
     background-color: #f9de4e;
     .nav-bar {
+      h1 {
+      }
       .nav-bar__link {
         a {
           text-decoration: none;
@@ -48,7 +50,7 @@ body {
   footer {
     .footer {
       h2 {
-        border-color: #f9de4e;
+        border: 3px solid #f9de4e;
       }
     }
     .footer__contact {
