@@ -274,3 +274,15 @@ INSERT INTO `invoices` (`id_company`, `created_at`, `updated_at`) VALUES
 (103, '2023-06-08 10:30:00', '2023-06-09 14:00:00'),
 (105, '2023-06-09 15:45:00', '2023-06-10 19:15:00'),
 (104, '2023-06-10 11:30:00', '2023-06-11 15:00:00');
+
+INSERT INTO `contacts` (`company_id`, `email`, `phone`, `created_at`, `updated_at`) VALUES
+(12345, 'john@example.com', '123-456-7890', NOW(), NOW()),
+(67890, 'jane@example.com', '987-654-3210', NOW(), NOW()),
+(54321, 'mark@example.com', '555-123-4567', NOW(), NOW()),
+(98765, 'amy@example.com', '999-888-7777', NOW(), NOW()),
+(23456, 'peter@example.com', '111-222-3333', NOW(), NOW()),
+(87654, 'sarah@example.com', '444-555-6666', NOW(), NOW()),
+(76543, 'michael@example.com', '777-888-9999', NOW(), NOW()),
+(43210, 'emily@example.com', '222-333-4444', NOW(), NOW()),
+(34567, 'david@example.com', '666-777-8888', NOW(), NOW()),
+(87654, 'lisa@example.com', '999-000-1111', NOW(), NOW());
