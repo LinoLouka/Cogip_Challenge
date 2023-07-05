@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 04 juil. 2023 à 12:03
--- Version du serveur : 10.4.25-MariaDB
--- Version de PHP : 8.1.10
+-- Généré le : mer. 05 juil. 2023 à 10:35
+-- Version du serveur : 10.4.28-MariaDB
+-- Version de PHP : 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,7 +35,7 @@ CREATE TABLE `companies` (
   `tva` varchar(50) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -46,11 +46,27 @@ CREATE TABLE `companies` (
 CREATE TABLE `contacts` (
   `id` int(11) NOT NULL,
   `company_id` int(11) DEFAULT NULL,
-  `eamil` varchar(50) NOT NULL,
-  `phhone` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` varchar(50) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `company_id`, `email`, `phone`, `created_at`, `updated_at`) VALUES
+(1, 12345, 'john@example.com', '123-456-7890', '2023-07-05 10:04:31', '2023-07-05 10:04:31'),
+(2, 67890, 'jane@example.com', '987-654-3210', '2023-07-05 10:04:31', '2023-07-05 10:04:31'),
+(3, 54321, 'mark@example.com', '555-123-4567', '2023-07-05 10:04:31', '2023-07-05 10:04:31'),
+(4, 98765, 'amy@example.com', '999-888-7777', '2023-07-05 10:04:31', '2023-07-05 10:04:31'),
+(5, 23456, 'peter@example.com', '111-222-3333', '2023-07-05 10:04:31', '2023-07-05 10:04:31'),
+(6, 87654, 'sarah@example.com', '444-555-6666', '2023-07-05 10:04:31', '2023-07-05 10:04:31'),
+(7, 76543, 'michael@example.com', '777-888-9999', '2023-07-05 10:04:31', '2023-07-05 10:04:31'),
+(8, 43210, 'emily@example.com', '222-333-4444', '2023-07-05 10:04:31', '2023-07-05 10:04:31'),
+(9, 34567, 'david@example.com', '666-777-8888', '2023-07-05 10:04:31', '2023-07-05 10:04:31'),
+(10, 87654, 'lisa@example.com', '999-000-1111', '2023-07-05 10:04:31', '2023-07-05 10:04:31');
 
 -- --------------------------------------------------------
 
@@ -63,89 +79,23 @@ CREATE TABLE `invoices` (
   `id_company` int(11) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Structure de la table `types`
+-- Déchargement des données de la table `invoices`
 --
 
-CREATE TABLE `types` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `companies`
---
-ALTER TABLE `companies`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_type_id_types` (`type_id`);
-
---
--- Index pour la table `contacts`
---
-ALTER TABLE `contacts`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_companies_id_contacts` (`company_id`);
-
---
--- Index pour la table `invoices`
---
-ALTER TABLE `invoices`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_companies_id_invoices` (`id_company`);
-
---
--- Index pour la table `types`
---
-ALTER TABLE `types`
-  ADD PRIMARY KEY (`id`);
-
---
--- Contraintes pour les tables déchargées
---
-
---
--- Contraintes pour la table `companies`
---
-ALTER TABLE `companies`
-  ADD CONSTRAINT `fk_type_id_types` FOREIGN KEY (`type_id`) REFERENCES `types` (`id`);
-
---
--- Contraintes pour la table `contacts`
---
-ALTER TABLE `contacts`
-  ADD CONSTRAINT `fk_companies_id_contacts` FOREIGN KEY (`company_id`) REFERENCES `companies` (`id`);
-
---
--- Contraintes pour la table `invoices`
---
-ALTER TABLE `invoices`
-  ADD CONSTRAINT `fk_companies_id_invoices` FOREIGN KEY (`id_company`) REFERENCES `companies` (`id`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Base de données : `cogip`
---
+INSERT INTO `invoices` (`id`, `id_company`, `created_at`, `updated_at`) VALUES
+(1, 101, '2023-06-01 10:00:00', '2023-06-02 14:30:00'),
+(2, 102, '2023-06-02 09:15:00', '2023-06-03 11:45:00'),
+(3, 103, '2023-06-03 12:30:00', '2023-06-04 16:00:00'),
+(4, 101, '2023-06-04 11:00:00', '2023-06-05 15:30:00'),
+(5, 104, '2023-06-05 14:45:00', '2023-06-06 18:15:00'),
+(6, 105, '2023-06-06 16:30:00', '2023-06-07 20:00:00'),
+(7, 102, '2023-06-07 13:15:00', '2023-06-08 17:45:00'),
+(8, 103, '2023-06-08 10:30:00', '2023-06-09 14:00:00'),
+(9, 105, '2023-06-09 15:45:00', '2023-06-10 19:15:00'),
+(10, 104, '2023-06-10 11:30:00', '2023-06-11 15:00:00');
 
 -- --------------------------------------------------------
 
@@ -188,6 +138,19 @@ CREATE TABLE `roles_permission` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `types`
+--
+
+CREATE TABLE `types` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `users`
 --
 
@@ -205,6 +168,24 @@ CREATE TABLE `users` (
 --
 -- Index pour les tables déchargées
 --
+
+--
+-- Index pour la table `companies`
+--
+ALTER TABLE `companies`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `invoices`
+--
+ALTER TABLE `invoices`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `permission`
@@ -227,11 +208,69 @@ ALTER TABLE `roles_permission`
   ADD KEY `role_id` (`role_id`);
 
 --
+-- Index pour la table `types`
+--
+ALTER TABLE `types`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD KEY `role_id` (`role_id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `companies`
+--
+ALTER TABLE `companies`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT pour la table `invoices`
+--
+ALTER TABLE `invoices`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT pour la table `permission`
+--
+ALTER TABLE `permission`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `roles_permission`
+--
+ALTER TABLE `roles_permission`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `types`
+--
+ALTER TABLE `types`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Contraintes pour les tables déchargées
