@@ -30,36 +30,6 @@ body .header-title-img .header__title h2 {
   font-size: 20px;
   padding-left: 12px;
 }
-body header {
-  background-color: #f9de4e;
-  height: 100px;
-}
-body header .nav-bar {
-  text-align: center;
-}
-body header .nav-bar h1 {
-  font-weight: bold;
-  font-size: 30px;
-}
-body header .nav-bar .nav-bar__link {
-  display: flex;
-  justify-content: space-around;
-  margin: 10px;
-}
-body header .nav-bar .nav-bar__link a {
-  text-decoration: none;
-  color: black;
-}
-body header .nav-bar .nav-bar__btn button {
-  border-style: none;
-  font-size: 16px;
-}
-body header .nav-bar .nav-bar__btn .nav-bar__btn--login {
-  background-color: #f9de4e;
-}
-body header .nav-bar .nav-bar__btn .nav-bar__btn--sign {
-  border-radius: 20px;
-}
 body .section h2 {
   margin: 20px 0 0 20px;
   font-size: 30px;
@@ -98,6 +68,7 @@ body .bot .bot__title {
   padding-left: 20px;
   font-size: 23px;
   text-transform: uppercase;
+<<<<<<< HEAD
 }
 body footer hr {
   height: 1px;
@@ -113,3 +84,6 @@ body footer .footer__contact a {
   text-decoration: none;
   color: black;
 }
+=======
+}/*# sourceMappingURL=style.css.map */
+>>>>>>> 3979bdb3de1076bf08a8a9af2f7582755a63b8cf
