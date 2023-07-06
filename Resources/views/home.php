@@ -9,22 +9,18 @@
     <link rel="stylesheet" href="../../public/assets/css/style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
     </style>
 </head>
 
 <body>
     <?php
     require './header.php';
-    ?>
-    <div class="header-title-img">
+    ?><div class="header-title-img">
         <div class="header__title">
-            <h2>MANAGE YOUR
-                CUSTOMERS AND
-                INVOICES EASLY</h2>
+            <h2>MANAGE YOUR CUSTOMERS AND INVOICES EASLY</h2>
         </div>
-        <div class="header__img">
-            <img src="../../public/assets/img/img-header.png" alt="img par défault">
-        </div>
+        <div class="header__img"><img src="../../public/assets/img/img-header.png" alt="img par défault"></div>
     </div>
     <section class="section">
         <div class="section-invoices">
@@ -57,10 +53,7 @@
                     </tr>
                 </table>
             </div>
-            <div align="right" class="section-invoices__img">
-                <img src="../../public/assets/img/hand.png" alt="hand with clipboard">
-            </div>
-
+            <div align="right" class="section-invoices__img"><img src="../../public/assets/img/hand.png" alt="hand with clipboard"></div>
         </div>
         <div class="section-contacts">
             <h2>Last contacts</h2>
@@ -96,10 +89,7 @@
                     </tr>
                 </table>
             </div>
-            <div align="left" class="section-contacts__img">
-                <img src="../../public/assets/img/lamp.png" alt="lamp">
-            </div>
-
+            <div align="left" class="section-contacts__img"><img src="../../public/assets/img/lamp.png" alt="lamp"></div>
         </div>
         <div class="section-companies">
             <h2>Last companies</h2>
@@ -141,14 +131,10 @@
         <div class="bot__title">
             <h2>work better in your company</h2>
         </div>
-        <div class="bot__img">
-            <img src="../../public/assets/img/phone-footer.png" alt="téléphone jaune">
-        </div>
-    </section>
-    <?php
-    require './footer.php';
-    ?>
-
+        <div class="bot__img"><img src="../../public/assets/img/phone-footer.png" alt="téléphone jaune"></div>
+    </section><?php
+                require './footer.php';
+                ?>
 </body>
 
 </html>
