@@ -70,9 +70,14 @@ body {
       margin: 20px auto 20px auto;
       th {
         background-color: #f9de4e;
+        text-align: left;
+        padding-left: 5px;
       }
       tr:nth-child(odd) {
         background-color: #f5f5f5;
+      }
+      tr:hover {
+        background-color: #ddd;
       }
     }
     .section-invoices {
