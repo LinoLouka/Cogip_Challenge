@@ -9,7 +9,12 @@ body {
   }
   .header-title-img {
     background-color: #f9de4e;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    h2 {
+      text-align: center;
+      padding: 30px;
+    }
     .header__img {
       img {
         max-width: 100%;
@@ -42,6 +47,7 @@ body {
       .nav-bar__btn {
         button {
           border-style: none;
+          font-size: 16px;
         }
         .nav-bar__btn--login {
           background-color: #f9de4e;
