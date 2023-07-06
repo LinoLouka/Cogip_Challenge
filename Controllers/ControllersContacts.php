@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Core\Controller;
 use App\Models\Contacts;
 
-Class Contact extends Controller
+Class ControllerContact extends Controller
 {
 
     public function index()

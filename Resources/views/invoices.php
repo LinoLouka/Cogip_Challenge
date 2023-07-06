@@ -26,7 +26,14 @@
 
     if (!is_null($invoices) && is_array($invoices)): ?>
         <table>
+        <tr>
+            <th>Invoice number</th>
+            <th>Dates due</th>
+            <th>Company</th>
+            <th>Created at</th>
+        </tr>
             <?php foreach ($invoices as $invoice):  ?>
+
             <tr>
                 <td><?php echo $invoice['id']; ?></td>
                 <td><?php echo $invoice['id_company']; ?></td>
