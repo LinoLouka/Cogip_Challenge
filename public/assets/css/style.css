@@ -71,6 +71,14 @@ body .section table th {
 body .section table tr:nth-child(odd) {
   background-color: #f5f5f5;
 }
+body .section .section-invoices .section-invoices__img img {
+  width: 25%;
+  height: auto;
+}
+body .section .section-contacts .section-contacts__img img {
+  width: 25%;
+  height: auto;
+}
 body .bot {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

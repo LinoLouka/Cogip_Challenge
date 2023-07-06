@@ -75,6 +75,22 @@ body {
         background-color: #f5f5f5;
       }
     }
+    .section-invoices {
+      .section-invoices__img {
+        img {
+          width: 25%;
+          height: auto;
+        }
+      }
+    }
+    .section-contacts {
+      .section-contacts__img {
+        img {
+          width: 25%;
+          height: auto;
+        }
+      }
+    }
   }
   .bot {
     display: grid;
