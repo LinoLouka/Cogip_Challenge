@@ -68,9 +68,13 @@ body .bot {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 20px 0px 20px 0px;
-}
-body .bot .bot__img {
   background-image: url(../../assets/img/rectangle.png);
+}
+body .bot .bot__title {
+  text-align: start;
+  align-self: center;
+  font-size: 25px;
+  text-transform: uppercase;
 }
 body footer hr {
   height: 1px;
