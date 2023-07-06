@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Core\Controller;
-use App\Models\Invoice;
+use App\Models\modelsInvoices;
 
 Class ControllerInvoices extends Controller
 {

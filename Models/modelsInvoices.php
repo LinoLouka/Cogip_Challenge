@@ -19,7 +19,7 @@ class Invoice{
         $statement->bindValue(':limit', $limit, \PDO::PARAM_INT);
         $statement->execute();
 
-        $invoiceArticle = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        $invoices = $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
 
 
