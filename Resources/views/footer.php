@@ -4,10 +4,18 @@
         <h2>cogip</h2>
     </div>
     <div class="footer__infos">
-        <p>Square des Martyrs, 6000 Charleroi</p>
-        <p>(123) 456-7890</p>
-        <p>(123) 456-7890</p>
+        <p>Square des Martyrs, 6000 Charleroi</p> <img src="../../public/assets/img/maps.svg" alt="round_place">
+        <p>(123) 456-7890</p> <img src="../../public/assets/img/phone.svg" alt="phone">
+        <p>(123) 456-7890</p> <img src="../../public/assets/img/print.svg" alt="print">
         <p>Social Media</p>
+        <img src="../../public/assets/img/Facebook.svg" alt="logo_facebook">
+        <img src="../../public/assets/img/Twitter.svg" alt="logo_twitter">
+        <img src="../../public/assets/img/LinkedIn.svg" alt="logo_linkedin">
+        <img src="../../public/assets/img/Youtube.svg" alt="logo_youtube">
+        <img src="../../public/assets/img/Instagram.svg" alt="logo_instagram">
+        <img src="../../public/assets/img/Pinterest.svg" alt="logo_pinterest">
+        <img src="../../public/assets/img/GooglePlus.svg" alt="logo_google">
+        <img src="../../public/assets/img/wifi.svg" alt="logo_rss">
     </div>
     <div class="footer__contact">
         <ul>
