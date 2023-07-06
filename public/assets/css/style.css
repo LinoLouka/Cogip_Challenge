@@ -9,10 +9,31 @@ footer .footer h2 {
   border: 3px solid #f9de4e;
   width: -moz-min-content;
   width: min-content;
+  display: flex;
+  flex-direction: column;
+}
+footer .footer__copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  opacity: 0.5;
+}
+footer .footer__infos .logo_social_media {
+  align-items: center;
+  margin: auto;
+}
+footer .footer__contact ul {
+  display: flex;
+  padding: 1px;
+  margin: 0;
+  justify-content: space-between;
 }
 footer .footer__contact a {
   text-decoration: none;
   color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header {
@@ -114,4 +135,4 @@ body .bot .bot__title {
   padding-left: 20px;
   font-size: 23px;
   text-transform: uppercase;
-}
+}/*# sourceMappingURL=style.css.map */

@@ -8,12 +8,49 @@ footer {
     h2 {
       border: 3px solid #f9de4e;
       width: min-content;
+      display: flex;
+      flex-direction: column;
+      
     }
   }
-  .footer__contact {
+
+.footer__copyright{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    opacity: 0.5;
+
+}
+.footer__infos{
+
+.logo_social_media{
+
+    align-items: center;
+    margin: auto;
+   
+    }
+  }
+
+.footer__contact {
+    ul{
+      display: flex;
+      padding: 1px;
+      margin: 0;
+      justify-content: space-between;
+      
+      
+    }
+
     a {
       text-decoration: none;
       color: black;
+      display: flex;
+      flex-direction: column;
+      align-items:center;
+      
+      
+      
     }
   }
+
 }
