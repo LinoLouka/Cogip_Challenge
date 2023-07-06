@@ -2,15 +2,15 @@
 
 namespace App\Core;
 
-class Controller 
+class ErrorController 
 {
     /*
     * @var $view, $data
     * return view
     */
-    public function view($view, $data = [])
+    public function error($view, $data = [])
     {
         extract($data);
-        require_once(__ROOT__.'/'.$view.'.php');
+        require_once(__ROOT__.'/Resources/views/'.$view.'.php');
     }
 }
