@@ -7,10 +7,6 @@
     <title>COGIP</title>
     <link rel="stylesheet" href="../../public/assets/css/reset.css">
     <link rel="stylesheet" href="../../public/assets/css/style.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
-    </style>
 </head>
 
 <body>
