@@ -57,7 +57,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="section-invoices__img">
+            <div align="right" class="section-invoices__img">
                 <img src="../../public/assets/img/hand.png" alt="hand with clipboard">
             </div>
 
@@ -96,7 +96,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="section-contacts__img">
+            <div align="left" class="section-contacts__img">
                 <img src="../../public/assets/img/lamp.png" alt="lamp">
             </div>
 
