@@ -18,6 +18,19 @@ body .header-title-img .header__img img {
 }
 body header {
   background-color: #f9de4e;
+  height: 100px;
+}
+body header .nav-bar {
+  text-align: center;
+}
+body header .nav-bar h1 {
+  font-weight: bold;
+  font-size: 30px;
+}
+body header .nav-bar .nav-bar__link {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
 }
 body header .nav-bar .nav-bar__link a {
   text-decoration: none;
