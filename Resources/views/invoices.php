@@ -21,32 +21,25 @@
         </div>
 
         <div class="section-invoices__table">
-            <table>
-                <tr>
-                    <th>Invoice number</th>
-                    <th>Dates due</th>
-                    <th>Company</th>
-                    <th>Created at</th>
-                </tr>
-                <tr>
-                    <td>Donnée 1</td>
-                    <td>Donnée 2</td>
-                    <td>Donnée 3</td>
-                    <td>Donnée 4</td>
-                </tr>
-                <tr>
-                    <td>Donnée 1</td>
-                    <td>Donnée 2</td>
-                    <td>Donnée 3</td>
-                    <td>Donnée 4</td>
-                </tr>
-                <tr>
-                    <td>Donnée 1</td>
-                    <td>Donnée 2</td>
-                    <td>Donnée 3</td>
-                    <td>Donnée 4</td>
-                </tr>
-            </table>
+
+    <?php
+
+    if (!is_null($invoices) && is_array($invoices)): ?>
+        <table>
+            <?php foreach ($invoices as $invoice):  ?>
+            <tr>
+                <td><?php echo $invoice['id']; ?></td>
+                <td><?php echo $invoice['id_company']; ?></td>
+                <td><?php echo $invoice['created_at']; ?></td>
+                <td><?php echo $invoice['updated_at']; ?></td>
+            </tr>
+            
+            <?php endforeach; ?>
+        </table>
+    <?php else: ?>
+        <p>No invoices found.</p>
+    <?php endif; ?>
+
         </div>
         <div class="section-invoices__navbar">
             <p>Page

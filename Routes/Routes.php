@@ -8,9 +8,6 @@ use App\Controllers\ControllerInvoices;
 
 
 $router = new Router();
-// $test = $router->get('/', function() {
-//     (new HomeController)->index();
-// });
 
 $test = $router->get('/', function() {
     (new ControllerInvoices)->index();

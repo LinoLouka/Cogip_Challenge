@@ -15,7 +15,7 @@ Class ControllerInvoices extends Controller
         $invoices = $modelInvoice->getLastInvoice(5);
 
         return $this->view('invoices',[
-            'invoices' => $invoices
+            'invoices' => $invoices,
         ]);
     }
 }
