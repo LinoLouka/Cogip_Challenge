@@ -73,7 +73,8 @@ body .bot {
 body .bot .bot__title {
   text-align: start;
   align-self: center;
-  font-size: 25px;
+  padding-left: 20px;
+  font-size: 23px;
   text-transform: uppercase;
 }
 body footer hr {
