@@ -3,14 +3,14 @@
 namespace App\Controllers;
 
 use App\Core\Controller;
-use App\Models\modelsInvoices;
+use App\Models\Invoices;
 
 Class ControllerInvoices extends Controller
 {
 
     public function index()
     {
-        $modelInvoice = new Invoice();
+        $modelInvoice = new Invoices();
 
         $invoices = $modelInvoice->getLastInvoice();
 

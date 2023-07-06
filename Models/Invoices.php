@@ -3,13 +3,14 @@ namespace App\Models;
 
 use App\Core\connect;
 
-class Invoice{
+class Invoices
+{
 
     private $bdd;
 
     public function __construct(){
 
-        $this->bdd = connect::getconnectBdd();
+        $this->bdd = connect::getConnectBdd();
     } 
 
     public function getLastInvoice($limit){
