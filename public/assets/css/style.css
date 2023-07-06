@@ -8,6 +8,14 @@ body img {
 body h2 {
   font-weight: bold;
 }
+body .header-title-img {
+  background-color: #f9de4e;
+  display: flex;
+}
+body .header-title-img .header__img img {
+  max-width: 100%;
+  max-height: 100%;
+}
 body header {
   background-color: #f9de4e;
 }
@@ -24,10 +32,6 @@ body header .nav-bar .nav-bar__btn .nav-bar__btn--login {
 body header .nav-bar .nav-bar__btn .nav-bar__btn--sign {
   border-radius: 20px;
 }
-body header .header__img img {
-  max-width: 100%;
-  max-height: 100%;
-}
 body .section table th {
   background-color: #f9de4e;
 }
@@ -36,6 +40,8 @@ body .section table tr:nth-child(odd) {
 }
 body footer .footer h2 {
   border: 3px solid #f9de4e;
+  width: -moz-min-content;
+  width: min-content;
 }
 body footer .footer__contact a {
   text-decoration: none;
