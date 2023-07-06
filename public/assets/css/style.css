@@ -1,5 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
+footer hr {
+  height: 1px;
+  background-color: #f9de4e;
+  border: none;
+}
+footer .footer h2 {
+  border: 3px solid #f9de4e;
+  width: -moz-min-content;
+  width: min-content;
+}
+footer .footer__contact a {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  background-color: #f9de4e;
+  height: 100px;
+}
+header .nav-bar {
+  text-align: center;
+}
+header .nav-bar h1 {
+  font-weight: bold;
+  font-size: 30px;
+}
+header .nav-bar .nav-bar__link {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+header .nav-bar .nav-bar__link a {
+  text-decoration: none;
+  color: black;
+}
+header .nav-bar .nav-bar__btn button {
+  border-style: none;
+  font-size: 16px;
+}
+header .nav-bar .nav-bar__btn .nav-bar__btn--login {
+  background-color: #f9de4e;
+}
+header .nav-bar .nav-bar__btn .nav-bar__btn--sign {
+  border-radius: 20px;
+}
+
 body {
   font-family: "Inter", sans-serif;
 }
@@ -68,22 +114,4 @@ body .bot .bot__title {
   padding-left: 20px;
   font-size: 23px;
   text-transform: uppercase;
-<<<<<<< HEAD
 }
-body footer hr {
-  height: 1px;
-  background-color: #f9de4e;
-  border: none;
-}
-body footer .footer h2 {
-  border: 3px solid #f9de4e;
-  width: -moz-min-content;
-  width: min-content;
-}
-body footer .footer__contact a {
-  text-decoration: none;
-  color: black;
-}
-=======
-}/*# sourceMappingURL=style.css.map */
->>>>>>> 3979bdb3de1076bf08a8a9af2f7582755a63b8cf
