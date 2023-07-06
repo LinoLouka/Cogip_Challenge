@@ -11,7 +11,7 @@
 
 <body>
     <?php
-    require './header.php';
+    require 'header.php';
     ?>
 
     <section class="section">
@@ -60,7 +60,7 @@
 
     </section>
     <?php
-    require './footer.php';
+    require 'footer.php';
     ?>
 </body>
 

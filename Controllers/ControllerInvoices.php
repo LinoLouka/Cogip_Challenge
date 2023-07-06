@@ -12,7 +12,7 @@ Class ControllerInvoices extends Controller
     {
         $modelInvoice = new Invoices();
 
-        $invoices = $modelInvoice->getLastInvoice();
+        $invoices = $modelInvoice->getLastInvoice(5);
 
         return $this->view('invoices',[
             'invoices' => $invoices
