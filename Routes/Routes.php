@@ -4,16 +4,20 @@ namespace App\Routes;
 
 use Bramus\Router\Router;
 use App\Controllers\HomeController;
-use App\Controllers\Controller404;
+
 
 $router = new Router();
-
-$router->get('/', function() {
+$test = $router->get('/', function() {
     (new HomeController)->index();
 });
 
-$router->get('/404', function(){
-    (new Controller404)->index();
-});
+
+
+if (file_exists(__ROOT__.'/Controllers')){
+    require_once($test);
+} else {
+    require_once(__ROOT__.'/Resources/views/404.php');
+}
+
 
 $router->run();
