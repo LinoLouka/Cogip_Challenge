@@ -59,11 +59,11 @@ body header .nav-bar .nav-bar__btn .nav-bar__btn--sign {
   border-radius: 20px;
 }
 body .section h2 {
-  margin: 20px;
+  margin: 20px 0 0 20px;
   font-size: 30px;
 }
 body .section table {
-  margin: auto;
+  margin: 20px auto 20px auto;
 }
 body .section table th {
   background-color: #f9de4e;
