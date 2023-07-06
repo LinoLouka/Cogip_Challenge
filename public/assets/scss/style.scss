@@ -69,6 +69,11 @@ body {
     }
   }
   footer {
+    hr {
+      height: 1px;
+      background-color: #f9de4e;
+      border: none;
+    }
     .footer {
       h2 {
         border: 3px solid #f9de4e;
