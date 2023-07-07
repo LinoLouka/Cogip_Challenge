@@ -21,9 +21,9 @@ class HomeController extends Controller
 
         $invoices = $modelInvoice->getLastInvoice(5);
         $contacts = $modelContact->getLastContacts(5);
-        $companies = $modelCompanies->getLastConpanies(5);
+        $companies = $modelCompanies->getLastCompanies(5);
 
-        return $this->view('welcome',[
+        return $this->view('welcome', [
             "name" => "Cogip",
             "invoices" => $invoices,
             "contacts"  => $contacts,
