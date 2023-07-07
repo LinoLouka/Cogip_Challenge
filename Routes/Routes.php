@@ -6,6 +6,7 @@ use Bramus\Router\Router;
 use App\Controllers\HomeController;
 use App\Controllers\ControllersInvoices;
 use App\Controllers\ControllersContacts;
+use App\Controllers\ControllersCompanies;
 
 
 $router = new Router();
@@ -19,9 +20,9 @@ $router->get('/invoices', function() {
 $router->get('/contacts', function() {
     (new ControllersContacts)->index();
 });
-// $router->get('/companies', function() {
-//     (new ControllersCompanies)->index();
-// });
+$router->get('/companies', function() {
+    (new ControllersCompanies)->index();
+});
 
 if (file_exists(__FILE__.'/Controllers')){
     require_once($router);

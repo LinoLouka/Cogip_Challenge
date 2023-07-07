@@ -19,7 +19,7 @@ class Companies{
         $statement->bindValue(':limit', $limit, \PDO::PARAM_INT);
         $statement->execute();
 
-        $companies = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        return $companies = $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
 
 

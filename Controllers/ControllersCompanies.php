@@ -10,9 +10,9 @@ Class ControllersCompanies extends Controller
 
     public function index()
     {
-        $modelCompanies = new Contact();
+        $modelCompanies = new Companies();
 
-        $companies = $modelCompanies->getLastContacts();
+        $companies = $modelCompanies->getLastCompanies(5);
 
         return $this->view('companies',[
             'companies' => $companies,
