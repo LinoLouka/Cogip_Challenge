@@ -6,6 +6,7 @@ footer hr {
   border: none;
 }
 footer .footer h2 {
+  font-size: 30px;
   border: 3px solid #f9de4e;
   width: -moz-min-content;
   width: min-content;
@@ -18,15 +19,45 @@ footer .footer__copyright {
   align-items: end;
   opacity: 0.5;
 }
-footer .footer__infos .logo_social_media {
+footer .footer__infos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
-  margin: auto;
+}
+footer .footer__infos .img_svg,
+footer .footer__infos .img_phone {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+footer .footer__infos .img_print {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: auto;
+}
+footer .footer__infos .img_print img {
+  margin-right: 5px;
+}
+footer .logo_social_media {
+  justify-content: space-between;
+  align-items: center;
+}
+footer .logo_social_media p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+footer .logo_social_media img {
+  margin-right: 23px;
+  flex-grow: 1;
 }
 footer .footer__contact ul {
   display: flex;
-  padding: 1px;
+  padding: 10px;
   margin: 0;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 footer .footer__contact a {
   text-decoration: none;
