@@ -21,6 +21,7 @@ header {
 }
 header .nav-bar {
   text-align: center;
+  padding-top: 10px;
 }
 header .nav-bar h1 {
   font-weight: bold;
@@ -43,7 +44,7 @@ header .nav-bar .nav-bar__btn .nav-bar__btn--login {
   background-color: #f9de4e;
 }
 header .nav-bar .nav-bar__btn .nav-bar__btn--sign {
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 body {
