@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COGIP</title>
-    <link rel="stylesheet" href="../../public/assets/css/reset.css">
-    <link rel="stylesheet" href="../../public/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -20,28 +20,28 @@
             <input type="text" placeholder="Search...">
         </div>
         <div class="section-companies__table">
-        <?php
-        if (!is_null($companies) && is_array($companies)): ?>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Country</th>
-                    <th>Type</th>
-                </tr>
-                <?php foreach ($companies as $company):  ?>
-                <tr>
-                    <td><?php echo $company['id']; ?></td>
-                    <td><?php echo $company['name']; ?></td>
-                    <td><?php echo $company['country']; ?></td>
-                    <td><?php echo $company['type_id']; ?></td>
-                </tr>
+            <?php
+            if (!is_null($companies) && is_array($companies)) : ?>
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Country</th>
+                        <th>Type</th>
+                    </tr>
+                    <?php foreach ($companies as $company) :  ?>
+                        <tr>
+                            <td><?php echo $company['id']; ?></td>
+                            <td><?php echo $company['name']; ?></td>
+                            <td><?php echo $company['country']; ?></td>
+                            <td><?php echo $company['type_id']; ?></td>
+                        </tr>
 
-<?php endforeach; ?>
-</table>
-<?php else: ?>
-<p>No companies found.</p>
-<?php endif; ?>
+                    <?php endforeach; ?>
+                </table>
+            <?php else : ?>
+                <p>No companies found.</p>
+            <?php endif; ?>
 
         </div>
         <div class="section-invoices__navbar">

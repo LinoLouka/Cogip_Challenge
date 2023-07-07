@@ -12,7 +12,8 @@
 <body>
     <?php
     require './header.php';
-    ?><div class="header-title-img">
+    ?>
+    <div class="header-title-img">
         <div class="header__title">
             <h2>MANAGE YOUR CUSTOMERS AND INVOICES EASLY</h2>
         </div>
