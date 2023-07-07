@@ -1,12 +1,17 @@
 <footer>
     <hr>
     <div class="footer">
-        <h2>cogip</h2>
+        <h2>COGIP</h2>
     </div>
     <div class="footer__infos">
-        <p>Square des Martyrs, 6000 Charleroi</p> <img src="../../public/assets/img/maps.svg" alt="round_place">
-        <p>(123) 456-7890</p> <img src="../../public/assets/img/phone.svg" alt="phone">
-        <p>(123) 456-7890</p> <img src="../../public/assets/img/print.svg" alt="print">
+        <div class="img_svg">
+        <img src="../../public/assets/img/maps.svg" alt="round_place"><p>Square des Martyrs, 6000 Charleroi</p></div>
+        <div class="img_phone">
+        <img src="../../public/assets/img/phone.svg" alt="phone"><p>(123) 456-7890</p></div>
+        <div class="img_print">
+        <img src="../../public/assets/img/print.svg" alt="print"> <p>(123) 456-7890</p></div>
+    
+        <div class="logo_social_media">
         <p>Social Media</p>
         <img src="../../public/assets/img/Facebook.svg" alt="logo_facebook">
         <img src="../../public/assets/img/Twitter.svg" alt="logo_twitter">
@@ -16,6 +21,7 @@
         <img src="../../public/assets/img/Pinterest.svg" alt="logo_pinterest">
         <img src="../../public/assets/img/GooglePlus.svg" alt="logo_google">
         <img src="../../public/assets/img/wifi.svg" alt="logo_rss">
+</div>
     </div>
     <div class="footer__contact">
         <ul>
