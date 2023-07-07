@@ -2,8 +2,16 @@
 
 namespace App\Core;
 
-function getConnectBdd()
+use PDO;
+
+
+class connect {
+
+private static $bdd;
+
+public static function getConnectBdd()
 {
+
     try {
         $bdd = new PDO('mysql:dbname=cogip;host=localhost;charset=utf8', 'root');
         return $bdd;
@@ -11,5 +19,5 @@ function getConnectBdd()
         die('Erreur : ' . $e->getMessage());
     }
 }
-
+}
 ?>

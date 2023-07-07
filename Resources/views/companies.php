@@ -11,7 +11,7 @@
 
 <body>
     <?php
-    require './header.php';
+    require 'header.php';
     ?>
 
     <section class="section">
@@ -20,36 +20,29 @@
             <input type="text" placeholder="Search...">
         </div>
         <div class="section-companies__table">
+        <?php
+        if (!is_null($companies) && is_array($companies)): ?>
             <table>
                 <tr>
+                    <th>ID</th>
                     <th>Name</th>
-                    <th>TVA</th>
                     <th>Country</th>
                     <th>Type</th>
-                    <th>Created at</th>
                 </tr>
+                <?php foreach ($companies as $company):  ?>
                 <tr>
-                    <td>Donnée 1</td>
-                    <td>Donnée 2</td>
-                    <td>Donnée 3</td>
-                    <td>Donnée 4</td>
-                    <td>Donnée 5</td>
+                    <td><?php echo $company['id']; ?></td>
+                    <td><?php echo $company['name']; ?></td>
+                    <td><?php echo $company['country']; ?></td>
+                    <td><?php echo $company['type_id']; ?></td>
                 </tr>
-                <tr>
-                    <td>Donnée 1</td>
-                    <td>Donnée 2</td>
-                    <td>Donnée 3</td>
-                    <td>Donnée 4</td>
-                    <td>Donnée 5</td>
-                </tr>
-                <tr>
-                    <td>Donnée 1</td>
-                    <td>Donnée 2</td>
-                    <td>Donnée 3</td>
-                    <td>Donnée 4</td>
-                    <td>Donnée 5</td>
-                </tr>
-            </table>
+
+<?php endforeach; ?>
+</table>
+<?php else: ?>
+<p>No companies found.</p>
+<?php endif; ?>
+
         </div>
         <div class="section-invoices__navbar">
             <p>Page
@@ -63,7 +56,7 @@
 
     </section>
     <?php
-    require './footer.php';
+    require 'footer.php';
     ?>
 </body>
 
