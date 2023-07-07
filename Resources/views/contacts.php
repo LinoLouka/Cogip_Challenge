@@ -11,7 +11,7 @@
 
 <body>
     <?php
-    require './header.php';
+    require 'header.php';
     ?>
 
     <section class="section">
@@ -33,13 +33,11 @@
             <?php foreach ($contacts as $contact):  ?>
 
             <tr>
-                <td><?php echo $contact['id']; ?></td>
                 <td><?php echo $contact['name']; ?></td>
-                <td><?php echo $contact['company_id']; ?></td>
-                <td><?php echo $contact['email']; ?></td>
                 <td><?php echo $contact['phone']; ?></td>
+                <td><?php echo $contact['email']; ?></td>
+                <td><?php echo $contact['company_id']; ?></td> 
                 <td><?php echo $contact['created_at']; ?></td>
-                <td><?php echo $contact['updated_at']; ?></td>
             </tr>
             
             <?php endforeach; ?>
@@ -60,7 +58,7 @@
 
     </section>
     <?php
-    require './footer.php';
+    require 'footer.php';
     ?>
 </body>
 

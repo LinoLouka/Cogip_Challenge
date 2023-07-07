@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Core\Controller;
 use App\Models\Companies;
 
-Class ControllerCompanies extends Controller
+Class ControllersCompanies extends Controller
 {
 
     public function index()
