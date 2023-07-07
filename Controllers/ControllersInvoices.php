@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Core\Controller;
 use App\Models\Invoices;
 
-Class ControllerInvoices extends Controller
+Class ControllersInvoices extends Controller
 {
 
     public function index()

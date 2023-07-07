@@ -12,7 +12,7 @@ Class ControllerCompanies extends Controller
     {
         $modelCompanies = new Contact();
 
-        $companies = $modelCompanies->getLastContacts(5);
+        $companies = $modelCompanies->getLastContacts();
 
         return $this->view('companies',[
             'companies' => $companies,

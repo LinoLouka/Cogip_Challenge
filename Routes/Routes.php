@@ -4,20 +4,24 @@ namespace App\Routes;
 
 use Bramus\Router\Router;
 use App\Controllers\HomeController;
-use App\Controllers\ControllerInvoices;
+use App\Controllers\ControllersInvoices;
+use App\Controllers\ControllerContacts;
 
 
 $router = new Router();
 
 $router->get('/', function() {
-    (new ControllerInvoices)->index();
+    (new HomeController)->index();
 });
-$router->get('/', function() {
+$router->get('/invoices', function() {
+    (new ControllersInvoices)->index();
+});
+$router->get('/contacts', function() {
     (new ControllerContacts)->index();
 });
-$router->get('/', function() {
-    (new ControllerCompanies)->index();
-});
+// $router->get('/', function() {
+//     (new ControllerCompanies)->index();
+// });
 
 if (file_exists(__FILE__.'/Controllers')){
     require_once($router);

@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Core\Controller;
+use App\Models\Invoices;
+use App\Models\Contacts;
 
 class HomeController extends Controller
 {
@@ -11,6 +13,17 @@ class HomeController extends Controller
     */
     public function index()
     {
-        return $this->view('index',["name" => "Cogip"]);
+
+        $modelInvoice = new Invoices();
+        $modelContact = new Contacts();
+
+        $invoices = $modelInvoice->getLastInvoice(5);
+        $contacts = $modelContact->getLastContacts(5);
+
+        return $this->view('welcome',[
+            "name" => "Cogip",
+            "invoices" => $invoices,
+            "contacts"  => $contacts
+        ]);
     }
 }

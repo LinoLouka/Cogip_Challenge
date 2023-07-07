@@ -3,7 +3,7 @@ namespace App\Models;
 
 use App\Core\connect;
 
-class Contact{
+class Contacts{
 
     private $bdd;
 
@@ -19,7 +19,7 @@ class Contact{
         $statement->bindValue(':limit', $limit, \PDO::PARAM_INT);
         $statement->execute();
 
-        $invoiceArticle = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        return $contacts = $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
 
 
