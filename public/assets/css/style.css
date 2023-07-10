@@ -51,6 +51,7 @@ footer .logo_social_media p {
 footer .logo_social_media img {
   margin-right: 23px;
   flex-grow: 1;
+  cursor: pointer;
 }
 footer .footer__contact ul {
   display: flex;
@@ -167,4 +168,4 @@ body .bot .bot__title {
   padding-left: 20px;
   font-size: 23px;
   text-transform: uppercase;
-}
+}/*# sourceMappingURL=style.css.map */
