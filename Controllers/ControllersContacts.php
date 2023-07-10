@@ -18,4 +18,23 @@ class ControllersContacts extends Controller
             'contacts' => $contacts,
         ]);
     }
+     public function showId($id)
+    {
+
+        $modelContacts = new Contacts();
+
+        $contacts = $modelContacts->Id($id);
+
+        $data = [
+            'company_id' => $contacts['company_id'],
+            'email' => $contacts['email'],
+            'name' => $contacts['name'],
+            'phone' => $contacts['phone'],
+            'created_at' => $contacts['created_at']
+        ];
+
+       return $this->view('show_contact', $data);
+
+
+    }
 }

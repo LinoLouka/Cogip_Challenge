@@ -33,6 +33,7 @@
             <?php foreach ($contacts as $contact):  ?>
 
             <tr>
+                <td><a href="contacts/<?php echo $contact['id'];?>"><?php echo $contact['id'];?></td>
                 <td><?php echo $contact['name']; ?></td>
                 <td><?php echo $contact['phone']; ?></td>
                 <td><?php echo $contact['email']; ?></td>
