@@ -35,25 +35,17 @@
                         <th>Company</th>
                         <th>Created at</th>
                     </tr>
+                    <?php foreach ($invoices as $invoice):  ?>
+
                     <tr>
-                        <td>Donnée 1</td>
-                        <td>Donnée 2</td>
-                        <td>Donnée 3</td>
-                        <td>Donnée 4</td>
+                        <td><?php echo $invoice['id']; ?></td>
+                        <td><?php echo $invoice['id_company']; ?></td>
+                        <td><?php echo $invoice['created_at']; ?></td>
+                        <td><?php echo $invoice['updated_at']; ?></td>
                     </tr>
-                    <tr>
-                        <td>Donnée 1</td>
-                        <td>Donnée 2</td>
-                        <td>Donnée 3</td>
-                        <td>Donnée 4</td>
-                    </tr>
-                    <tr>
-                        <td>Donnée 1</td>
-                        <td>Donnée 2</td>
-                        <td>Donnée 3</td>
-                        <td>Donnée 4</td>
-                    </tr>
-                </table>
+
+                    <?php endforeach; ?>
+                    </table>
             </div>
             <div class="section-invoices__img">
                 <img src="../../public/assets/img/hand.png" alt="hand with clipboard">
@@ -71,28 +63,18 @@
                         <th>Company</th>
                         <th>Created at</th>
                     </tr>
+                    <?php foreach ($contacts as $contact):  ?>
+
                     <tr>
-                        <td>Donnée 1</td>
-                        <td>Donnée 2</td>
-                        <td>Donnée 3</td>
-                        <td>Donnée 4</td>
-                        <td>Donnée 5</td>
+                        <td><?php echo $contact['name']; ?></td>
+                        <td><?php echo $contact['phone']; ?></td>
+                        <td><?php echo $contact['email']; ?></td>
+                        <td><?php echo $contact['company_id']; ?></td> 
+                        <td><?php echo $contact['created_at']; ?></td>
                     </tr>
-                    <tr>
-                        <td>Donnée 1</td>
-                        <td>Donnée 2</td>
-                        <td>Donnée 3</td>
-                        <td>Donnée 4</td>
-                        <td>Donnée 5</td>
-                    </tr>
-                    <tr>
-                        <td>Donnée 1</td>
-                        <td>Donnée 2</td>
-                        <td>Donnée 3</td>
-                        <td>Donnée 4</td>
-                        <td>Donnée 5</td>
-                    </tr>
-                </table>
+
+                    <?php endforeach; ?>
+                    </table>
             </div>
             <div class="section-contacts__img">
                 <img src="../../public/assets/img/lamp.png" alt="lamp">
@@ -110,27 +92,15 @@
                         <th>Type</th>
                         <th>Created at</th>
                     </tr>
-                    <tr>
-                        <td>Donnée 1</td>
-                        <td>Donnée 2</td>
-                        <td>Donnée 3</td>
-                        <td>Donnée 4</td>
-                        <td>Donnée 5</td>
-                    </tr>
-                    <tr>
-                        <td>Donnée 1</td>
-                        <td>Donnée 2</td>
-                        <td>Donnée 3</td>
-                        <td>Donnée 4</td>
-                        <td>Donnée 5</td>
-                    </tr>
-                    <tr>
-                        <td>Donnée 1</td>
-                        <td>Donnée 2</td>
-                        <td>Donnée 3</td>
-                        <td>Donnée 4</td>
-                        <td>Donnée 5</td>
-                    </tr>
+                    <?php foreach ($companies as $company):  ?>
+                <tr>
+                    <td><?php echo $company['id']; ?></td>
+                    <td><?php echo $company['name']; ?></td>
+                    <td><?php echo $company['country']; ?></td>
+                    <td><?php echo $company['type_id']; ?></td>
+                </tr>
+
+                <?php endforeach; ?>
                 </table>
             </div>
         </div>
