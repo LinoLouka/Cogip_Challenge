@@ -8,16 +8,19 @@ use App\Models\Companies;
 Class ControllersCompanies extends Controller
 {
 
-    public function index()
+    public function show()
     {
         $modelCompanies = new Companies();
 
-        $companies = $modelCompanies->getLastCompanies(5);
+        $companies = $modelCompanies->showCompanies();
 
         return $this->view('companies',[
             'companies' => $companies,
         ]);
     }
+    
+
+
 }
 
 ?>

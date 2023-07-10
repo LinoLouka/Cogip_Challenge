@@ -15,13 +15,13 @@ $router->get('/home', function() {
     (new HomeController)->index();
 });
 $router->get('/invoices', function() {
-    (new ControllersInvoices)->index();
+    (new ControllersInvoices)->show();
 });
 $router->get('/contacts', function() {
     (new ControllersContacts)->index();
 });
 $router->get('/companies', function() {
-    (new ControllersCompanies)->index();
+    (new ControllersCompanies)->show();
 });
 
 if (file_exists(__FILE__.'/Controllers')){

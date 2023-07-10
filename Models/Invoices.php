@@ -22,6 +22,13 @@ class Invoices
 
         return $invoices = $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
+    public function showInvoices(){
+        $request = 'SELECT * FROM invoices';
+        $statement = $this->bdd->prepare($request);
+        $statement->execute();
+
+        return $invoices = $statement->fetchAll(\PDO::FETCH_ASSOC);
+    }
 
 
 }

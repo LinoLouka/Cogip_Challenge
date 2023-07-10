@@ -8,16 +8,16 @@ use App\Models\Invoices;
 Class ControllersInvoices extends Controller
 {
 
-    public function index()
+    public function show()
     {
         $modelInvoice = new Invoices();
 
-        $invoices = $modelInvoice->getLastInvoice(5);
+        $invoices = $modelInvoice->showInvoices(5);
 
         return $this->view('invoices',[
             'invoices' => $invoices,
         ]);
     }
-}
+    }
 
 ?>
