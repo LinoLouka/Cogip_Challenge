@@ -19,13 +19,13 @@
 
         <div class="logo_social_media">
             <p>Social Media</p>
-            <img src="assets/img/Facebook.svg" alt="logo_facebook">
-            <img src="assets/img/Twitter.svg" alt="logo_twitter">
-            <img src="assets/img/LinkedIn.svg" alt="logo_linkedin">
-            <img src="assets/img/Youtube.svg" alt="logo_youtube">
-            <img src="assets/img/Instagram.svg" alt="logo_instagram">
-            <img src="assets/img/Pinterest.svg" alt="logo_pinterest">
-            <img src="assets/img/GooglePlus.svg" alt="logo_google">
+            <a href="https://www.facebook.com"><img src="assets/img/Facebook.svg" alt="logo_facebook">
+            <a href="https://www.twitter.com"><img src="assets/img/Twitter.svg" alt="logo_twitter">
+            <a href="https://www.linkedin.com"><img src="assets/img/LinkedIn.svg" alt="logo_linkedin">
+            <a href="https://www.youtube.com"><img src="assets/img/Youtube.svg" alt="logo_youtube">
+            <a href="https://www.instagram.com"><img src="assets/img/Instagram.svg" alt="logo_instagram">
+            <a href="https://www.pinterest.com"><img src="assets/img/Pinterest.svg" alt="logo_pinterest">
+            <a href="https://www.google.com"><img src="assets/img/GooglePlus.svg" alt="logo_google">
             <img src="assets/img/wifi.svg" alt="logo_rss">
         </div>
     </div>
