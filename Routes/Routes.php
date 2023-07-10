@@ -18,7 +18,7 @@ $router->get('/invoices', function() {
     (new ControllersInvoices)->show();
 });
 $router->get('/contacts', function() {
-    (new ControllersContacts)->index();
+    (new ControllersContacts)->show();
 });
 $router->get('/companies', function() {
     (new ControllersCompanies)->show();

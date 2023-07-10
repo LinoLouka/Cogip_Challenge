@@ -32,7 +32,7 @@ class Contacts
         $statement = $this->bdd->prepare($request);
         $statement->execute();
 
-        $contacts = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $contacts = $statement->fetchAll(\PDO::FETCH_ASSOC);
         return $contacts;
     }
 }
