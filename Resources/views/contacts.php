@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COGIP</title>
-    <link rel="stylesheet" href="../../public/assets/css/reset.css">
-    <link rel="stylesheet" href="../../public/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -20,17 +20,17 @@
             <input type="text" placeholder="Search...">
         </div>
         <div class="section-contacts__table">
-    <?php
-        if (!is_null($contacts) && is_array($contacts)): ?>
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Phone</th>
-                <th>Mail</th>
-                <th>Company</th>
-                <th>Created at</th>
-            </tr>
-            <?php foreach ($contacts as $contact):  ?>
+            <?php
+            if (!is_null($contacts) && is_array($contacts)) : ?>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Mail</th>
+                        <th>Company</th>
+                        <th>Created at</th>
+                    </tr>
+                    <?php foreach ($contacts as $contact) :  ?>
 
             <tr>
                 <td><a href="contacts/<?php echo $contact['id'];?>"><?php echo $contact['id'];?></td>

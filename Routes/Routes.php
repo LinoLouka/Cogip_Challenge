@@ -10,35 +10,21 @@ use App\Controllers\ControllersCompanies;
 
 $router = new Router();
 
-$router->get('/', function() {
+$router->get('/', function () {
     (new HomeController)->index();
 });
-$router->get('/home', function() {
+$router->get('/home', function () {
     (new HomeController)->index();
 });
-
 $router->get('/invoices', function() {
-    (new ControllersInvoices)->show();
+    (new ControllersInvoices)->index();
 });
 
 $router->get('/contacts', function() {
     (new ControllersContacts)->show();
 });
-
 $router->get('/companies', function() {
-    (new ControllersCompanies)->show();
-});
-
-$router->get('/companies/{id}', function($id) {
-    (new ControllersCompanies)->showId($id);
-});
-
-$router->get('/contacts/{id}', function($id) {
-    (new ControllersContacts)->showId($id);
-});
-
-$router->get('/invoices/{id}', function($id) {
-    (new ControllersInvoices)->showId($id);
+    (new ControllersCompanies)->index();
 });
 
 $router->set404(function() {
@@ -46,3 +32,4 @@ $router->set404(function() {
 });
 
 $router->run();
+

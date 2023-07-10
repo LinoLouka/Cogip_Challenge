@@ -1,3 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
+footer hr {
+  height: 1px;
+  background-color: #f9de4e;
+  border: none;
+}
+footer .footer h2 {
+  font-size: 30px;
+  border: 3px solid #f9de4e;
+  width: -moz-min-content;
+  width: min-content;
+  display: flex;
+  flex-direction: column;
+}
+footer .footer__copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  opacity: 0.5;
+}
+footer .footer__infos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+footer .footer__infos .img_svg,
+footer .footer__infos .img_phone {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+footer .footer__infos .img_print {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: auto;
+}
+footer .footer__infos .img_print img {
+  margin-right: 5px;
+}
+footer .logo_social_media {
+  justify-content: space-between;
+  align-items: center;
+}
+footer .logo_social_media p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+footer .logo_social_media img {
+  margin-right: 23px;
+  flex-grow: 1;
+}
+footer .footer__contact ul {
+  display: flex;
+  padding: 10px;
+  margin: 0;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+footer .footer__contact a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  background-color: #f9de4e;
+  height: 100px;
+}
+header .nav-bar {
+  text-align: center;
+  padding-top: 10px;
+}
+header .nav-bar h1 {
+  font-weight: bold;
+  font-size: 30px;
+}
+header .nav-bar .nav-bar__link {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+header .nav-bar .nav-bar__link a {
+  text-decoration: none;
+  color: black;
+}
+header .nav-bar .nav-bar__btn button {
+  border-style: none;
+  font-size: 16px;
+}
+header .nav-bar .nav-bar__btn .nav-bar__btn--login {
+  background-color: #f9de4e;
+}
+header .nav-bar .nav-bar__btn .nav-bar__btn--sign {
+  border-radius: 10px;
+}
+
 body {
   font-family: "Inter", sans-serif;
 }
@@ -8,36 +109,62 @@ body img {
 body h2 {
   font-weight: bold;
 }
-body header {
+body .header-title-img {
   background-color: #f9de4e;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
-body header .nav-bar .nav-bar__link a {
-  text-decoration: none;
-  color: black;
+body .header-title-img h2 {
+  text-align: center;
 }
-body header .nav-bar .nav-bar__btn button {
-  border-style: none;
-}
-body header .nav-bar .nav-bar__btn .nav-bar__btn--login {
-  background-color: #f9de4e;
-}
-body header .nav-bar .nav-bar__btn .nav-bar__btn--sign {
-  border-radius: 20px;
-}
-body header .header__img img {
+body .header-title-img .header__img img {
   max-width: 100%;
   max-height: 100%;
 }
+body .header-title-img .header__title {
+  align-self: center;
+}
+body .header-title-img .header__title h2 {
+  text-align: start;
+  font-size: 20px;
+  padding-left: 12px;
+}
+body .section h2 {
+  margin: 20px 0 0 20px;
+  font-size: 30px;
+}
+body .section table {
+  margin: 20px auto 20px auto;
+}
 body .section table th {
   background-color: #f9de4e;
+  text-align: left;
+  padding-left: 5px;
 }
 body .section table tr:nth-child(odd) {
   background-color: #f5f5f5;
 }
-body footer .footer h2 {
-  border: 3px solid #f9de4e;
+body .section table tr:hover {
+  background-color: #ddd;
 }
-body footer .footer__contact a {
-  text-decoration: none;
-  color: black;
-}/*# sourceMappingURL=style.css.map */
+body .section .section-invoices .section-invoices__img img {
+  width: 25%;
+  height: auto;
+}
+body .section .section-contacts .section-contacts__img img {
+  width: 25%;
+  height: auto;
+}
+body .bot {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 20px 0px 20px 0px;
+  background-image: url(../../assets/img/rectangle.png);
+}
+body .bot .bot__title {
+  text-align: start;
+  align-self: center;
+  padding-left: 20px;
+  font-size: 23px;
+  text-transform: uppercase;
+}

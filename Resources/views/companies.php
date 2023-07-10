@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COGIP</title>
-    <link rel="stylesheet" href="../../public/assets/css/reset.css">
-    <link rel="stylesheet" href="../../public/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -37,11 +37,11 @@
                     <td><?php echo $company['type_id']; ?></td>
                 </tr>
 
-<?php endforeach; ?>
-</table>
-<?php else: ?>
-<p>No companies found.</p>
-<?php endif; ?>
+                    <?php endforeach; ?>
+                </table>
+            <?php else : ?>
+                <p>No companies found.</p>
+            <?php endif; ?>
 
         </div>
         <div class="section-invoices__navbar">
