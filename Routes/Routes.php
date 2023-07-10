@@ -23,6 +23,9 @@ $router->get('/contacts', function() {
 $router->get('/companies', function() {
     (new ControllersCompanies)->show();
 });
+$router->get('/companies/{$id}', function($id) {
+    (new ControllersCompanies)->showId($id);
+});
 
 if (file_exists(__FILE__.'/Controllers')){
     require_once($router);

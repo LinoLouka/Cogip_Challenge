@@ -18,6 +18,25 @@ Class ControllersCompanies extends Controller
             'companies' => $companies,
         ]);
     }
+    public function showId($id)
+    {
+
+        $modelCompanies = new Companies();
+
+        $companies = $modelCompanies->Id($id);
+
+        $data = [
+            'tva' => $companies['tva'],
+            'type_id' => $companies['type_id'],
+            'name' => $companies['name'],
+            'country' => $companies['country'],
+            'created_at' => $companies['created_at']
+        ];
+
+       return $this->view('show_company', $data);
+
+
+    }
     
 
 

@@ -25,7 +25,16 @@ class Companies{
         $request = 'SELECT * FROM companies';
         $statement = $this->bdd->prepare($request);
         $statement->execute();
-        return $companies = $statement->fetchALL(\PDO::FETCH_ASSOC);
+        return $companies = $statement->fetchAll(\PDO::FETCH_ASSOC);
+    }
+    public function Id($id)
+    {
+        $request = 'SELECT * FROM companies WHERE id = :id';
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $companies = $statement->fetch(\PDO::FETCH_ASSOC);
     }
 
 
