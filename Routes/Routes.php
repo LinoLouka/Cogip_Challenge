@@ -11,7 +11,7 @@ use App\Controllers\ControllersCompanies;
 
 $router = new Router();
 
-$router->get('/', function() {
+$router->get('/home', function() {
     (new HomeController)->index();
 });
 $router->get('/invoices', function() {

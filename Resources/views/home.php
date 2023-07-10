@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COGIP</title>
-    <link rel="stylesheet" href="../../public/assets/css/reset.css">
-    <link rel="stylesheet" href="../../public/assets/css/style.css">
+    <link rel="stylesheet" href="../public/assets/css/reset.css">
+    <link rel="stylesheet" href="../public/assets/css/style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
     </style>
@@ -14,7 +14,7 @@
 
 <body>
     <?php
-    require './header.php';
+    require 'header.php';
     ?>
     <div class="header__title">
         <h2>MANAGE YOUR
@@ -22,7 +22,7 @@
             INVOICES EASLY</h2>
     </div>
     <div class="header__img">
-        <img src="../../public/assets/img/img-header.png" alt="img par défault">
+        <img src="../public/assets/img/img-header.png" alt="img par défault">
     </div>
     <section class="section">
         <div class="section-invoices">
@@ -48,7 +48,7 @@
                     </table>
             </div>
             <div class="section-invoices__img">
-                <img src="../../public/assets/img/hand.png" alt="hand with clipboard">
+                <img src="../public/assets/img/hand.png" alt="hand with clipboard">
             </div>
 
         </div>
@@ -77,7 +77,7 @@
                     </table>
             </div>
             <div class="section-contacts__img">
-                <img src="../../public/assets/img/lamp.png" alt="lamp">
+                <img src="../public/assets/img/lamp.png" alt="lamp">
             </div>
 
         </div>
@@ -110,11 +110,11 @@
             <h2>work better in your company</h2>
         </div>
         <div class="bot__img">
-            <img src="../../public/assets/img/phone-footer.png" alt="téléphone jaune">
+            <img src="../public/assets/img/phone-footer.png" alt="téléphone jaune">
         </div>
     </section>
     <?php
-    require './footer.php';
+    require 'footer.php';
     ?>
 
 </body>
