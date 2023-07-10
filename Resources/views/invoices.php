@@ -35,7 +35,7 @@
             <?php foreach ($invoices as $invoice):  ?>
 
             <tr>
-                <td><a href="invoices/"<?php echo $invoice['id'] ?>><?php echo $invoice['id'];?></a></td>
+                <td><a href="invoices/<?php echo $invoice['id'] ?>"><?php echo $invoice["id"]?></a></td>
                 <td><?php echo $invoice['id_company']; ?></td>
                 <td><?php echo $invoice['created_at']; ?></td>
                 <td><?php echo $invoice['updated_at']; ?></td>
