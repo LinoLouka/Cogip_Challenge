@@ -35,5 +35,14 @@ class Contacts
         $contacts = $statement->fetchAll(\PDO::FETCH_ASSOC);
         return $contacts;
     }
+    public function Id($id)
+    {
+        $request = 'SELECT * FROM contacts WHERE id = :id';
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $contacts = $statement->fetch(\PDO::FETCH_ASSOC);
+    }
 }
 ?>
