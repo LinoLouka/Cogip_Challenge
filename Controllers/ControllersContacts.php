@@ -18,4 +18,12 @@ class ControllersContacts extends Controller
             'contacts' => $contacts,
         ]);
     }
+
+    public function show(){
+        $contacts = $modelContact->showContact();
+
+        return $this->view('contacts', [
+            'contacts' => $contacts,
+        ]);
+    }
 }
