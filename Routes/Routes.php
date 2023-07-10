@@ -26,6 +26,9 @@ $router->get('/companies', function() {
 $router->get('/companies/{$id}', function($id) {
     (new ControllersCompanies)->showId($id);
 });
+$router->get('/invoices/{$id}', function($id) {
+    (new ControllersInvoices)->showId($id);
+});
 
 if (file_exists(__FILE__.'/Controllers')){
     require_once($router);
