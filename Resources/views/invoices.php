@@ -27,25 +27,26 @@
             if (!is_null($invoices) && is_array($invoices)) : ?>
                 <table>
                     <tr>
+                        <th>Id</th>
                         <th>Invoice number</th>
-                        <th>Dates due</th>
-                        <th>Company</th>
+                        <th>Due dates</th>
+                        <!-- <th>Company</th> -->
                         <th>Created at</th>
                     </tr>
                     <?php foreach ($invoices as $invoice) :  ?>
 
-            <tr>
-                <td><a href="invoices/<?php echo $invoice['id'] ?>"><?php echo $invoice["id"]?></a></td>
-                <td><?php echo $invoice['id_company']; ?></td>
-                <td><?php echo $invoice['created_at']; ?></td>
-                <td><?php echo $invoice['updated_at']; ?></td>
-            </tr>
-            
-            <?php endforeach; ?>
-        </table>
-    <?php else: ?>
-        <p>No invoices found.</p>
-    <?php endif; ?>
+                        <tr>
+                            <td><a href="invoices/<?php echo $invoice['id'] ?>"><?php echo $invoice["id"] ?></a></td>
+                            <td><?php echo $invoice['id_company']; ?></td>
+                            <td><?php echo $invoice['created_at']; ?></td>
+                            <td><?php echo $invoice['updated_at']; ?></td>
+                        </tr>
+
+                    <?php endforeach; ?>
+                </table>
+            <?php else : ?>
+                <p>No invoices found.</p>
+            <?php endif; ?>
 
         </div>
         <div class="section-invoices__navbar">

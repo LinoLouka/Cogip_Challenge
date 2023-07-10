@@ -20,22 +20,24 @@
             <input type="text" placeholder="Search...">
         </div>
         <div class="section-companies__table">
-        <?php
-        if (!is_null($companies) && is_array($companies)): ?>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Country</th>
-                    <th>Type</th>
-                </tr>
-                <?php foreach ($companies as $company):  ?>
-                <tr>
-                    <td><a href="companies/<?php echo $company['id'] ?>"><?php echo $company["id"]?></a></td>
-                    <td><?php echo $company['name']; ?></td>
-                    <td><?php echo $company['country']; ?></td>
-                    <td><?php echo $company['type_id']; ?></td>
-                </tr>
+            <?php
+            if (!is_null($companies) && is_array($companies)) : ?>
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>TVA</th>
+                        <th>Country</th>
+                        <th>Type</th>
+                    </tr>
+                    <?php foreach ($companies as $company) :  ?>
+                        <tr>
+                            <td><a href="companies/<?php echo $company['id'] ?>"><?php echo $company["id"] ?></a></td>
+                            <td><?php echo $company['name']; ?></td>
+                            <td><?php echo $company['tva']; ?></td>
+                            <td><?php echo $company['country']; ?></td>
+                            <td><?php echo $company['type_id']; ?></td>
+                        </tr>
 
                     <?php endforeach; ?>
                 </table>
