@@ -32,6 +32,7 @@
                 <?php foreach ($companies as $company):  ?>
                 <tr>
                     <td><a href="companies/<?php echo $company['id'] ?>"><?php echo $company["id"]?></a></td>
+                    <td><?php echo $company['tva']; ?></td>
                     <td><?php echo $company['name']; ?></td>
                     <td><?php echo $company['country']; ?></td>
                     <td><?php echo $company['type_id']; ?></td>

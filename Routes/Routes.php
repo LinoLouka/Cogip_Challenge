@@ -7,6 +7,8 @@ use App\Controllers\HomeController;
 use App\Controllers\ControllersInvoices;
 use App\Controllers\ControllersContacts;
 use App\Controllers\ControllersCompanies;
+use App\Controllers\dashboardController;
+
 
 $router = new Router();
 
@@ -36,6 +38,9 @@ $router->get('/contacts/{id}', function($id) {
 
 $router->get('/invoices/{id}', function($id) {
     (new ControllersInvoices)->showId($id);
+});
+$router->get('/dashboard', function() {
+    (new dashboardController)->index();
 });
 
 $router->set404(function() {
