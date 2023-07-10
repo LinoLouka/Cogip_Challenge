@@ -6,10 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Contact: <?php echo $data['name'];  ?> </p> 
-    <p>Phone: <?php echo $data['email'];  ?> </p>
-    <p>Mail: <?php echo $data['phone'];  ?></p>
-    <p>Company: <?php echo $data['company_id'];  ?> </p>
+    <p>name: <?php echo $data['name'];  ?> </p> 
+    <p>TVA: <?php echo $data['tva'];  ?> </p>
+    <p>Country: <?php echo $data['country'];  ?></p>
+    <p>Type Id: <?php echo $data['type_id'];  ?> </p>
 
 </body>
 </html>

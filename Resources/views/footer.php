@@ -31,11 +31,11 @@
     </div>
     <div class="footer__contact">
         <ul>
-            <li><a type="button" href="">Home</a></li>
+            <li><a type="button" href="home">Home</a></li>
             <li><a type="button" href="invoices">Invoices</a></li>
-            <li><a type="button" href="companies">Compagnies</a></li>
+            <li><a type="button" href="companies">Companies</a></li>
             <li><a type="button" href="contacts">Contacts</a></li>
-            <li><a type="button" href="#">Privacy Policy</a></li>
+            <li><a href="#">Privacy Policy</a></li>
         </ul>
     </div>
     <div class="footer__copyright">

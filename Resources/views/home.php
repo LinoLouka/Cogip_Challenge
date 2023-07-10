@@ -5,19 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COGIP</title>
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../public/assets/css/reset.css">
+    <link rel="stylesheet" href="../public/assets/css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+    </style>
 </head>
 
 <body>
     <?php
-    require './header.php';
+    require 'header.php';
     ?>
-    <div class="header-title-img">
-        <div class="header__title">
-            <h2>MANAGE YOUR CUSTOMERS AND INVOICES EASLY</h2>
-        </div>
-        <div class="header__img"><img src="../../public/assets/img/img-header.png" alt="img par défault"></div>
+    <div class="header__title">
+        <h2>MANAGE YOUR
+            CUSTOMERS AND
+            INVOICES EASLY</h2>
+    </div>
+    <div class="header__img">
+        <img src="../public/assets/img/img-header.png" alt="img par défault">
     </div>
     <section class="section">
         <div class="section-invoices">
@@ -30,27 +35,22 @@
                         <th>Company</th>
                         <th>Created at</th>
                     </tr>
+                    <?php foreach ($invoices as $invoice):  ?>
+
                     <tr>
-                        <td>Donnée 1</td>
-                        <td>Donnée 2</td>
-                        <td>Donnée 3</td>
-                        <td>Donnée 4</td>
+                        <td><?php echo $invoice['id']; ?></td>
+                        <td><?php echo $invoice['id_company']; ?></td>
+                        <td><?php echo $invoice['created_at']; ?></td>
+                        <td><?php echo $invoice['updated_at']; ?></td>
                     </tr>
-                    <tr>
-                        <td>Donnée 1</td>
-                        <td>Donnée 2</td>
-                        <td>Donnée 3</td>
-                        <td>Donnée 4</td>
-                    </tr>
-                    <tr>
-                        <td>Donnée 1</td>
-                        <td>Donnée 2</td>
-                        <td>Donnée 3</td>
-                        <td>Donnée 4</td>
-                    </tr>
-                </table>
+
+                    <?php endforeach; ?>
+                    </table>
             </div>
-            <div align="right" class="section-invoices__img"><img src="../../public/assets/img/hand.png" alt="hand with clipboard"></div>
+            <div class="section-invoices__img">
+                <img src="../public/assets/img/hand.png" alt="hand with clipboard">
+            </div>
+
         </div>
         <div class="section-contacts">
             <h2>Last contacts</h2>
@@ -63,30 +63,23 @@
                         <th>Company</th>
                         <th>Created at</th>
                     </tr>
+                    <?php foreach ($contacts as $contact):  ?>
+
                     <tr>
-                        <td>Donnée 1</td>
-                        <td>Donnée 2</td>
-                        <td>Donnée 3</td>
-                        <td>Donnée 4</td>
-                        <td>Donnée 5</td>
+                        <td><?php echo $contact['name']; ?></td>
+                        <td><?php echo $contact['phone']; ?></td>
+                        <td><?php echo $contact['email']; ?></td>
+                        <td><?php echo $contact['company_id']; ?></td> 
+                        <td><?php echo $contact['created_at']; ?></td>
                     </tr>
-                    <tr>
-                        <td>Donnée 1</td>
-                        <td>Donnée 2</td>
-                        <td>Donnée 3</td>
-                        <td>Donnée 4</td>
-                        <td>Donnée 5</td>
-                    </tr>
-                    <tr>
-                        <td>Donnée 1</td>
-                        <td>Donnée 2</td>
-                        <td>Donnée 3</td>
-                        <td>Donnée 4</td>
-                        <td>Donnée 5</td>
-                    </tr>
-                </table>
+
+                    <?php endforeach; ?>
+                    </table>
             </div>
-            <div align="left" class="section-contacts__img"><img src="../../public/assets/img/lamp.png" alt="lamp"></div>
+            <div class="section-contacts__img">
+                <img src="../public/assets/img/lamp.png" alt="lamp">
+            </div>
+
         </div>
         <div class="section-companies">
             <h2>Last companies</h2>
@@ -99,27 +92,16 @@
                         <th>Type</th>
                         <th>Created at</th>
                     </tr>
-                    <tr>
-                        <td>Donnée 1</td>
-                        <td>Donnée 2</td>
-                        <td>Donnée 3</td>
-                        <td>Donnée 4</td>
-                        <td>Donnée 5</td>
-                    </tr>
-                    <tr>
-                        <td>Donnée 1</td>
-                        <td>Donnée 2</td>
-                        <td>Donnée 3</td>
-                        <td>Donnée 4</td>
-                        <td>Donnée 5</td>
-                    </tr>
-                    <tr>
-                        <td>Donnée 1</td>
-                        <td>Donnée 2</td>
-                        <td>Donnée 3</td>
-                        <td>Donnée 4</td>
-                        <td>Donnée 5</td>
-                    </tr>
+                    <?php foreach ($companies as $company):  ?>
+                <tr>
+                    <td><?php echo $company['id']; ?></td>
+                    <td><?php echo $company['name']; ?></td>
+                    <td><?php echo $company['country']; ?></td>
+                    <td><?php echo $company['type_id']; ?></td>
+                    <td><?php echo $company['created_at']; ?></td>
+                </tr>
+
+                <?php endforeach; ?>
                 </table>
             </div>
         </div>
@@ -128,10 +110,14 @@
         <div class="bot__title">
             <h2>work better in your company</h2>
         </div>
-        <div class="bot__img"><img src="../../public/assets/img/phone-footer.png" alt="téléphone jaune"></div>
-    </section><?php
-                require './footer.php';
-                ?>
+        <div class="bot__img">
+            <img src="../public/assets/img/phone-footer.png" alt="téléphone jaune">
+        </div>
+    </section>
+    <?php
+    require 'footer.php';
+    ?>
+
 </body>
 
 </html>

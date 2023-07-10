@@ -23,7 +23,7 @@ class HomeController extends Controller
         $contacts = $modelContact->getLastContacts(5);
         $companies = $modelCompanies->getLastCompanies(5);
 
-        return $this->view('welcome', [
+        return $this->view('home',[
             "name" => "Cogip",
             "invoices" => $invoices,
             "contacts"  => $contacts,

@@ -34,18 +34,18 @@
                     </tr>
                     <?php foreach ($invoices as $invoice) :  ?>
 
-                        <tr>
-                            <td><?php echo $invoice['id']; ?></td>
-                            <td><?php echo $invoice['id_company']; ?></td>
-                            <td><?php echo $invoice['created_at']; ?></td>
-                            <td><?php echo $invoice['updated_at']; ?></td>
-                        </tr>
-
-                    <?php endforeach; ?>
-                </table>
-            <?php else : ?>
-                <p>No invoices found.</p>
-            <?php endif; ?>
+            <tr>
+                <td><a href="invoices/<?php echo $invoice['id'] ?>"><?php echo $invoice["id"]?></a></td>
+                <td><?php echo $invoice['id_company']; ?></td>
+                <td><?php echo $invoice['created_at']; ?></td>
+                <td><?php echo $invoice['updated_at']; ?></td>
+            </tr>
+            
+            <?php endforeach; ?>
+        </table>
+    <?php else: ?>
+        <p>No invoices found.</p>
+    <?php endif; ?>
 
         </div>
         <div class="section-invoices__navbar">

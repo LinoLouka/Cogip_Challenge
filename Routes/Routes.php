@@ -8,26 +8,28 @@ use App\Controllers\ControllersInvoices;
 use App\Controllers\ControllersContacts;
 use App\Controllers\ControllersCompanies;
 
-
 $router = new Router();
 
 $router->get('/', function () {
     (new HomeController)->index();
 });
-$router->get('/invoices', function () {
+$router->get('/home', function () {
+    (new HomeController)->index();
+});
+$router->get('/invoices', function() {
     (new ControllersInvoices)->index();
 });
-$router->get('/contacts', function () {
-    (new ControllersContacts)->index();
+
+$router->get('/contacts', function() {
+    (new ControllersContacts)->show();
 });
-$router->get('/companies', function () {
+$router->get('/companies', function() {
     (new ControllersCompanies)->index();
 });
 
-if (file_exists(__FILE__ . '/Controllers')) {
-    require_once($router);
-} else {
-    // require_once(__ROOT__.'/Resources/views/404.php');
-}
+$router->set404(function() {
+    require_once(__ROOT__.'/Resources/views/404.php');
+});
 
 $router->run();
+
