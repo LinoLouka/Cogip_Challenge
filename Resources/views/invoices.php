@@ -7,6 +7,7 @@
     <title>COGIP</title>
     <link rel="stylesheet" href="../../public/assets/css/reset.css">
     <link rel="stylesheet" href="../../public/assets/css/style.css">
+    
 </head>
 
 <body>
