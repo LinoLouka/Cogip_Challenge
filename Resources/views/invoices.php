@@ -65,5 +65,6 @@
     require 'footer.php';
     ?>
 </body>
+<script defer src="../public/assets/js/header_remove.js"></script>
 
 </html>
