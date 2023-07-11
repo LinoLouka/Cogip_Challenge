@@ -150,6 +150,28 @@ body .section .section-contacts__searchbar input {
   border-radius: 10px;
   padding: 5px;
 }
+body .section .section-invoices__searchbar {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin-top: 10px;
+}
+body .section .section-invoices__searchbar input {
+  border: solid 1px gray;
+  border-radius: 10px;
+  padding: 5px;
+}
+body .section .section-companies__searchbar {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin-top: 10px;
+}
+body .section .section-companies__searchbar input {
+  border: solid 1px gray;
+  border-radius: 10px;
+  padding: 5px;
+}
 body .section table {
   margin: 20px 5px 20px 5px;
   font-size: 13px;
