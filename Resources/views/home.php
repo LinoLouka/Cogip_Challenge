@@ -38,7 +38,7 @@
                 </table>
             </div>
             <div class="section-invoices__img">
-                <img src="../public/assets/img/hand.png" alt="hand with clipboard">
+                <img src="../public/assets/img/hand.svg" alt="hand with clipboard">
             </div>
 
         </div>
@@ -67,7 +67,7 @@
                 </table>
             </div>
             <div class="section-contacts__img">
-                <img src="../public/assets/img/lamp.png" alt="lamp">
+                <img src="../public/assets/img/lamp.svg" alt="lamp">
             </div>
 
         </div>
@@ -103,7 +103,7 @@
             <h2>work better in your company</h2>
         </div>
         <div class="bot__img">
-            <img src="../public/assets/img/phone-footer.png" alt="téléphone jaune">
+            <img src="../public/assets/img/phone_footer.svg" alt="téléphone jaune">
         </div>
     </section>
     <?php
