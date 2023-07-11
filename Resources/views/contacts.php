@@ -17,7 +17,7 @@
     <section class="section">
         <h2>Last contacts</h2>
         <div class="section-contacts__searchbar">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Search contact">
         </div>
         <div class="section-contacts__table">
             <?php
@@ -63,5 +63,5 @@
     require 'footer.php';
     ?>
 </body>
-
+<script defer src="../public/assets/js/contacts.js"></script>
 </html>

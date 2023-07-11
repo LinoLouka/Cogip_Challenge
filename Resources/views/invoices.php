@@ -17,7 +17,7 @@
     <section class="section">
         <h2>Last invoices</h2>
         <div class="section-invoices__searchbar">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Search company" onkeyup="searchInvoices()" id="search_invoices">
         </div>
 
         <div class="section-invoices__table">
@@ -64,6 +64,11 @@
     <?php
     require 'footer.php';
     ?>
+
+    
+
+
 </body>
+<script defer src="../public/assets/js/invoices.js"></script>
 
 </html>

@@ -17,7 +17,7 @@
     <section class="section">
         <h2>Last companies</h2>
         <div class="section-companies__searchbar">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Search company name">
         </div>
         <div class="section-companies__table">
             <?php
@@ -62,6 +62,7 @@
     <?php
     require 'footer.php';
     ?>
+  
 </body>
-
+<script defer src="../public/assets/js/companies.js"></script>
 </html>
