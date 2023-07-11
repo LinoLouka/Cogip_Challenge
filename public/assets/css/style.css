@@ -91,6 +91,9 @@ header .nav-bar .nav-bar__link a {
   text-decoration: none;
   color: black;
 }
+header .nav-bar .nav-bar__link a:hover {
+  border: solid 1px black;
+}
 header .nav-bar .nav-bar__btn button {
   border-style: none;
   font-size: 16px;
@@ -102,6 +105,13 @@ header .nav-bar .nav-bar__btn .nav-bar__btn--sign {
   border-radius: 10px;
 }
 
+@media screen and (min-width: 376px) {
+  body header .nav-bar {
+    padding: 40px 40px 0 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
 body {
   font-family: "Inter", sans-serif;
 }
@@ -134,6 +144,7 @@ body .header-title-img .header__title h2 {
 }
 body .section h2 {
   margin: 20px 0 0 20px;
+  margin-bottom: 60px;
   font-size: 30px;
   background-image: url(../img/rectangle_title.svg);
   background-repeat: no-repeat;
@@ -201,12 +212,12 @@ body .section .section-invoices .section-invoices__img img {
   width: 25%;
   height: auto;
 }
+body .section .section-contacts .section-contacts__img {
+  margin-bottom: 180px;
+}
 body .section .section-contacts .section-contacts__img img {
   width: 25%;
   height: auto;
-}
-body .section .section-companies h2 {
-  text-align: start;
 }
 body .bot {
   display: grid;

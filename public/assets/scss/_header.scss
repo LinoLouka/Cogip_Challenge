@@ -16,6 +16,9 @@ header {
         text-decoration: none;
         color: black;
       }
+      a:hover {
+        border: solid 1px black;
+      }
     }
     .nav-bar__btn {
       button {

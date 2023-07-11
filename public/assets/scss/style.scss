@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
 @import "footer";
 @import "header";
+@import "mixin";
 
 body {
   font-family: "Inter", sans-serif;
@@ -38,6 +39,7 @@ body {
   .section {
     h2 {
       margin: 20px 0 0 20px;
+      margin-bottom: 60px;
       font-size: 30px;
       background-image: url(../img/rectangle_title.svg);
       background-repeat: no-repeat;
@@ -116,7 +118,7 @@ body {
     }
     .section-contacts {
       .section-contacts__img {
-        // margin-bottom: 180px;
+        margin-bottom: 180px;
         img {
           width: 25%;
           height: auto;
@@ -125,7 +127,7 @@ body {
     }
     .section-companies {
       h2 {
-        text-align: start;
+        // text-align: start;
       }
     }
   }
