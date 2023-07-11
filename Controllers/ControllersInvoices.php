@@ -12,7 +12,7 @@ class ControllersInvoices extends Controller
     $modelInvoice = new Invoices();
 
     $totalRecords = $modelInvoice->countInvoices();
-    $perPage = 10;
+    $perPage = 5;
     $currentPage = $_GET['page'] ?? 1;
 
     $startIndex = ($currentPage - 1) * $perPage;

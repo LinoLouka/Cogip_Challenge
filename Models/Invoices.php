@@ -59,9 +59,8 @@ public function countInvoices()
     $statement->execute();
 
     $result = $statement->fetch(\PDO::FETCH_ASSOC);
-
+    echo $result['total'];
     return $result['total'];
 }
-
 
 }
