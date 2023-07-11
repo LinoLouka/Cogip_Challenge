@@ -55,6 +55,11 @@ header .header-title-img .header__title h2 {
   font-size: 5vw;
   padding-left: 12px;
 }
+header .header-title-img__rectangle {
+  position: relative;
+  top: 2px;
+}
+
 footer hr {
   height: 1px;
   background-color: #f9de4e;
