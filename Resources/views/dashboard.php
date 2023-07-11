@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- rajouter icone poubelle pour les boutons delete -->
     <form method="POST">
 <table>
                     <tr>
@@ -13,20 +14,23 @@
                         <th>Invoice number</th>
                         <th>Dates due</th>
                         <th>Created at</th>
+                        <th>Name</th>
                         <th><button type="submit">Add</button></th>
                     </tr>
                     <?php foreach ($invoices as $invoice):  ?>
 
                     <tr>
                         <td><?php echo $invoice['id']; ?></td>
-                        <td><?php echo $invoice['id_company']; ?></td>
+                        <td value=<?php $invoice['id_company']?> name="invoiceIdCompany"><?php echo $invoice['id_company']; ?></td>
                         <td><?php echo $invoice['created_at']; ?></td>
                         <td><?php echo $invoice['updated_at']; ?></td>
-                        <td><button type="submit" value="">Edit</button> <button type="submit" value="delete">delete</button></td>                    
+                        <td value=<?php $invoice['name']?> name="invoiceName"><?php echo $invoice['name']; ?></td>
+                        <td><input type="text" name="invoiceIdCompany"><input type="text" name="invoiceName"><button type="submit" value="">Edit</button> <button type="submit" value="delete">delete</button><button type="submit" name="validation">Validation</button></td>       
+                        
                     </tr>
                     <?php endforeach; ?>
                     </table>    
-                    </form>
+    </form>
 
                         <form method="POST">
                     <table>
