@@ -11,7 +11,7 @@ class Invoices
     public function __construct()
     {
         $this->bdd = connect::getConnectBdd();
-    } 
+    }
 
     public function getLastInvoice($limit)
     {
@@ -22,7 +22,7 @@ class Invoices
 
         return $invoices = $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
-    
+
     public function showInvoices()
     {
         $request = 'SELECT * FROM invoices';
@@ -41,26 +41,26 @@ class Invoices
 
         return $invoices = $statement->fetch(\PDO::FETCH_ASSOC);
     }
-    
+
     public function getInvoicesWithPagination($startIndex, $perPage)
-{
-    $request = 'SELECT * FROM invoices ORDER BY created_at ASC LIMIT :startIndex, :perPage';
-    $statement = $this->bdd->prepare($request);
-    $statement->bindValue(':startIndex', $startIndex, \PDO::PARAM_INT);
-    $statement->bindValue(':perPage', $perPage, \PDO::PARAM_INT);
-    $statement->execute();
+    {
+        $request = 'SELECT * FROM invoices ORDER BY created_at ASC LIMIT :startIndex, :perPage';
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':startIndex', $startIndex, \PDO::PARAM_INT);
+        $statement->bindValue(':perPage', $perPage, \PDO::PARAM_INT);
+        $statement->execute();
 
-    return $invoices = $statement->fetchAll(\PDO::FETCH_ASSOC);
-}
-public function countInvoices()
-{
-    $request = 'SELECT COUNT(*) as total FROM invoices';
-    $statement = $this->bdd->prepare($request);
-    $statement->execute();
+        return $invoices = $statement->fetchAll(\PDO::FETCH_ASSOC);
+    }
+    public function countInvoices()
+    {
+        $request = 'SELECT COUNT(*) as total FROM invoices';
+        $statement = $this->bdd->prepare($request);
+        $statement->execute();
 
-    $result = $statement->fetch(\PDO::FETCH_ASSOC);
-    echo $result['total'];
-    return $result['total'];
-}
+        $result = $statement->fetch(\PDO::FETCH_ASSOC);
+
+        return $result['total'];
+    }
 
 }
