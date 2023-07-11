@@ -111,6 +111,21 @@ header .nav-bar .nav-bar__btn .nav-bar__btn--sign {
     display: flex;
     justify-content: space-between;
   }
+  body header .nav-bar h1 {
+    font-size: 3vw;
+  }
+  body header .nav-bar .nav-bar__link {
+    word-spacing: 50px;
+  }
+  body .section .section-invoices h2 {
+    font-size: 4vw;
+  }
+  body .section .section-contacts h2 {
+    font-size: 4vw;
+  }
+  body .section .section-companies h2 {
+    font-size: 4vw;
+  }
 }
 body {
   font-family: "Inter", sans-serif;
@@ -139,7 +154,7 @@ body .header-title-img .header__title {
 }
 body .header-title-img .header__title h2 {
   text-align: start;
-  font-size: 20px;
+  font-size: 5vw;
   padding-left: 12px;
 }
 body .section h2 {
@@ -148,7 +163,6 @@ body .section h2 {
   font-size: 30px;
   background-image: url(../img/rectangle_title.svg);
   background-repeat: no-repeat;
-  background-position: right;
 }
 body .section .section-contacts__searchbar {
   display: flex;

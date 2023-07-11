@@ -5,6 +5,31 @@
         padding: 40px 40px 0 40px;
         display: flex;
         justify-content: space-between;
+        h1 {
+          font-size: 3vw;
+        }
+        .nav-bar__link {
+          word-spacing: 50px; // <=== Cassé
+          a {
+          }
+        }
+      }
+    }
+    .section {
+      .section-invoices {
+        h2 {
+          font-size: 4vw;
+        }
+      }
+      .section-contacts {
+        h2 {
+          font-size: 4vw;
+        }
+      }
+      .section-companies {
+        h2 {
+          font-size: 4vw;
+        }
       }
     }
   }
