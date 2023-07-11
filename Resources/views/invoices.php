@@ -30,7 +30,7 @@
                         <th>Id</th>
                         <th>Invoice number</th>
                         <th>Due dates</th>
-                        <!-- <th>Company</th> -->
+                        <th>Company</th>
                         <th>Created at</th>
                     </tr>
                     <?php foreach ($invoices as $invoice) :  ?>
@@ -39,6 +39,7 @@
                             <td><a href="invoices/<?php echo $invoice['id'] ?>"><?php echo $invoice["id"] ?></a></td>
                             <td><?php echo $invoice['id_company']; ?></td>
                             <td><?php echo $invoice['created_at']; ?></td>
+                            <td><?php echo $invoice['name']; ?></td>
                             <td><?php echo $invoice['updated_at']; ?></td>
                         </tr>
 

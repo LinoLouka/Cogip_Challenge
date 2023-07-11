@@ -39,10 +39,37 @@ body {
     h2 {
       margin: 20px 0 0 20px;
       font-size: 30px;
+      background-image: url(../img/rectangle_title.svg);
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+    .section-contacts__searchbar {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      margin-top: 10px;
+      input {
+        border: solid 1px gray;
+        border-radius: 10px;
+        padding: 5px;
+      }
     }
     table {
       margin: 20px 5px 20px 5px;
       font-size: 13px;
+      width: 98%;
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+      overflow-y: hidden;
+      tbody {
+        tr {
+          td {
+            padding: 5px 10px 5px 0;
+            width: 100px;
+          }
+        }
+      }
       th {
         background-color: #f9de4e;
         text-align: left;
@@ -55,6 +82,7 @@ body {
         background-color: #ddd;
       }
     }
+
     .section-invoices {
       .section-invoices__img {
         img {
@@ -66,10 +94,16 @@ body {
     }
     .section-contacts {
       .section-contacts__img {
+        margin-bottom: 180px;
         img {
           width: 25%;
           height: auto;
         }
+      }
+    }
+    .section-companies {
+      h2 {
+        text-align: start;
       }
     }
   }

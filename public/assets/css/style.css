@@ -135,10 +135,33 @@ body .header-title-img .header__title h2 {
 body .section h2 {
   margin: 20px 0 0 20px;
   font-size: 30px;
+  background-image: url(../img/rectangle_title.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+}
+body .section .section-contacts__searchbar {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin-top: 10px;
+}
+body .section .section-contacts__searchbar input {
+  border: solid 1px gray;
+  border-radius: 10px;
+  padding: 5px;
 }
 body .section table {
   margin: 20px 5px 20px 5px;
   font-size: 13px;
+  width: 98%;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  overflow-y: hidden;
+}
+body .section table tbody tr td {
+  padding: 5px 10px 5px 0;
+  width: 100px;
 }
 body .section table th {
   background-color: #f9de4e;
@@ -156,9 +179,15 @@ body .section .section-invoices .section-invoices__img img {
   width: 25%;
   height: auto;
 }
+body .section .section-contacts .section-contacts__img {
+  margin-bottom: 180px;
+}
 body .section .section-contacts .section-contacts__img img {
   width: 25%;
   height: auto;
+}
+body .section .section-companies h2 {
+  text-align: start;
 }
 body .bot {
   display: grid;
