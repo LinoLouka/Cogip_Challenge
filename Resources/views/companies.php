@@ -45,15 +45,22 @@
             <?php endif; ?>
 
         </div>
-        <div class="section-invoices__navbar">
-            <p>Page
-                <a class="navpage" href="#" target="_top">First</a>
-                <a class="navpage" href="#" target="_top">1</a>
-                <a class="navpage" href="#" target="_top">2</a>
-                <a class="navpage" href="#" target="_top">>></a>
-                <a class="navpage" href="#" target="_top">Last</a>
-            </p>
-        </div>
+        <div class="section-companies__navbar">
+    <p>Page
+        <a class="navpage" href="?page=1">First</a>
+        <?php if ($pagination['currentPage'] > 1) : ?>
+            <a class="navpage" href="?page=<?php echo $pagination['currentPage'] - 1; ?>">&lt;</a>
+        <?php endif; ?>
+        <?php for ($i = 1; $i <= $pagination['totalPages']; $i++) : ?>
+            <a class="navpage <?php echo $i == $pagination['currentPage'] ? 'active' : ''; ?>" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+        <?php endfor; ?>
+        <?php if ($pagination['currentPage'] < $pagination['totalPages']) : ?>
+            <a class="navpage" href="?page=<?php echo $pagination['currentPage'] + 1; ?>">&gt;</a>
+        <?php endif; ?>
+        <a class="navpage" href="?page=<?php echo $pagination['totalPages']; ?>">Last</a>
+    </p>
+</div>
+
 
     </section>
     <?php

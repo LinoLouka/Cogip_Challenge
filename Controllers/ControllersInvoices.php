@@ -8,23 +8,23 @@ use App\Models\Invoices;
 class ControllersInvoices extends Controller
 {
     public function show()
-{
-    $modelInvoice = new Invoices();
+    {
+        $modelInvoice = new Invoices();
 
-    $totalRecords = $modelInvoice->countInvoices();
-    $perPage = 5;
-    $currentPage = $_GET['page'] ?? 1;
+        $totalRecords = $modelInvoice->countInvoices();
+        $perPage = 5;
+        $currentPage = $_GET['page'] ?? 1;
 
-    $startIndex = ($currentPage - 1) * $perPage;
-    $invoices = $modelInvoice->getInvoicesWithPagination($startIndex, $perPage);
+        $startIndex = ($currentPage - 1) * $perPage;
+        $invoices = $modelInvoice->getInvoicesWithPagination($startIndex, $perPage);
 
-    $pagination = $this->paginate($totalRecords, $currentPage, $perPage);
+        $pagination = $this->paginate($totalRecords, $currentPage, $perPage);
 
-    return $this->view('invoices', [
-        'invoices' => $invoices,
-        'pagination' => $pagination,
-    ]);
-}
+        return $this->view('invoices', [
+            'invoices' => $invoices,
+            'pagination' => $pagination,
+        ]);
+    }
 
 
     public function showId($id)
@@ -34,6 +34,7 @@ class ControllersInvoices extends Controller
 
         $data = [
             'id' => $invoices['id'],
+            'name' => $invoices['name'],
             'id_company' => $invoices['id_company'],
             'created_at' => $invoices['created_at'],
             'updated_at' => $invoices['updated_at'],
