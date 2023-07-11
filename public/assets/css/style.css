@@ -1,5 +1,60 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
+header {
+  background-color: #f9de4e;
+}
+header .nav-bar {
+  text-align: center;
+  padding-top: 10px;
+}
+header .nav-bar h1 {
+  font-weight: bold;
+  font-size: 30px;
+}
+header .nav-bar .nav-bar__link {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+  font-size: 4vw;
+}
+header .nav-bar .nav-bar__link a {
+  text-decoration: none;
+  color: black;
+  padding: 5px 15px 5px 15px;
+}
+header .nav-bar .nav-bar__link a:hover {
+  outline: solid 2px black;
+}
+header .nav-bar .nav-bar__btn button {
+  border-style: none;
+  font-size: 16px;
+}
+header .nav-bar .nav-bar__btn .nav-bar__btn--login {
+  background-color: #f9de4e;
+}
+header .nav-bar .nav-bar__btn .nav-bar__btn--sign {
+  border: solid 5px #f9de4e;
+  border-radius: 20px;
+}
+header .header-title-img {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+header .header-title-img h2 {
+  text-align: center;
+}
+header .header-title-img .header__img img {
+  max-width: 100%;
+  max-height: 100%;
+}
+header .header-title-img .header__title {
+  align-self: center;
+}
+header .header-title-img .header__title h2 {
+  text-align: start;
+  font-size: 5vw;
+  padding-left: 12px;
+}
 footer hr {
   height: 1px;
   background-color: #f9de4e;
@@ -72,42 +127,6 @@ footer .footer__copyright {
   opacity: 0.5;
 }
 
-header {
-  background-color: #f9de4e;
-  height: 100px;
-}
-header .nav-bar {
-  text-align: center;
-  padding-top: 10px;
-}
-header .nav-bar h1 {
-  font-weight: bold;
-  font-size: 30px;
-}
-header .nav-bar .nav-bar__link {
-  display: flex;
-  justify-content: space-around;
-  margin: 10px;
-}
-header .nav-bar .nav-bar__link a {
-  text-decoration: none;
-  color: black;
-}
-header .nav-bar .nav-bar__link a:hover {
-  border: solid 1px black;
-}
-header .nav-bar .nav-bar__btn button {
-  border-style: none;
-  font-size: 16px;
-}
-header .nav-bar .nav-bar__btn .nav-bar__btn--login {
-  background-color: #f9de4e;
-}
-header .nav-bar .nav-bar__btn .nav-bar__btn--sign {
-  border: solid 5px #f9de4e;
-  border-radius: 20px;
-}
-
 @media screen and (min-width: 376px) {
   body header .nav-bar {
     padding: 40px 40px 0 40px;
@@ -119,6 +138,8 @@ header .nav-bar .nav-bar__btn .nav-bar__btn--sign {
   }
   body header .nav-bar .nav-bar__link {
     margin: auto;
+    font-size: 3vw;
+    justify-content: flex-start;
   }
   body header .nav-bar .nav-bar__link a {
     margin: 0 10px 0 10px;
@@ -132,6 +153,11 @@ header .nav-bar .nav-bar__btn .nav-bar__btn--sign {
   body .section .section-companies h2 {
     font-size: 4vw;
   }
+  body .section table {
+    align-items: center;
+    font-size: 3vw;
+    margin: auto;
+  }
 }
 body {
   font-family: "Inter", sans-serif;
@@ -142,26 +168,6 @@ body img {
 }
 body h2 {
   font-weight: bold;
-}
-body .header-title-img {
-  background-color: #f9de4e;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-body .header-title-img h2 {
-  text-align: center;
-}
-body .header-title-img .header__img img {
-  max-width: 100%;
-  max-height: 100%;
-}
-body .header-title-img .header__title {
-  align-self: center;
-}
-body .header-title-img .header__title h2 {
-  text-align: start;
-  font-size: 5vw;
-  padding-left: 12px;
 }
 body .section h2 {
   margin: 20px 0 0 20px;
@@ -205,10 +211,10 @@ body .section .section-companies__searchbar input {
   padding: 5px;
 }
 body .section table {
+  display: flex;
+  flex-direction: column;
   margin: 20px 5px 20px 5px;
-  font-size: 13px;
   width: 98%;
-  display: block;
   overflow-x: auto;
   white-space: nowrap;
   overflow-y: hidden;

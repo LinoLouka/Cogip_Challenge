@@ -13,16 +13,6 @@
     <?php
     require 'header.php';
     ?>
-    <section class="header-title-img">
-        <div class="header__title">
-            <h2>MANAGE YOUR
-                CUSTOMERS AND
-                INVOICES EASLY</h2>
-        </div>
-        <div class="header__img">
-            <img src="../public/assets/img/img-header.png" alt="img par défault">
-        </div>
-    </section>
     <section class="section">
         <div class="section-invoices">
             <h2>Last invoices</h2>

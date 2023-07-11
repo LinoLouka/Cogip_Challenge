@@ -10,6 +10,8 @@
         }
         .nav-bar__link {
           margin: auto;
+          font-size: 3vw;
+          justify-content: flex-start;
           a {
             margin: 0 10px 0 10px;
           }
@@ -30,6 +32,15 @@
       .section-companies {
         h2 {
           font-size: 4vw;
+        }
+      }
+      table {
+        align-items: center;
+        font-size: 3vw;
+        margin: auto;
+        tbody {
+          tr {
+          }
         }
       }
     }

@@ -1,6 +1,5 @@
 header {
   background-color: #f9de4e;
-  height: 100px;
   .nav-bar {
     text-align: center;
     padding-top: 10px;
@@ -12,12 +11,14 @@ header {
       display: flex;
       justify-content: space-around;
       margin: 10px;
+      font-size: 4vw;
       a {
         text-decoration: none;
         color: black;
+        padding: 5px 15px 5px 15px;
       }
       a:hover {
-        border: solid 1px black;
+        outline: solid 2px black;
       }
     }
     .nav-bar__btn {
@@ -33,5 +34,28 @@ header {
         border-radius: 20px;
       }
     }
+  }
+  .header-title-img {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    h2 {
+      text-align: center;
+    }
+    .header__img {
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    .header__title {
+      align-self: center;
+      h2 {
+        text-align: start;
+        font-size: 5vw;
+        padding-left: 12px;
+      }
+    }
+  }
+  .header-title-img__rectangle {
   }
 }
