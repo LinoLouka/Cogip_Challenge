@@ -44,5 +44,26 @@ class Contacts
 
         return $contacts = $statement->fetch(\PDO::FETCH_ASSOC);
     }
+
+    public function getContactsWithPagination($startIndex, $perPage)
+    {
+        $request = 'SELECT * FROM contacts ORDER BY created_at ASC LIMIT :startIndex, :perPage';
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':startIndex', $startIndex, \PDO::PARAM_INT);
+        $statement->bindValue(':perPage', $perPage, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $contacts = $statement->fetchAll(\PDO::FETCH_ASSOC);
+    }
+    public function countContacts()
+    {
+        $request = 'SELECT COUNT(*) as total FROM contacts';
+        $statement = $this->bdd->prepare($request);
+        $statement->execute();
+
+        $result = $statement->fetch(\PDO::FETCH_ASSOC);
+
+        return $result['total'];
+    }
 }
 ?>

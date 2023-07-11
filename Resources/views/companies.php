@@ -45,7 +45,7 @@
             <?php endif; ?>
 
         </div>
-        <div class="section-invoices__navbar">
+        <div class="section-companies__navbar">
     <p>Page
         <a class="navpage" href="?page=1">First</a>
         <?php if ($pagination['currentPage'] > 1) : ?>
