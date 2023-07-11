@@ -4,6 +4,8 @@ footer hr {
   height: 1px;
   background-color: #f9de4e;
   border: none;
+  width: 75%;
+  margin: 40px auto 30px auto;
 }
 footer .footer h2 {
   font-size: 30px;
@@ -12,7 +14,7 @@ footer .footer h2 {
   width: min-content;
   display: flex;
   flex-direction: column;
-  margin: 0 0 10px 10px;
+  margin: 0 0 30px 10px;
 }
 footer .footer__infos {
   display: flex;
@@ -102,7 +104,8 @@ header .nav-bar .nav-bar__btn .nav-bar__btn--login {
   background-color: #f9de4e;
 }
 header .nav-bar .nav-bar__btn .nav-bar__btn--sign {
-  border-radius: 10px;
+  border: solid 5px #f9de4e;
+  border-radius: 20px;
 }
 
 @media screen and (min-width: 376px) {
@@ -115,7 +118,10 @@ header .nav-bar .nav-bar__btn .nav-bar__btn--sign {
     font-size: 3vw;
   }
   body header .nav-bar .nav-bar__link {
-    word-spacing: 50px;
+    margin: auto;
+  }
+  body header .nav-bar .nav-bar__link a {
+    margin: 0 10px 0 10px;
   }
   body .section .section-invoices h2 {
     font-size: 4vw;
@@ -163,6 +169,7 @@ body .section h2 {
   font-size: 30px;
   background-image: url(../img/rectangle_title.svg);
   background-repeat: no-repeat;
+  clear: right;
 }
 body .section .section-contacts__searchbar {
   display: flex;
@@ -222,22 +229,25 @@ body .section table tr:hover {
   background-color: #ddd;
 }
 body .section .section-invoices .section-invoices__img img {
-  margin: 20px 0 20px 0;
+  float: right;
   width: 25%;
   height: auto;
-}
-body .section .section-contacts .section-contacts__img {
-  margin-bottom: 180px;
 }
 body .section .section-contacts .section-contacts__img img {
   width: 25%;
   height: auto;
+}
+body .section .section-companies {
+  margin-bottom: 80px;
 }
 body .bot {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 20px 0px 20px 0px;
   background-image: url(../../assets/img/rectangle.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
 }
 body .bot .bot__title {
   text-align: start;

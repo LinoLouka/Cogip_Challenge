@@ -48,7 +48,7 @@
                 </table>
             </div>
             <div class="section-invoices__img">
-                <img src="../public/assets/img/hand.png" alt="hand with clipboard" align="right">
+                <img src="../public/assets/img/hand.png" alt="hand with clipboard">
             </div>
 
         </div>
@@ -77,7 +77,7 @@
                 </table>
             </div>
             <div class="section-contacts__img">
-                <img src="../public/assets/img/lamp.png" alt="lamp" align="left">
+                <img src="../public/assets/img/lamp.png" alt="lamp">
             </div>
 
         </div>

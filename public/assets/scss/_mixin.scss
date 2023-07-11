@@ -9,8 +9,9 @@
           font-size: 3vw;
         }
         .nav-bar__link {
-          word-spacing: 50px; // <=== Cassé
+          margin: auto;
           a {
+            margin: 0 10px 0 10px;
           }
         }
       }

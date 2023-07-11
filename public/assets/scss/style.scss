@@ -43,6 +43,7 @@ body {
       font-size: 30px;
       background-image: url(../img/rectangle_title.svg);
       background-repeat: no-repeat;
+      clear: right;
     }
     .section-contacts__searchbar {
       display: flex;
@@ -109,7 +110,7 @@ body {
     .section-invoices {
       .section-invoices__img {
         img {
-          margin: 20px 0 20px 0;
+          float: right;
           width: 25%;
           height: auto;
         }
@@ -117,7 +118,6 @@ body {
     }
     .section-contacts {
       .section-contacts__img {
-        margin-bottom: 180px;
         img {
           width: 25%;
           height: auto;
@@ -125,9 +125,7 @@ body {
       }
     }
     .section-companies {
-      h2 {
-        // text-align: start;
-      }
+      margin-bottom: 80px;
     }
   }
   .bot {
@@ -142,5 +140,8 @@ body {
       text-transform: uppercase;
     }
     background-image: url(../../assets/img/rectangle.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
   }
 }
