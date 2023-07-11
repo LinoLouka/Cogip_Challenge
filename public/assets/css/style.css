@@ -12,12 +12,14 @@ footer .footer h2 {
   width: min-content;
   display: flex;
   flex-direction: column;
+  margin: 0 0 10px 10px;
 }
 footer .footer__infos {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
+  margin: 0 5px 0 10px;
 }
 footer .footer__infos .img-svg,
 footer .footer__infos .img-phone {
@@ -135,13 +137,13 @@ body .section h2 {
   font-size: 30px;
 }
 body .section table {
-  margin: 20px auto 20px auto;
+  margin: 20px 5px 20px 5px;
   font-size: 13px;
 }
 body .section table th {
   background-color: #f9de4e;
   text-align: left;
-  padding-left: 5px;
+  padding: 5px 5px 5px 2px;
 }
 body .section table tr:nth-child(odd) {
   background-color: #f5f5f5;
@@ -150,6 +152,7 @@ body .section table tr:hover {
   background-color: #ddd;
 }
 body .section .section-invoices .section-invoices__img img {
+  margin: 20px 0 20px 0;
   width: 25%;
   height: auto;
 }
