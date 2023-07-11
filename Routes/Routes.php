@@ -42,6 +42,10 @@ $router->get('/invoices/{id}', function($id) {
 $router->get('/dashboard', function() {
     (new dashboardController)->index();
 });
+$router->get('/dashboard', function($name, $country, $TVA, $Type) {
+    (new dashboardController)->addCompanies($name, $type, $country, $TVA);
+});
+
 
 $router->set404(function() {
     require_once(__ROOT__.'/Resources/views/404.php');

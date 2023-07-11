@@ -27,8 +27,23 @@ class dashboardController extends Controller
         ]);
 
     }
+    public function addInvoice()
+    {
 
-}
+        
+    }
+    public function addCompanies($name, $type, $country, $TVA)
+    {
+        $modelCompanies = new Companies();
+
+        $companies = $modelCompanies->Add($name, $type, $country, $TVA);
+
+    }
+    public function addContact()
+    {
+
+    }
+}   
 
 
 

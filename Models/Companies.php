@@ -60,5 +60,14 @@ class Companies
 
         return $result['total'];
     }
+    public function Add($name, $type, $country, $TVA)
+    {
+        $request = 'INSERT INTO companies (type_id, name, country, tva) VALUES (:type, :name, :country, :TVA)';
+        $statement = $this->bdd->prepare($request);
+        $statement->execute();
+
+        $companies = $statement->fetch(\PDO::FETCH_ASSOC);
+
+    }
 
 }

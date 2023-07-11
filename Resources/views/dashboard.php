@@ -80,7 +80,7 @@
 
                     <!-- mettre dans une section -->
                     <!-- fonction add invoices -->
-                    <form method="POST" action="">
+                    <!-- <form method="POST" action="."> -->
                         <label for="invoicesNumber">Invoice number:</input>
                             <input name="invoicesNumber" type="text" value="">
                         <label for="invoicesCompany">Invoice Company name:</input>
@@ -89,13 +89,18 @@
                             <button type="submit" name="validationInvoice">Validation Invoice</button>
                     </form>
                     <?php 
+                    
+                    
+                    
+                    ?>
+                    <?php 
                     echo "<br>";
                     echo "<br>";
                     echo "<br>";
                     ?>
                     <!-- mettre dans une autre section -->
                         <!-- fonction add Companies -->
-                    <form method="POST" action="">
+                    <form method="POST" action=".">
                         <label for="companyName">Company name:</input>
                             <input name="companyName" type="text" value="">
                         <label for="companyType">Company type:</input>
@@ -105,7 +110,7 @@
                         <label for="companyTVA">TVA:</label>
                             <input name="companyTVA" type="text" value="">
                         
-                            <button type="submit" name="validationCompany">Validation Company</button>
+                            <button type="submit" name="validationCompany" value="ValidationCompany">Validation Company</button>
                     </form>
                    <?php 
                     echo "<br>";
@@ -113,9 +118,8 @@
                     echo "<br>";
                     ?>
                     <!-- mettre dans une autre section -->
-                    
                          <!-- fonction add Contacts -->
-                    <form method="POST" action="">
+                    <!-- <form method="POST" action="."> -->
                         <label for="contactName">Contact name:</input>
                             <input name="contactName" type="text" value="">
                         <label for="contactPhone">Contact phone:</input>
