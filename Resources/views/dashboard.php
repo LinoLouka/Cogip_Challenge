@@ -53,7 +53,7 @@
                 </table>
                     
                    
-    <form method="POST" action="/dashboard">
+    <form method="POST" action="dashboard">
     <table>
         <tr>
             <th>Id</th>
@@ -156,7 +156,7 @@
                     
                     ?>
 
-<?php endforeach; ?>
+
 </table>
     </form>
 </body>

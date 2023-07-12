@@ -16,10 +16,6 @@ class dashboardController extends Controller
         $modelContact = new Contacts();
         $modelCompanies = new Companies();
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->editInvoice();
-        }
-
         $invoices = $modelInvoice->getLastInvoice(5);
         $contacts = $modelContact->getLastContacts(5);
         $companies = $modelCompanies->getLastCompanies(5);
@@ -32,7 +28,6 @@ class dashboardController extends Controller
         ]);
 
     }
-
     public function addInvoice()
     {
 
@@ -45,12 +40,18 @@ class dashboardController extends Controller
     public function addCompanies()
     {
         $modelCompanies = new Companies();
+        if (isset($_POST['validationCompany'])){
          $name = $_POST['companyName'];  
          $type = $_POST['companyType'];  
         $country = $_POST['companyCountry'];  
         $tva = $_POST['companyTVA'];  
-
         $message = $modelCompanies->Add($name, $type, $country, $tva);
+        }
+
+        
+
+
+
     }
 
 
@@ -60,21 +61,21 @@ class dashboardController extends Controller
     {
 
     }
-}   
-
-
-
-
-    public function editInvoice()
+public function editInvoice()
     {
+        if (isset($_POST['editInvoice'])){
         $id = $_POST['editInvoice'];
         $id_company = $_POST['id_company'][$id];
         $name = $_POST['invoiceName'][$id];
 
         $modelInvoice = new Invoices();
         $modelInvoice->editInvoices($id, $id_company, $name);
+        }
     }
-}
-    
+
+
+}   
+
+
 
 ?>

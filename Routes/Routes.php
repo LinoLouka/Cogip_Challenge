@@ -45,15 +45,11 @@ $router->get('/dashboard', function() {
 });
 $router->post('/dashboard', function() {
     (new dashboardController)->addCompanies();
-    (new dashboardController)->index();
-
-});
-
-
-$router->post('/dashboard', function() {
     (new dashboardController)->editInvoice();
     (new dashboardController)->index();
+
 });
+
 
 $router->set404(function() {
     require_once(__ROOT__.'/Resources/views/404.php');
