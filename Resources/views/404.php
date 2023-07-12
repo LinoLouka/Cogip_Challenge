@@ -1,23 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/css/reset.css">
+  <meta charset="UTF-8">
+  <title>page 404</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/404.css">
+
 </head>
+
 <body>
-<div id='oopss'>
+
+  <div id='oopss'>
     <div id='error-text'>
         <img src="https://cdn.rawgit.com/ahmedhosna95/upload/1731955f/sad404.svg" alt="404">
-        <span>404 error</span>
-        <p class="p-a">Page not found</p>
-        <p class="p-b">Sorry, the page you are looking for doesn't exist</p>
-        <a href='#' class="back"></a>
+        <span>404 PAGE</span>
+        <p class="p-a">
+           <p>The page you were looking for could not be found</p>
+        
+        <a href='#' class="back">... Back to previous page</a>
     </div>
-</div> 
+</div>
+  
+  
+
 </body>
+
 </html>
 
 
