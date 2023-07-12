@@ -63,57 +63,69 @@
         <th>Name</th>
     </tr>
     <?php foreach ($invoices as $invoice): ?>
-        <tr onclick='createSaveBtn(this)'>
+
+        <tr onclick='SaveBtnInvoice(this)'>
             <td><?php echo $invoice['id']; ?></td>
-            <td onclick='createInputCell(this)' ><?php echo $invoice['id_company']; ?></td>
+            <td onclick='InvoiceIdCompany(this)' ><?php echo $invoice['id_company']; ?></td>
             <td><?php echo $invoice['created_at']; ?></td>
             <td><?php echo $invoice['updated_at']; ?></td>
-            <td onclick='createInputCell(this)'><?php echo $invoice['name']; ?></td>
-            <td>
-            <input type="text" name="invoiceName[<?php echo $invoice['id']; ?>]" value="<?php echo $invoice['name']; ?>">
-            <input type="text" name="id_company[<?php echo $invoice['id']; ?>]" value="<?php echo $invoice['id_company']; ?>">
-            </td>
-            <td>
-                <button type="submit" name="editInvoice" value="<?php echo $invoice['id']; ?>">Edit</button>
-                <button type="submit" name="deleteInvoice" value="<?php echo $invoice['id']; ?>">Delete</button>
-            </td>
-        </tr>
-    <?php endforeach; ?>
-</table>    
-    <script>
+            <td onclick='InvoiceName(this)'><?php echo $invoice['name']; ?></td>
+            <td><button type="submit" name="deleteInvoice" value="<?php echo $invoice['id']; ?>">Delete</button></td>
+<script>
+        let SaveBtn;
     function createSaveBtn(line){
-        let table = line.parentNode;
-        let existingBtn = table.querySelector('.saveBtn');
+        let existingBtn = line.querySelector('.saveBtn');
         if(!existingBtn){
-            let SaveBtn = document.createElement('button');
+        SaveBtn = document.createElement('button');
+        SaveBtn.type = 'submit';
         SaveBtn.innerText = 'Save';
         SaveBtn.className = 'saveBtn';
-        table.appendChild(SaveBtn);
-
+        line.appendChild(SaveBtn);
         }
         
-    }
-                    
-        function createInputCell(cell){
+}  
+function SaveBtnInvoice(line){
+    createSaveBtn(line);
+    SaveBtn.name = 'editInvoice';
+    SaveBtn.value = "<?php echo $invoice['id']; ?>";
+}
+let input;
+function createInputCell(cell){
     let content = cell.innerText;
-    let input = document.createElement('input');
+    input = document.createElement('input');
     input.type='text';
     input.value=content;
     cell.innerText = '';
-
     cell.appendChild(input);
-
-
     input.focus();
     input.addEventListener('keydown', (event) =>{
     if(event.keyCode == 13){
     cell.innerText = input.value;
+    console.log(cell.innerText);
     input.remove();
     }
-});
+    });
+    input.addEventListener('blur', ()=>{
+        cell.innertext = input.value;
+    });
 
 }
+function InvoiceName(cell){
+    createInputCell(cell);
+    input.name= "invoiceName[<?php echo $invoice['id']; ?>]";
+    console.log(input.name);
+    return input.name;
+}
+function InvoiceIdCompany(cell){
+    createInputCell(cell);
+    input.name= "id_company[<?php echo $invoice['id']; ?>]";
+    console.log(input.name);
+    return input.name;
+}
 </script>
+        </tr>
+    <?php endforeach; ?>
+</table>    
 </form>
 
 
