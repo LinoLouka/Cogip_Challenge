@@ -92,7 +92,11 @@
                                 cell.appendChild(input);
 
                                 input.focus();
-
+                            input.addEventListener('keydown', (event) =>{
+                                if(event.code == 13){
+                                    console.log('press Enter');
+                                }
+                            });
                             }
                         </script>
                 </form>
