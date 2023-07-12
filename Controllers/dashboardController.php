@@ -54,10 +54,12 @@ class dashboardController extends Controller
     public function addContact()
     {
         $modelContacts = new Contacts();
-        if(isset($_POST['validationContact'])){
+        if(isset($_POST['validationContact'])) {
             $name = $_POST['contactName'];
             $phone = $_POST['contactPhone'];
             $email = $_POST['contactMail'];
+            $company_id = $_POST['contactCompanyId'];
+            $message = $modelContact($name, $phone, $email, $company_id);
         }
 
     }
@@ -72,6 +74,7 @@ class dashboardController extends Controller
             $modelInvoice->editInvoices($id, $id_company, $name);
         }
     }
+
 
 
 }
