@@ -25,7 +25,7 @@
                         <td><?php echo $invoice['created_at']; ?></td>
                         <td><?php echo $invoice['updated_at']; ?></td>
                         <td value=<?php $invoice['name']?> name="invoiceName"><?php echo $invoice['name']; ?></td>
-                        <td><input type="text" name="invoiceIdCompany"><input type="text" name="invoiceName"><button type="submit" value="">Edit</button> <button type="submit" value="delete">delete</button></td>       
+                        <td><button type="submit" value="">Edit</button> <button type="submit" value="delete">delete</button></td>       
                         
                     </tr>
                     <?php endforeach; ?>
