@@ -71,5 +71,14 @@ class Companies
 
         $result = $statement->execute();
     }
+    public function editCompanies($id, $name)
+{
+    $request = 'UPDATE companies SET name = :name WHERE id = :id';
+    $statement = $this->bdd->prepare($request);
+    $statement->bindValue(':name', $name, \PDO::PARAM_STR);
+    $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+    $statement->execute();
+}
+
 
 }
