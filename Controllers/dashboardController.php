@@ -65,7 +65,6 @@ public function editInvoice()
     {
         if (isset($_POST['editInvoice'])){
         $id = $_POST['editInvoice'];
-        if (isset($_POST['id_company'][$id]) && isset($_POST['invoiceName'][$id])) {
         $id_company = $_POST['id_company'][$id];
         $name = $_POST['invoiceName'][$id];
 
@@ -73,10 +72,7 @@ public function editInvoice()
         $modelInvoice->editInvoices($id, $id_company, $name);
         }
     }
-
-
 }   
-}
 
 
 ?>

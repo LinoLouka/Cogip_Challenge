@@ -71,58 +71,7 @@
             <td><?php echo $invoice['updated_at']; ?></td>
             <td onclick='InvoiceName(this)'><?php echo $invoice['name']; ?></td>
             <td><button type="submit" name="deleteInvoice" value="<?php echo $invoice['id']; ?>">Delete</button></td>
-<script>
-        let SaveBtn;
-    function createSaveBtn(line){
-        let existingBtn = line.querySelector('.saveBtn');
-        if(!existingBtn){
-        SaveBtn = document.createElement('button');
-        SaveBtn.type = 'submit';
-        SaveBtn.innerText = 'Save';
-        SaveBtn.className = 'saveBtn';
-        line.appendChild(SaveBtn);
-        }
-        
-}  
-function SaveBtnInvoice(line){
-    createSaveBtn(line);
-    SaveBtn.name = 'editInvoice';
-    SaveBtn.value = "<?php echo $invoice['id']; ?>";
-}
-let input;
-function createInputCell(cell){
-    let content = cell.innerText;
-    input = document.createElement('input');
-    input.type='text';
-    input.value=content;
-    cell.innerText = '';
-    cell.appendChild(input);
-    input.focus();
-    input.addEventListener('keydown', (event) =>{
-    if(event.keyCode == 13){
-    cell.innerText = input.value;
-    console.log(cell.innerText);
-    input.remove();
-    }
-    });
-    input.addEventListener('blur', ()=>{
-        cell.innertext = input.value;
-    });
 
-}
-function InvoiceName(cell){
-    createInputCell(cell);
-    input.name= "invoiceName[<?php echo $invoice['id']; ?>]";
-    console.log(input.name);
-    return input.name;
-}
-function InvoiceIdCompany(cell){
-    createInputCell(cell);
-    input.name= "id_company[<?php echo $invoice['id']; ?>]";
-    console.log(input.name);
-    return input.name;
-}
-</script>
         </tr>
     <?php endforeach; ?>
 </table>    
@@ -190,5 +139,57 @@ function InvoiceIdCompany(cell){
 
 </table>
     </form>
+    <script>
+        let SaveBtn;
+    function createSaveBtn(line){
+        let existingBtn = line.querySelector('.saveBtn');
+        if(!existingBtn){
+        SaveBtn = document.createElement('button');
+        SaveBtn.type = 'submit';
+        SaveBtn.innerText = 'Save';
+        SaveBtn.className = 'saveBtn';
+        line.appendChild(SaveBtn);
+        }
+        
+}  
+function SaveBtnInvoice(line){
+    createSaveBtn(line);
+    SaveBtn.name = 'editInvoice';
+    SaveBtn.value = "<?php echo $invoice['id']; ?>";
+}
+let input;
+function createInputCell(cell){
+    let content = cell.innerText;
+    input = document.createElement('input');
+    input.type='text';
+    input.value=content;
+    cell.innerText = '';
+    cell.appendChild(input);
+    input.focus();
+    input.addEventListener('keydown', (event) =>{
+    if(event.keyCode == 13){
+    cell.innerText = input.value;
+    console.log(cell.innerText);
+    input.remove();
+    }
+    });
+    input.addEventListener('blur', ()=>{
+        cell.innertext = input.value;
+    });
+
+}
+function InvoiceName(cell){
+    createInputCell(cell);
+    input.name= "invoiceName[<?php echo $invoice['id']; ?>]";
+    console.log(input.name);
+    return input.name;
+}
+function InvoiceIdCompany(cell){
+    createInputCell(cell);
+    input.name= "id_company[<?php echo $invoice['id']; ?>]";
+    console.log(input.name);
+    return input.name;
+}
+</script>
 </body>
 </html>
