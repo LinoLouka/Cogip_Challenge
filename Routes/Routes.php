@@ -39,7 +39,19 @@ $router->get('/contacts/{id}', function($id) {
 $router->get('/invoices/{id}', function($id) {
     (new ControllersInvoices)->showId($id);
 });
+
 $router->get('/dashboard', function() {
+    (new dashboardController)->index();
+});
+$router->post('/dashboard', function() {
+    (new dashboardController)->addCompanies();
+    (new dashboardController)->index();
+
+});
+
+
+$router->post('/dashboard', function() {
+    (new dashboardController)->editInvoice();
     (new dashboardController)->index();
 });
 

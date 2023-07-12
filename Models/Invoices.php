@@ -63,4 +63,12 @@ class Invoices
         return $result['total'];
     }
 
+    public function editInvoices($id, $id_company, $name){
+        $request = 'UPDATE invoices SET id_company=:id_company, name=:name WHERE id=:id';
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':id_company', $id_company, \PDO::PARAM_INT);
+        $statement->bindValue(':name', $name, \PDO::PARAM_STR);
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
 }
