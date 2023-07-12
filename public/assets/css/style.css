@@ -160,7 +160,7 @@ footer .footer__copyright {
   }
   body .section table {
     align-items: center;
-    font-size: 3vw;
+    font-size: 2vw;
     margin: auto;
   }
 }
@@ -178,8 +178,6 @@ body .section h2 {
   margin: 20px 0 0 20px;
   margin-bottom: 60px;
   font-size: 30px;
-  background-image: url(../img/rectangle_title.svg);
-  background-repeat: no-repeat;
   clear: right;
 }
 body .section .section-contacts__searchbar {
@@ -219,7 +217,6 @@ body .section table {
   display: flex;
   flex-direction: column;
   margin: 20px 5px 20px 5px;
-  width: 98%;
   overflow-x: auto;
   white-space: nowrap;
   overflow-y: hidden;
@@ -239,10 +236,20 @@ body .section table tr:nth-child(odd) {
 body .section table tr:hover {
   background-color: #ddd;
 }
+body .section .section-invoices h2 {
+  background-image: url(../img/rectangle_title_invoices.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 body .section .section-invoices .section-invoices__img img {
   float: right;
   width: 25%;
   height: auto;
+}
+body .section .section-contacts h2 {
+  background-image: url(../img/rectangle_title_contacts.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 body .section .section-contacts .section-contacts__img img {
   width: 25%;
@@ -250,6 +257,11 @@ body .section .section-contacts .section-contacts__img img {
 }
 body .section .section-companies {
   margin-bottom: 80px;
+}
+body .section .section-companies h2 {
+  background-image: url(../img/rectangle_title_companies.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 body .bot {
   display: grid;

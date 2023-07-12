@@ -19,6 +19,8 @@
       }
     }
     .section {
+      h2 {
+      }
       .section-invoices {
         h2 {
           font-size: 4vw;
@@ -36,12 +38,8 @@
       }
       table {
         align-items: center;
-        font-size: 3vw;
+        font-size: 2vw;
         margin: auto;
-        tbody {
-          tr {
-          }
-        }
       }
     }
   }

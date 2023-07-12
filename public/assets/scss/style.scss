@@ -18,9 +18,10 @@ body {
       margin: 20px 0 0 20px;
       margin-bottom: 60px;
       font-size: 30px;
-      background-image: url(../img/rectangle_title.svg);
-      background-repeat: no-repeat;
       clear: right;
+      // background-image: url(../img/rectangle_title.svg);
+      // background-repeat: no-repeat;
+      // background-size: cover;
     }
     .section-contacts__searchbar {
       display: flex;
@@ -59,7 +60,6 @@ body {
       display: flex;
       flex-direction: column;
       margin: 20px 5px 20px 5px;
-      width: 98%;
       overflow-x: auto; //scroll horizontal
       white-space: nowrap; //scroll horizontal
       overflow-y: hidden; //scroll horizontal
@@ -85,6 +85,11 @@ body {
     }
 
     .section-invoices {
+      h2 {
+        background-image: url(../img/rectangle_title_invoices.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
       .section-invoices__img {
         img {
           float: right;
@@ -94,6 +99,11 @@ body {
       }
     }
     .section-contacts {
+      h2 {
+        background-image: url(../img/rectangle_title_contacts.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
       .section-contacts__img {
         img {
           width: 25%;
@@ -103,6 +113,11 @@ body {
     }
     .section-companies {
       margin-bottom: 80px;
+      h2 {
+        background-image: url(../img/rectangle_title_companies.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
     }
   }
   .bot {
