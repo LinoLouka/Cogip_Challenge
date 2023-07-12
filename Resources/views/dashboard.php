@@ -7,43 +7,7 @@
 </head>
 <body>
     <!-- rajouter icone poubelle pour les boutons delete -->
-<table>
-                    <tr>
-                        <th>Id</th>
-                        <th>Invoice number</th>
-                        <th>Dates due</th>
-                        <th>Created at</th>
-                        <th>Name</th>
-                    </tr>
-                    <?php foreach ($invoices as $invoice):  ?>
 
-                    <tr>
-                        <td><?php echo $invoice['id']; ?></td>
-                        <td onclick='createInputCell(this)'><?php echo $invoice['id_company']; ?></td>
-                        <td><?php echo $invoice['created_at']; ?></td>
-                        <td><?php echo $invoice['updated_at']; ?></td>
-                        <td onclick='createInputCell(this)'><?php echo $invoice['name']; ?></td>
-                        <td><button type="submit" value="">Edit</button> <button type="submit" value="delete">delete</button></td>       
-                        
-                    </tr>
-                    <?php endforeach; ?>
-                    </table>    
-                        <script>
-                            function createInputCell(cell){
-                                let content = cell.innerText;
-
-                                let input = document.createElement('input');
-                                input.type='text';
-                                input.value=content;
-
-                                cell.innerText = '';
-                                cell.appendChild(input);
-
-                                input.focus();
-
-                            }
-                        </script>
-                        
                     <table>
                     <tr>
                         <th>Name</th>
@@ -87,45 +51,54 @@
 
                 <?php endforeach; ?>
                 </table>
-                        <form>
-                    <!-- mettre dans une section -->
-                    <!-- fonction add invoices -->
-                    <!-- <form method="POST" action="."> -->
-                        <label for="invoicesNumber">Invoice number:</input>
-                            <input name="invoicesNumber" type="text" value="">
-                        <label for="invoicesCompany">Invoice Company name:</input>
-                            <input name="invoicesCompany" type="text" value="">
-
-                            <button type="submit" name="validationInvoice">Validation Invoice</button>
-                    </form>
-                   <?php
                     
-                    ?>
-                    <?php 
-                    echo "<br>";
-                    echo "<br>";
-                    echo "<br>";
-                    ?>
+                   
+    <form method="POST" action="/dashboard">
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Invoice number</th>
+            <th>Dates due</th>
+            <th>Created at</th>
+            <th>Name</th>
+        </tr>
+        <?php foreach ($invoices as $invoice): ?>
+            <tr>
+                <td><?php echo $invoice['id']; ?></td>
+                <td onclick='createInputCell(this)' ><?php echo $invoice['id_company']; ?></td>
+                <td><?php echo $invoice['created_at']; ?></td>
+                <td><?php echo $invoice['updated_at']; ?></td>
+                <td onclick='createInputCell(this)'><?php echo $invoice['name']; ?></td>
+                <td>
+                <input type="text" name="invoiceName[<?php echo $invoice['id']; ?>]" value="<?php echo $invoice['name']; ?>">
+                <input type="text" name="id_company[<?php echo $invoice['id']; ?>]" value="<?php echo $invoice['id_company']; ?>">
+                </td>
+                <td>
+                    <button type="submit" name="editInvoice" value="<?php echo $invoice['id']; ?>">Edit</button>
+                    <button type="submit" name="deleteInvoice" value="<?php echo $invoice['id']; ?>">Delete</button>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>    
+      <script>
+                            function createInputCell(cell){
+                                let content = cell.innerText;
 
+                                let input = document.createElement('input');
+                                input.type='text';
+                                input.value=content;
 
-                    <!-- mettre dans une autre section -->
-                        <!-- fonction add Companies -->
-                    <form method="POST" action="dashboard">
-                        <label for="companyName">Company name:</label>
-                            <input name="companyName" type="text" value="">
-                        <label for="companyType">Company type:</label>
-                            <input name="companyType" type="number" value="">
-                        <label for="companyCountry">Country of the company:</label>
-                            <input name="companyCountry" type="text" value="">
-                        <label for="companyTVA">TVA:</label>
-                            <input name="companyTVA" type="text" value="">
-                        
-                            <button type="submit" name="validationCompany">Validation Company</button>
-                    </form>
-                    
+                                cell.innerText = '';
+                                cell.appendChild(input);
 
+                                input.focus();
 
-
+                            }
+                        </script>
+                </form>
+  
+  
+  
 
                    <?php 
                     echo "<br>";
@@ -147,7 +120,44 @@
 
                         <button type="submit" name="validationContact">Validation contact</button>
                     </form>
+                       <?php 
+                    echo "<br>";
+                    echo "<br>";
+                    echo "<br>";
+                    ?>
 
 
+                    <!-- mettre dans une autre section -->
+                        <!-- fonction add Companies -->
+                    <form method="POST" action="dashboard">
+                        <label for="companyName">Company name:</label>
+                            <input name="companyName" type="text" value="">
+                        <label for="companyType">Company type:</label>
+                            <input name="companyType" type="number" value="">
+                        <label for="companyCountry">Country of the company:</label>
+                            <input name="companyCountry" type="text" value="">
+                        <label for="companyTVA">TVA:</label>
+                            <input name="companyTVA" type="text" value="">
+                        
+                            <button type="submit" name="validationCompany">Validation Company</button>
+                    </form>
+              <form>
+                    <!-- mettre dans une section -->
+                    <!-- fonction add invoices -->
+                    <!-- <form method="POST" action="."> -->
+                        <label for="invoicesNumber">Invoice number:</input>
+                            <input name="invoicesNumber" type="text" value="">
+                        <label for="invoicesCompany">Invoice Company name:</input>
+                            <input name="invoicesCompany" type="text" value="">
+
+                            <button type="submit" name="validationInvoice">Validation Invoice</button>
+                    </form>
+                   <?php
+                    
+                    ?>
+
+<?php endforeach; ?>
+</table>
+    </form>
 </body>
 </html>

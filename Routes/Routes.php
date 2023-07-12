@@ -39,6 +39,7 @@ $router->get('/contacts/{id}', function($id) {
 $router->get('/invoices/{id}', function($id) {
     (new ControllersInvoices)->showId($id);
 });
+
 $router->get('/dashboard', function() {
     (new dashboardController)->index();
 });
@@ -48,6 +49,11 @@ $router->post('/dashboard', function() {
 
 });
 
+
+$router->post('/dashboard', function() {
+    (new dashboardController)->editInvoice();
+    (new dashboardController)->index();
+});
 
 $router->set404(function() {
     require_once(__ROOT__.'/Resources/views/404.php');
