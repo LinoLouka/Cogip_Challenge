@@ -15,7 +15,7 @@
                         <th>Dates due</th>
                         <th>Created at</th>
                         <th>Name</th>
-                        <th><button type="submit">Add</button></th>
+
                     </tr>
                     <?php foreach ($invoices as $invoice):  ?>
 
@@ -25,7 +25,7 @@
                         <td><?php echo $invoice['created_at']; ?></td>
                         <td><?php echo $invoice['updated_at']; ?></td>
                         <td value=<?php $invoice['name']?> name="invoiceName"><?php echo $invoice['name']; ?></td>
-                        <td><input type="text" name="invoiceIdCompany"><input type="text" name="invoiceName"><button type="submit" value="">Edit</button> <button type="submit" value="delete">delete</button><button type="submit" name="validation">Validation</button></td>       
+                        <td><input type="text" name="invoiceIdCompany"><input type="text" name="invoiceName"><button type="submit" value="">Edit</button> <button type="submit" value="delete">delete</button></td>       
                         
                     </tr>
                     <?php endforeach; ?>
@@ -40,7 +40,7 @@
                         <th>Mail</th>
                         <th>Company</th>
                         <th>Created at</th>
-                        <th><button type="submit">Add</button></th>
+
                     </tr>
                     <?php foreach ($contacts as $contact):  ?>
 
@@ -64,7 +64,7 @@
                         <th>Country</th>
                         <th>Type</th>
                         <th>Created at</th>
-                        <th><button type="submit">Add</button></th>
+
                     </tr>
                     <?php foreach ($companies as $company):  ?>
                 <tr>
