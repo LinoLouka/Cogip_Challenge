@@ -15,6 +15,10 @@ class dashboardController extends Controller
         $modelContact = new Contacts();
         $modelCompanies = new Companies();
 
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->editInvoice();
+        }
+
         $invoices = $modelInvoice->getLastInvoice(5);
         $contacts = $modelContact->getLastContacts(5);
         $companies = $modelCompanies->getLastCompanies(5);
@@ -27,9 +31,15 @@ class dashboardController extends Controller
         ]);
 
     }
+    public function editInvoice()
+    {
+        $id = $_POST['editInvoice'];
+        $id_company = $_POST['id_company'][$id];
+        $name = $_POST['invoiceName'][$id];
 
+        $modelInvoice = new Invoices();
+        $modelInvoice->editInvoices($id, $id_company, $name);
+    }
 }
-
-
-
+    
 ?>
