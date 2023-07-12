@@ -9,7 +9,7 @@
     <!-- rajouter icone poubelle pour les boutons delete -->
 
                         <!-- The contacts -->
-
+<form method="POST" action="dashboard">
 <table>
     <tr>
         <th>Id</td>
@@ -39,9 +39,9 @@
     </tr>           
     <?php endforeach; ?>
 </table>
-
+</form>
                     <!-- The Companies -->
-
+<form method="POST" action="dashboard">
 <table>
     <tr>
         <th>Id</th>
@@ -62,13 +62,13 @@
         <td><?php echo $company['created_at']; ?></td>
         <td><input type="text" name="companyName[<?php echo $company['id']; ?>]" value="<?php echo $company['name']; ?>"></td>
         <td>
-            <button type="submit" name="editContact" value="<?php echo $company['id']; ?>">Edit</button>
-            <button type="submit" name="deleteContact" value="<?php echo $company['id']; ?>">Delete</button>
+            <button type="submit" name="editCompany" value="<?php echo $company['id']; ?>">Edit</button>
+            <button type="submit" name="deleteCompany" value="<?php echo $company['id']; ?>">Delete</button>
         </td>
     </tr>
     <?php endforeach; ?>
 </table>
-                    
+</form>                 
                    
 <form method="POST" action="dashboard">
 <table>
@@ -91,8 +91,8 @@
             <input type="text" name="id_company[<?php echo $invoice['id']; ?>]" value="<?php echo $invoice['id_company']; ?>">
             </td>
             <td>
-                <button type="submit" name="editInvoice" value="<?php echo $invoice['id']; ?>">Edit</button>
-                <button type="submit" name="deleteInvoice" value="<?php echo $invoice['id']; ?>">Delete</button>
+            <button type="submit" name="editInvoice" value="<?php echo $invoice['id']; ?>">Edit</button>
+            <button type="submit" name="deleteInvoice" value="<?php echo $invoice['id']; ?>">Delete</button>
             </td>
         </tr>
     <?php endforeach; ?>
@@ -121,8 +121,7 @@ echo "<br>";
 ?>
 <!-- mettre dans une autre section -->
         <!-- fonction add Contacts -->
-<!-- <form method="POST" action="."> -->
-<form>
+<form method="POST" action="dashboard">
     <label for="contactName">Contact name:</input>
         <input name="contactName" type="text" value="">
     <label for="contactPhone">Contact phone:</input>

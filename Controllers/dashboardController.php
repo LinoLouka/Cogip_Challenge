@@ -59,7 +59,7 @@ class dashboardController extends Controller
             $phone = $_POST['contactPhone'];
             $email = $_POST['contactMail'];
             $company_id = $_POST['contactCompanyId'];
-            $message = $modelContact($name, $phone, $email, $company_id);
+            $message = $modelContacts($name, $phone, $email, $company_id);
         }
 
     }
@@ -74,7 +74,27 @@ class dashboardController extends Controller
             $modelInvoice->editInvoices($id, $id_company, $name);
         }
     }
+    public function editContact()
+    {
+        if (isset($_POST['editContact'])) {
+            $id = $_POST['editContact'];
+            $company_id = $_POST['company_id'][$id];
+            $name = $_POST['contactName'][$id];
 
+            $modelContact = new Contacts();
+            $modelContact->editContact($id, $company_id, $name);
+        }
+    }
+    public function editCompany()
+    {
+        if (isset($_POST['editCompany'])) {
+            $id = $_POST['editCompany'];
+            $name = $_POST['companyName'][$id];
+
+            $modelCompany = new Companies();
+            $modelCompany->editCompanie($id, $name);
+        }
+    }
 
 
 }
