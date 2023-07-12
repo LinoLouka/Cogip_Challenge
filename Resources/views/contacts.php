@@ -17,7 +17,7 @@
     <section class="section">
         <h2>Last contacts</h2>
         <div class="section-contacts__searchbar">
-            <input type="text" placeholder="Search contact">
+            <input type="text" placeholder="Search contact" onkeyup="searchContacts()" id="search_contacts">
         </div>
         <div class="section-contacts__table">
             <?php

@@ -19,12 +19,9 @@
         <div class="section-invoices__searchbar">
             <input type="text" placeholder="Search company" onkeyup="searchInvoices()" id="search_invoices">
         </div>
-
-        <div class="section-invoices__table">
-
-            <?php
-
-            if (!is_null($invoices) && is_array($invoices)) : ?>
+    <div class="section-invoices__table">
+<?php
+if (!is_null($invoices) && is_array($invoices)) : ?>
                 <table>
                     <tr>
                         <th>Id</th>

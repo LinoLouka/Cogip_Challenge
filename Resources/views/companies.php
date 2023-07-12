@@ -17,7 +17,7 @@
     <section class="section">
         <h2>Last companies</h2>
         <div class="section-companies__searchbar">
-            <input type="text" placeholder="Search company name">
+            <input type="text" placeholder="Search company name" onkeyup="searchCompanies()" id="search_companies">
         </div>
         <div class="section-companies__table">
             <?php
