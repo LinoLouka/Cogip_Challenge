@@ -7,7 +7,6 @@
 </head>
 <body>
     <!-- rajouter icone poubelle pour les boutons delete -->
-    <form method="">
 <table>
                     <tr>
                         <th>Id</th>
@@ -20,18 +19,17 @@
 
                     <tr>
                         <td><?php echo $invoice['id']; ?></td>
-                        <td value=<?php $invoice['id_company']?> name="invoiceIdCompany"><?php echo $invoice['id_company']; ?></td>
+                        <td onclick='createInputCell(this)' value=<?php $invoice['id_company']?> name="invoiceIdCompany"><?php echo $invoice['id_company']; ?></td>
                         <td><?php echo $invoice['created_at']; ?></td>
                         <td><?php echo $invoice['updated_at']; ?></td>
-                        <td value=<?php $invoice['name']?> name="invoiceName"><?php echo $invoice['name']; ?></td>
+                        <td onclick='createInputCell(this)' value=<?php $invoice['name']?> name="invoiceName"><?php echo $invoice['name']; ?></td>
                         <td><button type="submit" value="">Edit</button> <button type="submit" value="delete">delete</button></td>       
                         
                     </tr>
                     <?php endforeach; ?>
                     </table>    
-    </form>
 
-                        <form method="">
+                        
                     <table>
                     <tr>
                         <th>Name</th>
@@ -50,10 +48,9 @@
                         <td><?php echo $contact['created_at']; ?></td>
                         <td><button type="submit" value="">Edit</button> <button type="submit" value="delete">delete</button></td>
                     </tr>
-                    </form>
+                
                     <?php endforeach; ?>
                     </table>
-                        <form method="">
                     <table>
                     <tr>
                         <th>Id</th>
@@ -76,8 +73,7 @@
 
                 <?php endforeach; ?>
                 </table>
-                    </form>
-
+                        <form>
                     <!-- mettre dans une section -->
                     <!-- fonction add invoices -->
                     <!-- <form method="POST" action="."> -->
@@ -88,9 +84,7 @@
 
                             <button type="submit" name="validationInvoice">Validation Invoice</button>
                     </form>
-                    <?php 
-                    
-                    
+                   <?php
                     
                     ?>
                     <?php 
@@ -98,20 +92,27 @@
                     echo "<br>";
                     echo "<br>";
                     ?>
+
+
                     <!-- mettre dans une autre section -->
                         <!-- fonction add Companies -->
-                    <form method="POST" action=".">
-                        <label for="companyName">Company name:</input>
+                    <form method="POST" action="dashboard">
+                        <label for="companyName">Company name:</label>
                             <input name="companyName" type="text" value="">
-                        <label for="companyType">Company type:</input>
+                        <label for="companyType">Company type:</label>
                             <input name="companyType" type="number" value="">
                         <label for="companyCountry">Country of the company:</label>
                             <input name="companyCountry" type="text" value="">
                         <label for="companyTVA">TVA:</label>
                             <input name="companyTVA" type="text" value="">
                         
-                            <button type="submit" name="validationCompany" value="ValidationCompany">Validation Company</button>
+                            <button type="submit" name="validationCompany">Validation Company</button>
                     </form>
+                    
+
+
+
+
                    <?php 
                     echo "<br>";
                     echo "<br>";
@@ -120,6 +121,7 @@
                     <!-- mettre dans une autre section -->
                          <!-- fonction add Contacts -->
                     <!-- <form method="POST" action="."> -->
+                        <form>
                         <label for="contactName">Contact name:</input>
                             <input name="contactName" type="text" value="">
                         <label for="contactPhone">Contact phone:</input>

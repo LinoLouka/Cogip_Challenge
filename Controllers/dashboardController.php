@@ -6,6 +6,7 @@ use App\Core\Controller;
 use App\Models\Invoices;
 use App\Models\Contacts;
 use App\Models\Companies;
+use App\Resources\views\dashboard;
 
 class dashboardController extends Controller
 {
@@ -32,13 +33,24 @@ class dashboardController extends Controller
 
         
     }
-    public function addCompanies($name, $type, $country, $TVA)
+
+
+
+    
+    public function addCompanies()
     {
         $modelCompanies = new Companies();
+         $name = $_POST['companyName'];  
+         $type = $_POST['companyType'];  
+        $country = $_POST['companyCountry'];  
+        $tva = $_POST['companyTVA'];  
 
-        $companies = $modelCompanies->Add($name, $type, $country, $TVA);
-
+        $message = $modelCompanies->Add($name, $type, $country, $tva);
     }
+
+
+
+
     public function addContact()
     {
 

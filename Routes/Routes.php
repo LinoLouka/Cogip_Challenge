@@ -42,8 +42,10 @@ $router->get('/invoices/{id}', function($id) {
 $router->get('/dashboard', function() {
     (new dashboardController)->index();
 });
-$router->get('/dashboard', function($name, $country, $TVA, $Type) {
-    (new dashboardController)->addCompanies($name, $type, $country, $TVA);
+$router->post('/dashboard', function() {
+    (new dashboardController)->addCompanies();
+    (new dashboardController)->index();
+
 });
 
 
