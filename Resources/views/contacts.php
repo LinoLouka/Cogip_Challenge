@@ -24,7 +24,7 @@
             if (!is_null($contacts) && is_array($contacts)) : ?>
                 <table>
                     <tr>
-                        <th>ID</th>
+                        <th>Id</th>
                         <th>Name</th>
                         <th>Phone</th>
                         <th>Mail</th>

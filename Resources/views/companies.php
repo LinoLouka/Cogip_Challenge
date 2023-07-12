@@ -24,7 +24,7 @@
             if (!is_null($companies) && is_array($companies)) : ?>
                 <table>
                     <tr>
-                        <th>ID</th>
+                        <th>Id</th>
                         <th>Name</th>
                         <th>TVA</th>
                         <th>Country</th>
