@@ -65,5 +65,15 @@ class Contacts
 
         return $result['total'];
     }
+    public function editContacts($id, $name, $company_id)
+        {
+            $request = 'UPDATE contacts SET name = :name, company_id = :company_id WHERE id = :id';
+            $statement = $this->bdd->prepare($request);
+            $statement->bindValue(':name', $name, \PDO::PARAM_STR);
+            $statement->bindValue(':company_id', $company_id, \PDO::PARAM_INT);
+            $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+            $statement->execute();
+        }
+
 }
 ?>

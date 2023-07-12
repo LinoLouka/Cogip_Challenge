@@ -12,7 +12,6 @@
 <form method="POST" action="dashboard">
 <table>
     <tr>
-        <th>Id</td>
         <th>Name</th>
         <th>Phone</th>
         <th>Mail</th>
@@ -21,7 +20,6 @@
     </tr>
     <?php foreach ($contacts as $contact):  ?>
     <tr>      
-        <td><?php echo $contact['id']; ?></td>
         <td onclick='createInputCell(this)'><?php echo $contact['name']; ?></td>
         <td><?php echo $contact['phone']; ?></td>
         <td><?php echo $contact['email']; ?></td>
@@ -30,7 +28,7 @@
         <td><?php echo $contact['updated_at']; ?></td>
         <td>
         <input type="text" name="contactName[<?php echo $contact['id']; ?>]" value="<?php echo $contact['name']; ?>">
-        <input type="text" name="company_id[<?php echo $contact['id']; ?>]" value="<?php echo $contact['company_id']; ?>">
+        <input type="text" name="contactCompanyId[<?php echo $contact['id']; ?>]" value="<?php echo $contact['company_id']; ?>">
         </td>
         <td>
             <button type="submit" name="editContact" value="<?php echo $contact['id']; ?>">Edit</button>

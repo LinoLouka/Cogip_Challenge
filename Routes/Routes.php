@@ -46,6 +46,7 @@ $router->get('/dashboard', function() {
 $router->post('/dashboard', function() {
     (new dashboardController)->addCompanies();
     (new dashboardController)->editInvoice();
+    (new dashboardController)->editContact();
     (new dashboardController)->index();
 
 });

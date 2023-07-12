@@ -78,11 +78,11 @@ class dashboardController extends Controller
     {
         if (isset($_POST['editContact'])) {
             $id = $_POST['editContact'];
-            $company_id = $_POST['company_id'][$id];
             $name = $_POST['contactName'][$id];
+            $company_id = $_POST['contactCompanyId'][$id];
 
             $modelContact = new Contacts();
-            $modelContact->editContact($id, $company_id, $name);
+            $modelContact->editContacts($id, $name, $company_id);
         }
     }
     public function editCompany()
@@ -92,7 +92,7 @@ class dashboardController extends Controller
             $name = $_POST['companyName'][$id];
 
             $modelCompany = new Companies();
-            $modelCompany->editCompanie($id, $name);
+            $modelCompany->editCompanies($id, $name);
         }
     }
 
