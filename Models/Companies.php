@@ -17,7 +17,7 @@ class Companies
     public function getLastCompanies($limit)
     {
 
-        $request = 'SELECT * FROM companies ORDER BY created_at ASC LIMIT :limit';
+        $request = 'SELECT * FROM companies ORDER BY id DESC LIMIT :limit';
         $statement = $this->bdd->prepare($request);
         $statement->bindValue(':limit', $limit, \PDO::PARAM_INT);
         $statement->execute();
@@ -59,6 +59,17 @@ class Companies
         $result = $statement->fetch(\PDO::FETCH_ASSOC);
 
         return $result['total'];
+    }
+    public function Add($name, $type, $country, $tva)
+    {
+        $request = 'INSERT INTO companies (type_id, name, country, tva, created_at) VALUES (:type, :name, :country, :tva, now())';
+        $statement = $this->bdd->prepare($request);
+        $statement->bindParam(':type', $type);
+        $statement->bindParam(':name', $name);
+        $statement->bindParam(':country', $country);
+        $statement->bindParam(':tva', $tva);
+
+        $result = $statement->execute();
     }
 
 }

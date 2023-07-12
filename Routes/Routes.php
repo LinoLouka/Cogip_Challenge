@@ -43,6 +43,12 @@ $router->get('/invoices/{id}', function($id) {
 $router->get('/dashboard', function() {
     (new dashboardController)->index();
 });
+$router->post('/dashboard', function() {
+    (new dashboardController)->addCompanies();
+    (new dashboardController)->index();
+
+});
+
 
 $router->post('/dashboard', function() {
     (new dashboardController)->editInvoice();
