@@ -19,16 +19,30 @@
 
                     <tr>
                         <td><?php echo $invoice['id']; ?></td>
-                        <td onclick='createInputCell(this)' value=<?php $invoice['id_company']?> name="invoiceIdCompany"><?php echo $invoice['id_company']; ?></td>
+                        <td onclick='createInputCell(this)'><?php echo $invoice['id_company']; ?></td>
                         <td><?php echo $invoice['created_at']; ?></td>
                         <td><?php echo $invoice['updated_at']; ?></td>
-                        <td onclick='createInputCell(this)' value=<?php $invoice['name']?> name="invoiceName"><?php echo $invoice['name']; ?></td>
+                        <td onclick='createInputCell(this)'><?php echo $invoice['name']; ?></td>
                         <td><button type="submit" value="">Edit</button> <button type="submit" value="delete">delete</button></td>       
                         
                     </tr>
                     <?php endforeach; ?>
                     </table>    
+                        <script>
+                            function createInputCell(cell){
+                                let content = cell.innerText;
 
+                                let input = document.createElement('input');
+                                input.type='text';
+                                input.value=content;
+
+                                cell.innerText = '';
+                                cell.appendChild(input);
+
+                                input.focus();
+
+                            }
+                        </script>
                         
                     <table>
                     <tr>
