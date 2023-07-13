@@ -19,7 +19,7 @@
         <p class="p-a">
            <p>The page you were looking for could not be found</p>
         
-        <a href='#' class="back">... Back to previous page</a>
+        <a href="home" class="back">... Back to previous page</a>
     </div>
 </div>
   
