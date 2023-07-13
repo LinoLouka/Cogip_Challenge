@@ -163,6 +163,12 @@ footer .footer__copyright {
     font-size: 2vw;
     margin: auto;
   }
+  body .bot {
+    background-image: url(../img/rectangle_footer_web.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+  }
 }
 body {
   font-family: "Inter", sans-serif;
