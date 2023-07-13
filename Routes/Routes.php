@@ -8,6 +8,7 @@ use App\Controllers\ControllersInvoices;
 use App\Controllers\ControllersContacts;
 use App\Controllers\ControllersCompanies;
 use App\Controllers\dashboardController;
+use App\Controllers\authController;
 
 
 $router = new Router();
@@ -56,7 +57,10 @@ $router->post('/dashboard', function() {
     (new dashboardController)->deleteContact();
 
     (new dashboardController)->index();
+});
 
+$router->get('/register', function(){
+    (new authController)->index();
 });
 
 $router->set404(function() {
