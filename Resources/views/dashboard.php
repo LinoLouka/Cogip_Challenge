@@ -22,7 +22,6 @@
         <td onclick='ContactName(this, "<?php echo $contact["id"] ?>")' ><?php echo $contact['name']; ?></td>
         <td onclick='ContactPhone(this, "<?php echo $contact["id"] ?>")' ><?php echo $contact['phone']; ?></td>
         <td><?php echo $contact['email']; ?></td>
-        <td><button type="submit" name="deleteContact" value="<?php echo $contact['id']; ?>">Delete</button></td>
     </tr>           
     <?php endforeach; ?>
 </table>
@@ -42,7 +41,6 @@
         <td onclick='CompanyName(this, "<?php echo $company["id"] ?>")' ><?php echo $company['name']; ?></td>
         <td><?php echo $company['tva']; ?></td>
         <td><?php echo $company['country']; ?></td>
-        <td><button type="submit" name="deleteCompany" value="<?php echo $company['id']; ?>">Delete</button></td>
     </tr>
     <?php endforeach; ?>
 </table>
@@ -63,8 +61,6 @@
             <td onclick='InvoiceIdCompany(this, "<?php echo $invoice["id"] ?>")' ><?php echo $invoice['id_company']; ?></td>
             <td><?php echo $invoice['created_at']; ?></td>
             <td onclick='InvoiceName(this, "<?php echo $invoice["id"] ?>")'><?php echo $invoice['name']; ?></td>
-          
-            <td><button type="submit" name="deleteInvoice" value="<?php echo $invoice['id']; ?>">Delete</button></td>
 
         </tr>
     <?php endforeach; ?>
@@ -127,7 +123,19 @@ echo "<br>";
 
     <script>
         let SaveBtn;
+        let DelBtn;
+    function createDeleteBtn(line){
+        let existingBtn = line.querySelector('.DeleteBtn');
+        if(!existingBtn){
+        DelBtn = document.createElement('button');
+        DelBtn.type = 'submit';
+        DelBtn.innerText = 'Delete';
+        DelBtn.className = 'DeleteBtn';
+        line.appendChild(DelBtn);
+        }
+}
     function createSaveBtn(line){
+        createDeleteBtn(line);
         let existingBtn = line.querySelector('.saveBtn');
         if(!existingBtn){
         SaveBtn = document.createElement('button');
@@ -142,15 +150,26 @@ function SaveBtnInvoice(line, id){
     createSaveBtn(line);
     SaveBtn.name = 'editInvoice';
     SaveBtn.value = id;
+    DelBtn.name = "deleteInvoice";
+    DelBtn.value = id;
 }
 function SaveBtnCompany(line, id){
     createSaveBtn(line);
     SaveBtn.name = 'editCompany';
     SaveBtn.value = id;
+    DelBtn.name = "deleteCompany";
+    DelBtn.value = id;
 }
 function SaveBtnContact(line, id){
     createSaveBtn(line);
     SaveBtn.name = "editContact";
+    SaveBtn.value = id;
+    DelBtn.name ="deleteContact";
+    DelBtn.value = id;
+}
+function DeleteInvoice(line, id){
+    createDeleteBtn(line);
+    SaveBtn.name = "deleteInvoice";
     SaveBtn.value = id;
 }
 let input;
