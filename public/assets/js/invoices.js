@@ -1,5 +1,3 @@
-
-
 function searchInvoices() {
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("search_invoices");

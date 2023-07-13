@@ -15,7 +15,7 @@
     ?>
 
     <section class="section">
-        <h2>Last contacts</h2>
+        <h2>All contacts</h2>
         <div class="section-contacts__searchbar">
             <input type="text" placeholder="Search contact" onkeyup="searchContacts()" id="search_contacts">
         </div>

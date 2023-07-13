@@ -15,7 +15,7 @@
     ?>
 
     <section class="section">
-        <h2>Last invoices</h2>
+        <h2>All invoices</h2>
         <div class="section-invoices__searchbar">
             <input type="text" placeholder="Search company" onkeyup="searchInvoices()" id="search_invoices">
         </div>

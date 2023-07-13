@@ -15,7 +15,7 @@
     ?>
 
     <section class="section">
-        <h2>Last companies</h2>
+        <h2>All companies</h2>
         <div class="section-companies__searchbar">
             <input type="text" placeholder="Search company name" onkeyup="searchCompanies()" id="search_companies">
         </div>
