@@ -80,7 +80,7 @@ echo "<br>";
     <label for="contactName">Contact name:</label>
         <input name="contactName" type="text" value="">
     <label for="contactPhone">Contact phone:</label>
-        <input name="contactPhone" type="number" value="">
+        <input name="contactPhone" type="text" value="">
     <label for="contactMail">Contact mail:</label>
         <input name="contactMail" value="" type="email">
     <label for="contactCompanyId">Contact company:</label>
