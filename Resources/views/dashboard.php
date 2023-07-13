@@ -44,11 +44,12 @@
     </tr>
     <?php foreach ($companies as $company):  ?>
 
-    <tr>    
+    <tr onclick='SaveBtnCompany(this, "<?php echo $company["id"] ?>")'>  
         
-        <td><?php echo $company['name']; ?></td>
+        <td onclick='CompanyName(this, "<?php echo $company["id"] ?>")' ><?php echo $company['name']; ?></td>
         <td><?php echo $company['tva']; ?></td>
         <td><?php echo $company['country']; ?></td>
+
         <td><input type="text" name="companyName[<?php echo $company['id']; ?>]" value="<?php echo $company['name']; ?>"></td>
         <td>
             <button type="submit" name="editCompany" value="<?php echo $company['id']; ?>">Edit</button>
@@ -154,6 +155,11 @@ function SaveBtnInvoice(line, id){
     SaveBtn.name = 'editInvoice';
     SaveBtn.value = id;
 }
+function SaveBtnCompany(line, id){
+    createSaveBtn(line);
+    SaveBtn.name = 'companyName';
+    SaveBtn.value = id;
+}
 let input;
 function createInputCell(cell){
     let content = cell.innerText;
@@ -194,6 +200,21 @@ function InvoiceIdCompany(cell, id){
     });
     input.addEventListener('blur', ()=>{
         cell.innertext = input.value;
+    });
+}
+function CompanyName(cell, id){
+    createInputCell(cell);
+    input.setAttribute('Company-id', id);
+    input.name = "companyName [ "+ id+ "]";
+    input.addEventListener('keydown', (event) =>{
+    if(event.keyCode == 13){
+    cell.innerText = input.value;
+    console.log(cell.innerText);  
+    }
+    });
+    input.addEventListener('blur', ()=>{
+        cell.innertext = input.value;
+        console.log(cell.innerText);
     });
 }
 </script>
