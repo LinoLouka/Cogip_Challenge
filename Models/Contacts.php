@@ -70,6 +70,20 @@ class Contacts
 
         return $result['total'];
     }
+
+    public function addContacts($name, $phone, $email)
+{
+    $request = 'INSERT INTO contacts (name, phone, email) VALUES (:name, :phone, :email)';
+    $statement = $this->bdd->prepare($request);
+    $statement->bindValue(':name', $name, \PDO::PARAM_STR);
+    $statement->bindValue(':phone', $phone, \PDO::PARAM_INT);
+    $statement->bindValue(':email', $email, \PDO::PARAM_STR);
+    $statement->execute();
+
+    $result = $statement->execute();
+}
+
+
     public function editContacts($id, $name, $company_id)
     {
         $request = 'UPDATE contacts SET name = :name, company_id = :company_id WHERE id = :id';

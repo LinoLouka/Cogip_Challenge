@@ -32,9 +32,9 @@ class dashboardController extends Controller
     {
         $modelInvoices = new Invoices();
         if(isset($_POST['validationInvoice'])) {
-            $id_company = $_POST['invoicesNumber'];
-            $name = $_POST['invoicesCompany'];
-            $message = $modelInvoices->Add($id_company, $name);
+            $id_company = $_POST['invoiceNumber'];
+            $name = $_POST['invoiceName'];
+            $message = $modelInvoices->AddInvoices($id_company, $name);
         }
 
     }
@@ -58,11 +58,10 @@ class dashboardController extends Controller
             $name = $_POST['contactName'];
             $phone = $_POST['contactPhone'];
             $email = $_POST['contactMail'];
-            $company_id = $_POST['contactCompanyId'];
-            $message = $modelContacts($name, $phone, $email, $company_id);
+            $message = $modelContacts->addContacts($name, $phone, $email);
         }
-
     }
+
     public function editInvoice()
     {
         if (isset($_POST['editInvoice'])) {

@@ -124,21 +124,18 @@ echo "<br>";
 
         <button type="submit" name="validationCompany">Validation Company</button>
 </form>
-<form>
+
     <!-- mettre dans une section -->
     <!-- fonction add invoices -->
 <form method="POST" action="dashboard">
-    <label for="invoicesNumber">Invoice number:</label>
-        <input name="invoicesNumber" type="text" value="">
-    <label for="invoicesCompany">Invoice Company name:</label>
-        <input name="invoicesCompany" type="text" value="">
+    <label for="invoiceNumber">Invoice number:</label>
+        <input name="invoiceNumber" type="text" value="">
+    <label for="invoiceName">Invoice Company name:</label>
+        <input name="invoiceName" type="text" value="">
 
         <button type="submit" name="validationInvoice">Validation Invoice</button>
 </form>
 
-
-</table>
-    </form>
     <script>
         let SaveBtn;
     function createSaveBtn(line){
