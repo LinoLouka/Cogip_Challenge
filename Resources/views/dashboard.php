@@ -64,12 +64,12 @@
     </tr>
     <?php foreach ($invoices as $invoice): ?>
 
-        <tr onclick='SaveBtnInvoice(this)'>
+        <tr onclick='SaveBtnInvoice(this, "<?php echo $invoice["id"] ?>")'>
             <td><?php echo $invoice['id']; ?></td>
-            <td onclick='InvoiceIdCompany(this)' ><?php echo $invoice['id_company']; ?></td>
+            <td onclick='InvoiceIdCompany(this, "<?php echo $invoice["id"] ?>")' ><?php echo $invoice['id_company']; ?></td>
             <td><?php echo $invoice['created_at']; ?></td>
             <td><?php echo $invoice['updated_at']; ?></td>
-            <td onclick='InvoiceName(this)'><?php echo $invoice['name']; ?></td>
+            <td onclick='InvoiceName(this, "<?php echo $invoice["id"] ?>")'><?php echo $invoice['name']; ?></td>
             <td><button type="submit" name="deleteInvoice" value="<?php echo $invoice['id']; ?>">Delete</button></td>
 
         </tr>
@@ -152,10 +152,10 @@
         }
         
 }  
-function SaveBtnInvoice(line){
+function SaveBtnInvoice(line, id){
     createSaveBtn(line);
     SaveBtn.name = 'editInvoice';
-    SaveBtn.value = "<?php echo $invoice['id']; ?>";
+    SaveBtn.value = id;
 }
 let input;
 function createInputCell(cell){
@@ -166,29 +166,38 @@ function createInputCell(cell){
     cell.innerText = '';
     cell.appendChild(input);
     input.focus();
+    
+
+}
+function InvoiceName(cell, id){
+    createInputCell(cell);
+    input.name= "invoiceName[" + id + "]";
+    console.log(input.name);
     input.addEventListener('keydown', (event) =>{
     if(event.keyCode == 13){
     cell.innerText = input.value;
-    console.log(cell.innerText);
-    input.remove();
+    console.log(cell.innerText);  
+    }
+    });
+    input.addEventListener('blur', ()=>{
+        cell.innertext = input.value;
+        console.log(cell.innerText);
+    });
+}
+function InvoiceIdCompany(cell, id){
+    createInputCell(cell);
+    input.setAttribute('invoice-id',id);
+    input.name= "id_company["+ id + "]";
+    console.log(input.name);
+    input.addEventListener('keydown', (event) =>{
+    if(event.keyCode == 13){
+    input.blur();
+    cell.innerText = input.value;
     }
     });
     input.addEventListener('blur', ()=>{
         cell.innertext = input.value;
     });
-
-}
-function InvoiceName(cell){
-    createInputCell(cell);
-    input.name= "invoiceName[<?php echo $invoice['id']; ?>]";
-    console.log(input.name);
-    return input.name;
-}
-function InvoiceIdCompany(cell){
-    createInputCell(cell);
-    input.name= "id_company[<?php echo $invoice['id']; ?>]";
-    console.log(input.name);
-    return input.name;
 }
 </script>
 </body>
