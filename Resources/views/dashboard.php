@@ -18,18 +18,11 @@
         <th>Mail</th>
     </tr>
     <?php foreach ($contacts as $contact):  ?>
-    <tr>      
-        <td><?php echo $contact['name']; ?></td>
-        <td><?php echo $contact['phone']; ?></td>
+    <tr onclick='SaveBtnContact(this, "<?php echo $contact["id"] ?>")'>     
+        <td onclick='ContactName(this, "<?php echo $contact["id"] ?>")' ><?php echo $contact['name']; ?></td>
+        <td onclick='ContactPhone(this, "<?php echo $contact["id"] ?>")' ><?php echo $contact['phone']; ?></td>
         <td><?php echo $contact['email']; ?></td>
-        <td>
-        <input type="text" name="contactName[<?php echo $contact['id']; ?>]" value="<?php echo $contact['name']; ?>">
-        <input type="text" name="contactCompanyId[<?php echo $contact['id']; ?>]" value="<?php echo $contact['company_id']; ?>">
-        </td>
-        <td>
-            <button type="submit" name="editContact" value="<?php echo $contact['id']; ?>">Edit</button>
-            <button type="submit" name="deleteContact" value="<?php echo $contact['id']; ?>">Delete</button>
-        </td>
+        <td><button type="submit" name="deleteContact" value="<?php echo $contact['id']; ?>">Delete</button></td>
     </tr>           
     <?php endforeach; ?>
 </table>
@@ -155,6 +148,11 @@ function SaveBtnCompany(line, id){
     SaveBtn.name = 'editCompany';
     SaveBtn.value = id;
 }
+function SaveBtnContact(line, id){
+    createSaveBtn(line);
+    SaveBtn.name = "editContact";
+    SaveBtn.value = id;
+}
 let input;
 function createInputCell(cell){
     let content = cell.innerText;
@@ -201,6 +199,36 @@ function CompanyName(cell, id){
     createInputCell(cell);
     input.setAttribute('Company-id', id);
     input.name = "companyName["+ id + "]";
+    input.addEventListener('keydown', (event) =>{
+    if(event.keyCode == 13){
+    cell.innerText = input.value;
+    console.log(input.value);  
+    }
+    });
+    input.addEventListener('blur', ()=>{
+        cell.innertext = input.value;
+        console.log(input.value);
+    });
+}
+function ContactName(cell, id){
+    createInputCell(cell);
+    input.setAttribute('Contact-id', id);
+    input.name = "contactName["+ id + "]";
+    input.addEventListener('keydown', (event) =>{
+    if(event.keyCode == 13){
+    cell.innerText = input.value;
+    console.log(input.value);  
+    }
+    });
+    input.addEventListener('blur', ()=>{
+        cell.innertext = input.value;
+        console.log(input.value);
+    });
+}
+function ContactPhone(cell, id){
+    createInputCell(cell);
+    input.setAttribute('Company-id', id);
+    input.name = "contactPhone["+ id + "]";
     input.addEventListener('keydown', (event) =>{
     if(event.keyCode == 13){
     cell.innerText = input.value;

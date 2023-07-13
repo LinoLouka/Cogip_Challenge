@@ -76,10 +76,10 @@ class dashboardController extends Controller
         if (isset($_POST['editContact'])) {
             $id = $_POST['editContact'];
             $name = $_POST['contactName'][$id];
-            $company_id = $_POST['contactCompanyId'][$id];
+            $contactPhone = $_POST['contactPhone'][$id];
 
             $modelContact = new Contacts();
-            $modelContact->editContacts($id, $name, $company_id);
+            $modelContact->editContacts($id, $name, $contactPhone);
         }
     }
     public function editCompany()
