@@ -68,15 +68,15 @@ class Invoices
         return $result['total'];
     }
 
-    public function addInvoices($name, $id_company) {
-        $request = 'INSERT INTO invoices (name, id_company) VALUES (:name, :id_company)';
+    public function addInvoices($id_company, $name) {
+        $request = 'INSERT INTO invoices (name, id_company, created_at) VALUES (:name, :id_company, now())';
         $statement = $this->bdd->prepare($request);
         $statement->bindValue(':name', $name, \PDO::PARAM_STR);
         $statement->bindValue(':id_company', $id_company, \PDO::PARAM_INT);
-        $statement->execute();
-    
         $result = $statement->execute();
+        return $result;
     }
+    
 
     public function editInvoices($id, $id_company, $name)
     {

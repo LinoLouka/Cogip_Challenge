@@ -34,11 +34,9 @@ class dashboardController extends Controller
         if(isset($_POST['validationInvoice'])) {
             $id_company = $_POST['invoiceNumber'];
             $name = $_POST['invoiceName'];
-            $message = $modelInvoices->AddInvoices($id_company, $name);
+            $message = $modelInvoices->addInvoices($id_company, $name);
         }
-
     }
-
     public function addCompanies()
     {
         $modelCompanies = new Companies();
