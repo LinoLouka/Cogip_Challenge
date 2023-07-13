@@ -76,7 +76,7 @@ class Contacts
     $request = 'INSERT INTO contacts (name, phone, email) VALUES (:name, :phone, :email)';
     $statement = $this->bdd->prepare($request);
     $statement->bindValue(':name', $name, \PDO::PARAM_STR);
-    $statement->bindValue(':phone', $phone, \PDO::PARAM_INT);
+    $statement->bindValue(':phone', $phone, \PDO::PARAM_STR);
     $statement->bindValue(':email', $email, \PDO::PARAM_STR);
     $statement->execute();
 
@@ -86,12 +86,34 @@ class Contacts
 
     public function editContacts($id, $name, $contactPhone)
     {
+        if ($name == null) {
+        $request = 'UPDATE contacts SET phone = :contactPhone WHERE id = :id';
+         
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':contactPhone', $contactPhone, \PDO::PARAM_STR);
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+        return;
+        }
+        if ($contactPhone == null) {
+        $request = 'UPDATE contacts SET name = :name WHERE id = :id';
+         
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':name', $name, \PDO::PARAM_STR);
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+        return;
+        }
+        if ($name && $contactPhone) {
         $request = 'UPDATE contacts SET name = :name, phone = :contactPhone WHERE id = :id';
+         
         $statement = $this->bdd->prepare($request);
         $statement->bindValue(':name', $name, \PDO::PARAM_STR);
         $statement->bindValue(':contactPhone', $contactPhone, \PDO::PARAM_STR);
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
+        return;
+        }
     }
 
     public function deleteContacts($id) {

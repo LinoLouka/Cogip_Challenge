@@ -64,9 +64,11 @@ class dashboardController extends Controller
     {
         if (isset($_POST['editInvoice'])) {
             $id = $_POST['editInvoice'];
-            $id_company = $_POST['id_company'][$id];
-            $name = $_POST['invoiceName'][$id];
-
+            $id_company = $_POST['id_company'][$id] ?? null;
+            $name = $_POST['invoiceName'][$id] ?? null;
+            if ($id_company== null && $name==null ){
+                return;
+            }
             $modelInvoice = new Invoices();
             $modelInvoice->editInvoices($id, $id_company, $name);
         }
@@ -75,9 +77,13 @@ class dashboardController extends Controller
     {
         if (isset($_POST['editContact'])) {
             $id = $_POST['editContact'];
-            $name = $_POST['contactName'][$id];
-            $contactPhone = $_POST['contactPhone'][$id];
+            
+            $name = $_POST['contactName'][$id] ?? null;
+            $contactPhone = $_POST['contactPhone'][$id] ?? null;
 
+            if($name == null && $contactPhone == null) {
+                return;
+            }
             $modelContact = new Contacts();
             $modelContact->editContacts($id, $name, $contactPhone);
         }
@@ -86,7 +92,11 @@ class dashboardController extends Controller
     {
         if (isset($_POST['editCompany'])) {
             $id = $_POST['editCompany'];
-            $name = $_POST['companyName'][$id];
+            $name = $_POST['companyName'][$id] ?? null;
+
+            if ($name == null) {
+                return;
+            }
 
             $modelCompany = new Companies();
             $modelCompany->editCompanies($id, $name);

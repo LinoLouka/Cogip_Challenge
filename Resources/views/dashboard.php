@@ -121,7 +121,19 @@ echo "<br>";
         <button type="submit" name="validationInvoice">Validation Invoice</button>
 </form>
 
-    <script>
+
+
+
+
+
+  
+
+
+
+
+</body>
+</html>
+  <script>
         let SaveBtn;
         let DelBtn;
     function createDeleteBtn(line){
@@ -260,5 +272,3 @@ function ContactPhone(cell, id){
     });
 }
 </script>
-</body>
-</html>
