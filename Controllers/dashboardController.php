@@ -96,5 +96,37 @@ class dashboardController extends Controller
         }
     }
 
+    public function deleteInvoice()
+    {
+        if(isset($_POST['deleteInvoice'])) {
+            $id = $_POST['deleteInvoice'];
+
+            $modelInvoice = new Invoices();
+            $modelInvoice->deleteInvoices($id);
+
+        }
+    }
+
+    public function deleteContact()
+    {
+        if(isset($_POST['deleteContact'])) {
+            $id = $_POST['deleteContact'];
+
+            $modelContact = new Contacts();
+            $modelContact->deleteContacts($id);
+
+        }
+    }
+
+    public function deleteCompany()
+    {
+        if(isset($_POST['deleteCompany'])) {
+            $id = $_POST['deleteCompany'];
+
+            $modelCompany = new Companies();
+            $modelCompany->deleteCompanies($id);
+
+        }
+    }
 
 }

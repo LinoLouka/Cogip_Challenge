@@ -49,6 +49,10 @@ $router->post('/dashboard', function() {
     (new dashboardController)->editInvoice();
     (new dashboardController)->editContact();
     (new dashboardController)->editCompany();
+    (new dashboardController)->deleteCompany();
+    (new dashboardController)->deleteInvoice();
+    (new dashboardController)->deleteContact();
+
     (new dashboardController)->index();
 
 });

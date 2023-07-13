@@ -89,5 +89,11 @@ class Companies
         $statement->execute();
     }
 
-
+    public function deleteCompanies($id) {
+        
+        $request = 'DELETE FROM companies WHERE id = :id';
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
 }

@@ -77,4 +77,12 @@ class Invoices
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
     }
+
+    public function deleteInvoices($id) {
+        
+        $request = 'DELETE FROM invoices WHERE id = :id';
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
 }

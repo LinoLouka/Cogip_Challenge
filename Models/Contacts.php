@@ -80,4 +80,12 @@ class Contacts
         $statement->execute();
     }
 
+    public function deleteContacts($id) {
+        
+        $request = 'DELETE FROM contacts WHERE id = :id';
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
+
 }
