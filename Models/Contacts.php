@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use App\Core\connect;
@@ -35,9 +36,13 @@ class Contacts
         $contacts = $statement->fetchAll(\PDO::FETCH_ASSOC);
         return $contacts;
     }
+
     public function Id($id)
     {
-        $request = 'SELECT * FROM contacts WHERE id = :id';
+        $request = "SELECT contacts.id, contacts.name, contacts.email, companies.name AS company_name 
+              FROM contacts
+              LEFT JOIN companies ON contacts.company_id = companies.id
+              WHERE contacts.id = :id";
         $statement = $this->bdd->prepare($request);
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
@@ -65,5 +70,22 @@ class Contacts
 
         return $result['total'];
     }
+    public function editContacts($id, $name, $company_id)
+    {
+        $request = 'UPDATE contacts SET name = :name, company_id = :company_id WHERE id = :id';
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':name', $name, \PDO::PARAM_STR);
+        $statement->bindValue(':company_id', $company_id, \PDO::PARAM_INT);
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
+
+    public function deleteContacts($id) {
+        
+        $request = 'DELETE FROM contacts WHERE id = :id';
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
+
 }
-?>

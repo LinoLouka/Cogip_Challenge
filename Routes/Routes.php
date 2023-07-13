@@ -43,13 +43,19 @@ $router->get('/invoices/{id}', function($id) {
 $router->get('/dashboard', function() {
     (new dashboardController)->index();
 });
+
 $router->post('/dashboard', function() {
     (new dashboardController)->addCompanies();
     (new dashboardController)->editInvoice();
+    (new dashboardController)->editContact();
+    (new dashboardController)->editCompany();
+    (new dashboardController)->deleteCompany();
+    (new dashboardController)->deleteInvoice();
+    (new dashboardController)->deleteContact();
+
     (new dashboardController)->index();
 
 });
-
 
 $router->set404(function() {
     require_once(__ROOT__.'/Resources/views/404.php');
