@@ -49,12 +49,7 @@
         <td onclick='CompanyName(this, "<?php echo $company["id"] ?>")' ><?php echo $company['name']; ?></td>
         <td><?php echo $company['tva']; ?></td>
         <td><?php echo $company['country']; ?></td>
-
-        <td><input type="text" name="companyName[<?php echo $company['id']; ?>]" value="<?php echo $company['name']; ?>"></td>
-        <td>
-            <button type="submit" name="editCompany" value="<?php echo $company['id']; ?>">Edit</button>
-            <button type="submit" name="deleteCompany" value="<?php echo $company['id']; ?>">Delete</button>
-        </td>
+        <td><button type="submit" name="deleteCompany" value="<?php echo $company['id']; ?>">Delete</button></td>
     </tr>
     <?php endforeach; ?>
 </table>
@@ -157,7 +152,7 @@ function SaveBtnInvoice(line, id){
 }
 function SaveBtnCompany(line, id){
     createSaveBtn(line);
-    SaveBtn.name = 'companyName';
+    SaveBtn.name = 'editCompany';
     SaveBtn.value = id;
 }
 let input;
@@ -191,7 +186,7 @@ function InvoiceIdCompany(cell, id){
     createInputCell(cell);
     input.setAttribute('invoice-id',id);
     input.name= "id_company["+ id + "]";
-    console.log(input.name);
+    console.log(id);
     input.addEventListener('keydown', (event) =>{
     if(event.keyCode == 13){
     input.blur();
@@ -205,16 +200,16 @@ function InvoiceIdCompany(cell, id){
 function CompanyName(cell, id){
     createInputCell(cell);
     input.setAttribute('Company-id', id);
-    input.name = "companyName [ "+ id+ "]";
+    input.name = "companyName["+ id + "]";
     input.addEventListener('keydown', (event) =>{
     if(event.keyCode == 13){
     cell.innerText = input.value;
-    console.log(cell.innerText);  
+    console.log(input.value);  
     }
     });
     input.addEventListener('blur', ()=>{
         cell.innertext = input.value;
-        console.log(cell.innerText);
+        console.log(input.value);
     });
 }
 </script>
