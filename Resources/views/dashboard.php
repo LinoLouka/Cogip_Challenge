@@ -8,7 +8,8 @@
 <body>
     <!-- rajouter icone poubelle pour les boutons delete -->
 
-                        <!-- The contacts -->
+
+             
 <form method="POST" action="dashboard">
 <table>
     <tr>
@@ -18,7 +19,7 @@
     </tr>
     <?php foreach ($contacts as $contact):  ?>
     <tr>      
-        <td onclick='createInputCell(this)'><?php echo $contact['name']; ?></td>
+        <td><?php echo $contact['name']; ?></td>
         <td><?php echo $contact['phone']; ?></td>
         <td><?php echo $contact['email']; ?></td>
         <td>
@@ -33,7 +34,7 @@
     <?php endforeach; ?>
 </table>
 </form>
-                    <!-- The Companies -->
+                   
 <form method="POST" action="dashboard">
 <table>
     <tr>
@@ -45,7 +46,7 @@
 
     <tr>    
         
-        <td onclick='createInputCell(this)'><?php echo $company['name']; ?></td>
+        <td><?php echo $company['name']; ?></td>
         <td><?php echo $company['tva']; ?></td>
         <td><?php echo $company['country']; ?></td>
         <td><input type="text" name="companyName[<?php echo $company['id']; ?>]" value="<?php echo $company['name']; ?>"></td>
@@ -57,6 +58,7 @@
     <?php endforeach; ?>
 </table>
 </form>                 
+                    
                    
 <form method="POST" action="dashboard">
 <table>
@@ -66,39 +68,22 @@
         <th>Name</th>
     </tr>
     <?php foreach ($invoices as $invoice): ?>
-        <tr>
 
-            <td onclick='createInputCell(this)' ><?php echo $invoice['id_company']; ?></td>
+        <tr onclick='SaveBtnInvoice(this, "<?php echo $invoice["id"] ?>")'>
+          
+            <td onclick='InvoiceIdCompany(this, "<?php echo $invoice["id"] ?>")' ><?php echo $invoice['id_company']; ?></td>
             <td><?php echo $invoice['created_at']; ?></td>
-            <td onclick='createInputCell(this)'><?php echo $invoice['name']; ?></td>
-            <td>
-            <input type="text" name="invoiceName[<?php echo $invoice['id']; ?>]" value="<?php echo $invoice['name']; ?>">
-            <input type="text" name="id_company[<?php echo $invoice['id']; ?>]" value="<?php echo $invoice['id_company']; ?>">
-            </td>
-            <td>
-            <button type="submit" name="editInvoice" value="<?php echo $invoice['id']; ?>">Edit</button>
-            <button type="submit" name="deleteInvoice" value="<?php echo $invoice['id']; ?>">Delete</button>
-            </td>
+            <td onclick='InvoiceName(this, "<?php echo $invoice["id"] ?>")'><?php echo $invoice['name']; ?></td>
+          
+            <td><button type="submit" name="deleteInvoice" value="<?php echo $invoice['id']; ?>">Delete</button></td>
+
         </tr>
     <?php endforeach; ?>
 </table>    
-    <script>
-        function createInputCell(cell){
-            let content = cell.innerText;
-
-            let input = document.createElement('input');
-            input.type='text';
-            input.value=content;
-
-            cell.innerText = '';
-            cell.appendChild(input);
-
-            input.focus();
-
-        }
-    </script>
 </form>
-  
+
+
+
 <?php
 echo "<br>";
 echo "<br>";
@@ -107,9 +92,9 @@ echo "<br>";
 <!-- mettre dans une autre section -->
         <!-- fonction add Contacts -->
 <form method="POST" action="dashboard">
-    <label for="contactName">Contact name:</input>
+    <label for="contactName">Contact name:</label>
         <input name="contactName" type="text" value="">
-    <label for="contactPhone">Contact phone:</input>
+    <label for="contactPhone">Contact phone:</label>
         <input name="contactPhone" type="number" value="">
     <label for="contactMail">Contact mail:</label>
         <input name="contactMail" value="" type="email">
@@ -136,19 +121,84 @@ echo "<br>";
         <input name="companyCountry" type="text" value="">
     <label for="companyTVA">TVA:</label>
         <input name="companyTVA" type="text" value="">
-    
+
         <button type="submit" name="validationCompany">Validation Company</button>
 </form>
 <form>
     <!-- mettre dans une section -->
     <!-- fonction add invoices -->
 <form method="POST" action="dashboard">
-    <label for="invoicesNumber">Invoice number:</input>
+    <label for="invoicesNumber">Invoice number:</label>
         <input name="invoicesNumber" type="text" value="">
-    <label for="invoicesCompany">Invoice Company name:</input>
+    <label for="invoicesCompany">Invoice Company name:</label>
         <input name="invoicesCompany" type="text" value="">
 
         <button type="submit" name="validationInvoice">Validation Invoice</button>
 </form>
+
+
+</table>
+    </form>
+    <script>
+        let SaveBtn;
+    function createSaveBtn(line){
+        let existingBtn = line.querySelector('.saveBtn');
+        if(!existingBtn){
+        SaveBtn = document.createElement('button');
+        SaveBtn.type = 'submit';
+        SaveBtn.innerText = 'Save';
+        SaveBtn.className = 'saveBtn';
+        line.appendChild(SaveBtn);
+        }
+        
+}  
+function SaveBtnInvoice(line, id){
+    createSaveBtn(line);
+    SaveBtn.name = 'editInvoice';
+    SaveBtn.value = id;
+}
+let input;
+function createInputCell(cell){
+    let content = cell.innerText;
+    input = document.createElement('input');
+    input.type='text';
+    input.value=content;
+    cell.innerText = '';
+    cell.appendChild(input);
+    input.focus();
+    
+
+}
+function InvoiceName(cell, id){
+    createInputCell(cell);
+    input.name= "invoiceName[" + id + "]";
+    console.log(input.name);
+    input.addEventListener('keydown', (event) =>{
+    if(event.keyCode == 13){
+    cell.innerText = input.value;
+    console.log(cell.innerText);  
+    }
+    });
+    input.addEventListener('blur', ()=>{
+        cell.innertext = input.value;
+        console.log(cell.innerText);
+    });
+}
+function InvoiceIdCompany(cell, id){
+    createInputCell(cell);
+    input.setAttribute('invoice-id',id);
+    input.name= "id_company["+ id + "]";
+    console.log(input.name);
+    input.addEventListener('keydown', (event) =>{
+    if(event.keyCode == 13){
+    input.blur();
+    cell.innerText = input.value;
+    }
+    });
+    input.addEventListener('blur', ()=>{
+        cell.innertext = input.value;
+    });
+}
+</script>
 </body>
 </html>
