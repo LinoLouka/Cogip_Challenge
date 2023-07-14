@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use App\Core\Controller;
+use App\Models\User;
 
 class authController extends Controller 
 {
@@ -13,17 +14,20 @@ class authController extends Controller
         ]);
     }
 
-    // public function register()
-    // {
-    //     $name = $_POST['name'];
-    //     $email =$_POST['email'];
-    //     $password = $_POST['password'];
-    //     $role = $_POST['role'];
+    public function register()
+    {
+        $role_id = filter_var($_POST['role'], FILTER_SANITIZE_NUMBER_INT);
+        $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_STRING);
+        $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_STRING);  
+        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        $password = $_POST['password'];   
 
-    //     $userModel = new User();
+        $userModel = new User();
 
-    //     // A finir
-
-    // }
+        $userModel->saveUser($role_id, $firstname, $lastname, $email, $password);
+              
+        header('Location: /login');
+        exit();
+    }
 }
 ?>
