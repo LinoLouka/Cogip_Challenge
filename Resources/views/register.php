@@ -75,7 +75,7 @@ function validateEmail($email) {
 </head>
 <body>
 
-    <form method="post" action="/register">
+    <form method="POST" action="register">
         <label for="lastname">Lastname :</label>
         <input type="text" id="lastname" name="lastname" value="<?php echo htmlspecialchars($lastname); ?>" placeholder="ex. Dupont" required>
         <span class="error"><?php echo $lastnameError; ?></span>
@@ -95,12 +95,12 @@ function validateEmail($email) {
         <label for="password">Confirm your password : </label>
         <input type="password" id="confirm_password" name="confirm_password" required>
         <br>
-        <label for="role">Choose your role</label>
+        <!-- <label for="role">Choose your role</label>
             <select name="role" id="role">
                 <option value=""></option>
                 <option value="1">Admin</option>
                 <option value="2">User</option>
-            </select>
+            </select> -->
 
         <button type="submit" name="submit">Register</button>
     </form>

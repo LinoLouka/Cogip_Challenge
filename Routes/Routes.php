@@ -62,6 +62,9 @@ $router->post('/dashboard', function() {
 $router->get('/register', function(){
     (new authController)->index();
 });
+$router->post('/register', function(){
+    (new authController)->register();
+});
 
 $router->set404(function() {
     require_once(__ROOT__.'/Resources/views/404.php');
