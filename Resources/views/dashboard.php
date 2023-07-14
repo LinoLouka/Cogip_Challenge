@@ -1,3 +1,41 @@
+ <?php
+// if($_SERVER['REQUEST_METHOD'] === 'POST'){
+//     $contactSpam1 = $_POST['spam1'];
+//     $contactName = $_POST['contactName'];
+//     $contactPhone = $_POST['contactPhone'];
+//     $contactMail = $_POST['contactMail'];
+//     $contactCompanyId = $_POST['contactCompanyId'];
+//     $sanitizedContactName = htmlspecialchars($contactName, ENT_QUOTES, 'UTF-8');
+//     $sanitizedContactPhone = htmlspecialchars($contactPhone, ENT_QUOTES, 'UTF-8');
+//     $sanitizedContactMail = htmlspecialchars($contactMail, FILTER_SANITIZE_MAIL);
+//     $sanitizedContactCompanyId = htmlspecialchars($contactCompanyId, ENT_QUOTES, 'UTF-8');
+//     $check = true;
+
+//     if($contactSpam1){
+//         exit();
+//     }
+//     if ($sanitizedContactCompanyId !== $contactCompanyId){
+//         $check = false;
+//     }
+//     if($sanitizedContactMail !== $contactMail){
+//         $check = false;
+//     }
+//     if($sanitizedContactName !== $contactName)
+//     {
+//         $check = false;
+//     }
+//     if($sanitizedContactPhone !== $contactPhone){
+//         $check = false;
+//     }
+//     if ($check == false){
+//         echo 'please, remove the specialcharacters from your inputs';
+//     }
+
+
+// }
+//  $spam2 = $_POST['spam2'];
+//  $spam3 = $_POST['spam3'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,13 +116,14 @@ echo "<br>";
         <!-- fonction add Contacts -->
 <form method="POST" action="dashboard">
     <label for="contactName">Contact name:</label>
-        <input name="contactName" type="text" value="">
+        <input name="contactName" type="text" value="" required>
     <label for="contactPhone">Contact phone:</label>
-        <input name="contactPhone" type="text" value="">
+        <input name="contactPhone" type="text" value="" required>
     <label for="contactMail">Contact mail:</label>
-        <input name="contactMail" value="" type="email">
+        <input name="contactMail" value="" type="email" required>
     <label for="contactCompanyId">Contact company:</label>
-        <input name="contactCompanyId" value="" type="number">
+        <input name="contactCompanyId" value="" type="number" required>
+    <input type="hidden" name="spam1" class="spam" value="">
 
     <button type="submit" name="validationContact">Validation contact</button>
 </form>
@@ -99,13 +138,14 @@ echo "<br>";
         <!-- fonction add Companies -->
 <form method="POST" action="dashboard">
     <label for="companyName">Company name:</label>
-        <input name="companyName" type="text" value="">
+        <input name="companyName" type="text" value="" required>
     <label for="companyType">Company type:</label>
-        <input name="companyType" type="number" value="">
+        <input name="companyType" type="number" value="" required>
     <label for="companyCountry">Country of the company:</label>
-        <input name="companyCountry" type="text" value="">
+        <input name="companyCountry" type="text" value="" required>
     <label for="companyTVA">TVA:</label>
-        <input name="companyTVA" type="text" value="">
+        <input name="companyTVA" type="text" value="" required>
+        <input type="hidden" name="spam2" class="spam" value="">
 
         <button type="submit" name="validationCompany">Validation Company</button>
 </form>
@@ -114,9 +154,10 @@ echo "<br>";
     <!-- fonction add invoices -->
 <form method="POST" action="dashboard">
     <label for="invoiceNumber">Invoice number:</label>
-        <input name="invoiceNumber" type="text" value="">
+        <input name="invoiceNumber" type="text" value="" required>
     <label for="invoiceName">Invoice Company name:</label>
-        <input name="invoiceName" type="text" value="">
+        <input name="invoiceName" type="text" value="" required>
+        <input type="hidden" name="spam3" class="spam" value="">
 
         <button type="submit" name="validationInvoice">Validation Invoice</button>
 </form>

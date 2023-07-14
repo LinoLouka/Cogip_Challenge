@@ -32,8 +32,8 @@ class dashboardController extends Controller
     {
         $modelInvoices = new Invoices();
         if(isset($_POST['validationInvoice'])) {
-            $id_company = $_POST['invoiceNumber'];
-            $name = $_POST['invoiceName'];
+            $id_company = htmlspecialchars($_POST['invoiceNumber'],ENT_QUOTES, 'UTF-8');
+            $name = htmlspecialchars($_POST['invoiceName'],ENT_QUOTES, 'UTF-8');
             $message = $modelInvoices->addInvoices($id_company, $name);
         }
     }
@@ -41,10 +41,10 @@ class dashboardController extends Controller
     {
         $modelCompanies = new Companies();
         if (isset($_POST['validationCompany'])) {
-            $name = $_POST['companyName'];
-            $type = $_POST['companyType'];
-            $country = $_POST['companyCountry'];
-            $tva = $_POST['companyTVA'];
+            $name = htmlspecialchars($_POST['companyName'], ENT_QUOTES, 'UTF-8');
+            $type = htmlspecialchars($_POST['companyType'], ENT_QUOTES, 'UTF-8');
+            $country = htmlspecialchars($_POST['companyCountry'],ENT_QUOTES, 'UTF-8');
+            $tva = htmlspecialchars($_POST['companyTVA'],ENT_QUOTES, 'UTF-8');
             $message = $modelCompanies->Add($name, $type, $country, $tva);
         }
     }
@@ -53,9 +53,9 @@ class dashboardController extends Controller
     {
         $modelContacts = new Contacts();
         if(isset($_POST['validationContact'])) {
-            $name = $_POST['contactName'];
-            $phone = $_POST['contactPhone'];
-            $email = $_POST['contactMail'];
+            $name = htmlspecialchars($_POST['contactName'], ENT_QUOTES, 'UTF-8');
+            $phone = htmlspecialchars($_POST['contactPhone'], ENT_QUOTES, 'UTF-8');
+            $email = filter_var($_POST['contactMail'], FILTER_SANITIZE_EMAIL);
             $message = $modelContacts->addContacts($name, $phone, $email);
         }
     }
@@ -64,8 +64,8 @@ class dashboardController extends Controller
     {
         if (isset($_POST['editInvoice'])) {
             $id = $_POST['editInvoice'];
-            $id_company = $_POST['id_company'][$id] ?? null;
-            $name = $_POST['invoiceName'][$id] ?? null;
+            $id_company = htmlspecialchars($_POST['id_company'][$id], ENT_QUOTES, 'UTF-8') ?? null;
+            $name = htmlspecialchars($_POST['invoiceName'][$id], ENT_QUOTES, 'UTF-8') ?? null;
             if ($id_company== null && $name==null ){
                 return;
             }
@@ -78,8 +78,8 @@ class dashboardController extends Controller
         if (isset($_POST['editContact'])) {
             $id = $_POST['editContact'];
             
-            $name = $_POST['contactName'][$id] ?? null;
-            $contactPhone = $_POST['contactPhone'][$id] ?? null;
+            $name = htmlspecialchars($_POST['contactName'][$id],ENT_QUOTES, 'UTF-8') ?? null;
+            $contactPhone = htmlspecialchars($_POST['contactPhone'][$id],ENT_QUOTES, 'UTF-8') ?? null;
 
             if($name == null && $contactPhone == null) {
                 return;
@@ -92,7 +92,7 @@ class dashboardController extends Controller
     {
         if (isset($_POST['editCompany'])) {
             $id = $_POST['editCompany'];
-            $name = $_POST['companyName'][$id] ?? null;
+            $name = htmlspecialchars($_POST['companyName'][$id], ENT_QUOTES, 'UTF-8') ?? null;
 
             if ($name == null) {
                 return;
