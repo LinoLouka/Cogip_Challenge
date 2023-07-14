@@ -27,6 +27,7 @@
             <table>
                 <tr>
                     <th>ID</th>
+                    <th>TVA</th>
                     <th>Name</th>
                     <th>Country</th>
                     <th>Type</th>
