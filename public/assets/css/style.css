@@ -323,10 +323,10 @@ body .section .section-invoices__navbar a {
   height: 15px;
   text-align: center;
 }
-body .section .section-invoices__navbar a:first-child,
-body .section .section-invoices__navbar a:last-child {
+body .section .section-invoices__navbar a:first-child, body .section .section-invoices__navbar a:last-child {
   color: #f9de4e;
   background-color: #c4cdd5;
+  width: auto;
 }
 body .section .section-invoices__navbar a:hover {
   border-color: #f9de4e;
@@ -347,10 +347,10 @@ body .section .section-contacts__navbar a {
   height: 15px;
   text-align: center;
 }
-body .section .section-contacts__navbar a:first-child,
-body .section .section-contacts__navbar a:last-child {
+body .section .section-contacts__navbar a:first-child, body .section .section-contacts__navbar a:last-child {
   color: #f9de4e;
   background-color: #c4cdd5;
+  width: auto;
 }
 body .section .section-contacts__navbar a:hover {
   border-color: #f9de4e;
@@ -371,10 +371,10 @@ body .section .section-companies__navbar a {
   height: 15px;
   text-align: center;
 }
-body .section .section-companies__navbar a:first-child,
-body .section .section-companies__navbar a:last-child {
+body .section .section-companies__navbar a:first-child, body .section .section-companies__navbar a:last-child {
   color: #f9de4e;
   background-color: #c4cdd5;
+  width: auto;
 }
 body .section .section-companies__navbar a:hover {
   border-color: #f9de4e;
