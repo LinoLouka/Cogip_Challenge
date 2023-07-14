@@ -111,6 +111,6 @@
     ?>
 
 </body>
-<script src="../../public/assets/js/script.js"></script>
+
 
 </html>

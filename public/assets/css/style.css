@@ -323,7 +323,8 @@ body .section .section-invoices__navbar a {
   height: 15px;
   text-align: center;
 }
-body .section .section-invoices__navbar a:first-child, body .section .section-invoices__navbar a:last-child {
+body .section .section-invoices__navbar a:first-child,
+body .section .section-invoices__navbar a:last-child {
   color: #f9de4e;
   background-color: #c4cdd5;
 }
@@ -346,7 +347,8 @@ body .section .section-contacts__navbar a {
   height: 15px;
   text-align: center;
 }
-body .section .section-contacts__navbar a:first-child, body .section .section-contacts__navbar a:last-child {
+body .section .section-contacts__navbar a:first-child,
+body .section .section-contacts__navbar a:last-child {
   color: #f9de4e;
   background-color: #c4cdd5;
 }
@@ -369,7 +371,8 @@ body .section .section-companies__navbar a {
   height: 15px;
   text-align: center;
 }
-body .section .section-companies__navbar a:first-child, body .section .section-companies__navbar a:last-child {
+body .section .section-companies__navbar a:first-child,
+body .section .section-companies__navbar a:last-child {
   color: #f9de4e;
   background-color: #c4cdd5;
 }

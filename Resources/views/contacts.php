@@ -15,16 +15,25 @@
     ?>
 
     <section class="section">
-        <h2>Last contacts</h2>
+        <h2>All contacts</h2>
         <div class="section-contacts__searchbar">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Search contact" onkeyup="searchContacts()" id="search_contacts">
+            <select onchange="sortContacts()" id="sort_contacts">
+                <option value="">Sort by</option>
+                <option value="id">Id</option>
+                <option value="name">Name</option>
+                <option value="phone">Phone</option>
+                <option value="email">Email</option>
+                <option value="company">Company</option>
+                <option value="created_at">Created at</option>
+            </select>
         </div>
         <div class="section-contacts__table">
             <?php
             if (!is_null($contacts) && is_array($contacts)) : ?>
                 <table>
                     <tr>
-                        <th>ID</th>
+                        <th>Id</th>
                         <th>Name</th>
                         <th>Phone</th>
                         <th>Mail</th>
@@ -65,5 +74,5 @@
     ?>
 </body>
 <script defer src="../public/assets/js/header_remove.js"></script>
-
+<script defer src="../public/assets/js/contacts.js"></script>
 </html>

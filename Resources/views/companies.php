@@ -15,16 +15,16 @@
     ?>
 
     <section class="section">
-        <h2>Last companies</h2>
+        <h2>All companies</h2>
         <div class="section-companies__searchbar">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Search company name" onkeyup="searchCompanies()" id="search_companies">
         </div>
         <div class="section-companies__table">
             <?php
             if (!is_null($companies) && is_array($companies)) : ?>
                 <table>
                     <tr>
-                        <th>ID</th>
+                        <th>Id</th>
                         <th>Name</th>
                         <th>TVA</th>
                         <th>Country</th>
@@ -63,7 +63,9 @@
     <?php
     require 'footer.php';
     ?>
+  
 </body>
 <script defer src="../public/assets/js/header_remove.js"></script>
 
+<script defer src="../public/assets/js/companies.js"></script>
 </html>
