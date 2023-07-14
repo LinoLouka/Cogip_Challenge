@@ -197,10 +197,25 @@ CREATE TABLE `permission` (
 
 CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL DEFAULT 'user',
   `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL
+  `updated_at` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- A rajouter dans myphpadmin pour mettre à jour la table role
+-- vu qu'elle a une contrainte
+
+-- ALTER TABLE `roles`
+-- ALTER COLUMN `name` SET DEFAULT 'user';
+
+-- et ensuite : 
+
+-- INSERT INTO roles (id, name, created_at, updated_at) VALUES
+-- (1, 'user', NOW(), NOW()),
+-- (2, 'admin', NOW(), NOW());
+
+
 
 -- --------------------------------------------------------
 

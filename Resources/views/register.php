@@ -95,12 +95,11 @@ function validateEmail($email) {
         <label for="password">Confirm your password : </label>
         <input type="password" id="confirm_password" name="confirm_password" required>
         <br>
-        <!-- <label for="role">Choose your role</label>
+        <label for="role">Choose your role</label>
             <select name="role" id="role">
-                <option value=""></option>
-                <option value="1">Admin</option>
-                <option value="2">User</option>
-            </select> -->
+                <option value="1">User</option>
+                <option value="2">Admin</option>
+            </select>
 
         <button type="submit" name="submit">Register</button>
     </form>
