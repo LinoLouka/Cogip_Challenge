@@ -13,6 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
+        $lastnameError = validateLastname($lastname);
+        $firstnameError = validateFirstname($firstname);
+        $addressEmailError = validateEmail($adresseMail);
+
         if ($selectedRole !== '') {
             echo "You selected the role: ";
 
@@ -30,6 +34,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "You must select a choice";
         }
     }
+}
+function validateLastname($lastname)
+{
+    if(empty($lastname)) {
+        return "The lastname is required";
+    }
+    // $minLenght = 2;
+    // if(strlen($lastname) < $minLenght) {
+    //     return "The lastname must be ";
+    // }
+
+    return "";
+}
+
+function validateFirstname($firstname){
+    if(empty($firstname)) {
+        return "The firstname is required";
+    }
+    return "";
+}
+
+function validateEmail($email) {
+    if(empty($email)) {
+        return "The email is required";
+    }
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return "The format email isn't valid";
+    }
+    return "";
 }
 ?>
 
