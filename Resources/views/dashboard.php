@@ -123,7 +123,7 @@ echo "<br>";
         <input name="contactMail" value="" type="email" required>
     <label for="contactCompanyId">Contact company:</label>
         <input name="contactCompanyId" value="" type="number" required>
-    <input type="hidden" name="spam1" class="spam" value="">
+    <input type="hidden" name="contactSpam" class="spam" value="">
 
     <button type="submit" name="validationContact">Validation contact</button>
 </form>
@@ -145,7 +145,7 @@ echo "<br>";
         <input name="companyCountry" type="text" value="" required>
     <label for="companyTVA">TVA:</label>
         <input name="companyTVA" type="text" value="" required>
-        <input type="hidden" name="spam2" class="spam" value="">
+        <input type="hidden" name="companySpam" class="spam" value="">
 
         <button type="submit" name="validationCompany">Validation Company</button>
 </form>
@@ -157,7 +157,7 @@ echo "<br>";
         <input name="invoiceNumber" type="text" value="" required>
     <label for="invoiceName">Invoice Company name:</label>
         <input name="invoiceName" type="text" value="" required>
-        <input type="hidden" name="spam3" class="spam" value="">
+        <input type="hidden" name="invoiceSpam" class="spam" value="">
 
         <button type="submit" name="validationInvoice">Validation Invoice</button>
 </form>
