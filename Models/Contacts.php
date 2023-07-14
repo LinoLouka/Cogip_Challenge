@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use App\Core\connect;
@@ -35,9 +36,13 @@ class Contacts
         $contacts = $statement->fetchAll(\PDO::FETCH_ASSOC);
         return $contacts;
     }
+
     public function Id($id)
     {
-        $request = 'SELECT * FROM contacts WHERE id = :id';
+        $request = "SELECT contacts.id, contacts.name, contacts.email, companies.name AS company_name 
+              FROM contacts
+              LEFT JOIN companies ON contacts.company_id = companies.id
+              WHERE contacts.id = :id";
         $statement = $this->bdd->prepare($request);
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
@@ -65,5 +70,58 @@ class Contacts
 
         return $result['total'];
     }
+
+    public function addContacts($name, $phone, $email)
+{
+    $request = 'INSERT INTO contacts (name, phone, email) VALUES (:name, :phone, :email)';
+    $statement = $this->bdd->prepare($request);
+    $statement->bindValue(':name', $name, \PDO::PARAM_STR);
+    $statement->bindValue(':phone', $phone, \PDO::PARAM_STR);
+    $statement->bindValue(':email', $email, \PDO::PARAM_STR);
+    $statement->execute();
+
+    $result = $statement->execute();
 }
-?>
+
+
+    public function editContacts($id, $name, $contactPhone)
+    {
+        if ($name == null) {
+        $request = 'UPDATE contacts SET phone = :contactPhone WHERE id = :id';
+         
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':contactPhone', $contactPhone, \PDO::PARAM_STR);
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+        return;
+        }
+        if ($contactPhone == null) {
+        $request = 'UPDATE contacts SET name = :name WHERE id = :id';
+         
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':name', $name, \PDO::PARAM_STR);
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+        return;
+        }
+        if ($name && $contactPhone) {
+        $request = 'UPDATE contacts SET name = :name, phone = :contactPhone WHERE id = :id';
+         
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':name', $name, \PDO::PARAM_STR);
+        $statement->bindValue(':contactPhone', $contactPhone, \PDO::PARAM_STR);
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+        return;
+        }
+    }
+
+    public function deleteContacts($id) {
+        
+        $request = 'DELETE FROM contacts WHERE id = :id';
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
+
+}
