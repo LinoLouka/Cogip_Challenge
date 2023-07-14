@@ -80,12 +80,36 @@ class Invoices
 
     public function editInvoices($id, $id_company, $name)
     {
+        if($id_company == null) {
+        $request = 'UPDATE invoices SET id_company=:id_company WHERE id=:id';
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':id_company', $id_company, \PDO::PARAM_STR);
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+        return;
+        }
+
+        if($name == null) {
+        $request = 'UPDATE invoices SET name=:name WHERE id=:id';
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':name', $name, \PDO::PARAM_STR);
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+            return;
+
+        }
+
+
+        if ($name && $id_company) {
         $request = 'UPDATE invoices SET id_company=:id_company, name=:name WHERE id=:id';
         $statement = $this->bdd->prepare($request);
         $statement->bindValue(':id_company', $id_company, \PDO::PARAM_INT);
         $statement->bindValue(':name', $name, \PDO::PARAM_STR);
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
+        return;
+        }
+       
     }
 
     public function deleteInvoices($id) {
