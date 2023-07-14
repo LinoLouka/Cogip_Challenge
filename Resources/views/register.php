@@ -40,10 +40,10 @@ function validateLastname($lastname)
     if(empty($lastname)) {
         return "The lastname is required";
     }
-    // $minLenght = 2;
-    // if(strlen($lastname) < $minLenght) {
-    //     return "The lastname must be ";
-    // }
+    $minLenght = 2;
+    if(strlen($lastname) < $minLenght) {
+        return "The lastname must be at least $minlenght characters long ";
+    }
 
     return "";
 }
