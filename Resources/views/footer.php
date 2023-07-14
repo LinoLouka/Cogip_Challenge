@@ -19,14 +19,14 @@
 
         <div class="logo-social-media">
             <p>Social Media</p>
-            <a href="https://www.facebook.com"><img src="assets/img/Facebook.svg" alt="logo_facebook">
-                <a href="https://www.twitter.com"><img src="assets/img/Twitter.svg" alt="logo_twitter">
-                    <a href="https://www.linkedin.com"><img src="assets/img/LinkedIn.svg" alt="logo_linkedin">
-                        <a href="https://www.youtube.com"><img src="assets/img/Youtube.svg" alt="logo_youtube">
-                            <a href="https://www.instagram.com"><img src="assets/img/Instagram.svg" alt="logo_instagram">
-                                <a href="https://www.pinterest.com"><img src="assets/img/Pinterest.svg" alt="logo_pinterest">
-                                    <a href="https://www.google.com"><img src="assets/img/GooglePlus.svg" alt="logo_google">
-                                        <img src="assets/img/wifi.svg" alt="logo_rss">
+            <a href="https://www.facebook.com"><img src="assets/img/Facebook.svg" alt="logo_facebook"></a>
+            <a href="https://www.twitter.com"><img src="assets/img/Twitter.svg" alt="logo_twitter"></a>
+            <a href="https://www.linkedin.com"><img src="assets/img/LinkedIn.svg" alt="logo_linkedin"></a>
+            <a href="https://www.youtube.com"><img src="assets/img/Youtube.svg" alt="logo_youtube"></a>
+            <a href="https://www.instagram.com"><img src="assets/img/Instagram.svg" alt="logo_instagram"></a>
+            <a href="https://www.pinterest.com"><img src="assets/img/Pinterest.svg" alt="logo_pinterest"></a>
+            <a href="https://www.google.com"><img src="assets/img/GooglePlus.svg" alt="logo_google"></a>
+            <img src="assets/img/wifi.svg" alt="logo_rss">
         </div>
     </div>
     <div class="footer__contact">

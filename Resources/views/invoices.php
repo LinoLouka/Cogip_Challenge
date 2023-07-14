@@ -23,7 +23,9 @@
             <?php if (!is_null($invoices) && is_array($invoices)) : ?>
                 <table>
                     <tr>
+                        <th>Id</th>
                         <th>Invoice number</th>
+
                         <th>Name</th>
                         <th>Dates due</th>
                         <th>Company</th>
@@ -38,6 +40,7 @@
                             <td><?php echo $invoice['updated_at']; ?></td>
                             
                         </tr>
+
                     <?php endforeach; ?>
                 </table>
             <?php else : ?>

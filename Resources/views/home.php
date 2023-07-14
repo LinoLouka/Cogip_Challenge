@@ -7,48 +7,48 @@
     <title>COGIP</title>
     <link rel="stylesheet" href="../public/assets/css/reset.css">
     <link rel="stylesheet" href="../public/assets/css/style.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-    </style>
 </head>
 
 <body>
     <?php
     require 'header.php';
     ?>
-    <div class="header__title">
-        <h2>MANAGE YOUR
-            CUSTOMERS AND
-            INVOICES EASLY</h2>
-    </div>
-    <div class="header__img">
-        <img src="../public/assets/img/img-header.png" alt="img par défault">
-    </div>
+    <section class="header-title-img">
+        <div class="header__title">
+            <h2>MANAGE YOUR
+                CUSTOMERS AND
+                INVOICES EASLY</h2>
+        </div>
+        <div class="header__img">
+            <img src="../public/assets/img/img-header.png" alt="img par défault">
+        </div>
+    </section>
     <section class="section">
         <div class="section-invoices">
             <h2>Last invoices</h2>
             <div class="section-invoices__table">
                 <table>
                     <tr>
+                        <th>Id</th>
                         <th>Invoice number</th>
                         <th>Dates due</th>
-                        <th>Company</th>
+                        <!-- <th>Company</th> -->
                         <th>Created at</th>
                     </tr>
-                    <?php foreach ($invoices as $invoice):  ?>
+                    <?php foreach ($invoices as $invoice) :  ?>
 
-                    <tr>
-                        <td><?php echo $invoice['id']; ?></td>
-                        <td><?php echo $invoice['id_company']; ?></td>
-                        <td><?php echo $invoice['created_at']; ?></td>
-                        <td><?php echo $invoice['updated_at']; ?></td>
-                    </tr>
+                        <tr>
+                            <td><?php echo $invoice['id']; ?></td>
+                            <td><?php echo $invoice['id_company']; ?></td>
+                            <td><?php echo $invoice['created_at']; ?></td>
+                            <td><?php echo $invoice['updated_at']; ?></td>
+                        </tr>
 
                     <?php endforeach; ?>
-                    </table>
+                </table>
             </div>
             <div class="section-invoices__img">
-                <img src="../public/assets/img/hand.png" alt="hand with clipboard">
+                <img src="../public/assets/img/hand.png" alt="hand with clipboard" align="right">
             </div>
 
         </div>
@@ -63,21 +63,21 @@
                         <th>Company</th>
                         <th>Created at</th>
                     </tr>
-                    <?php foreach ($contacts as $contact):  ?>
+                    <?php foreach ($contacts as $contact) :  ?>
 
-                    <tr>
-                        <td><?php echo $contact['name']; ?></td>
-                        <td><?php echo $contact['phone']; ?></td>
-                        <td><?php echo $contact['email']; ?></td>
-                        <td><?php echo $contact['company_id']; ?></td> 
-                        <td><?php echo $contact['created_at']; ?></td>
-                    </tr>
+                        <tr>
+                            <td><?php echo $contact['name']; ?></td>
+                            <td><?php echo $contact['phone']; ?></td>
+                            <td><?php echo $contact['email']; ?></td>
+                            <td><?php echo $contact['company_id']; ?></td>
+                            <td><?php echo $contact['created_at']; ?></td>
+                        </tr>
 
                     <?php endforeach; ?>
-                    </table>
+                </table>
             </div>
             <div class="section-contacts__img">
-                <img src="../public/assets/img/lamp.png" alt="lamp">
+                <img src="../public/assets/img/lamp.png" alt="lamp" align="left">
             </div>
 
         </div>
@@ -86,12 +86,14 @@
             <div class="section-companies__table">
                 <table>
                     <tr>
+                        <th>Id</th>
                         <th>Name</th>
                         <th>TVA</th>
                         <th>Country</th>
                         <th>Type</th>
                         <th>Created at</th>
                     </tr>
+
                     <?php foreach ($companies as $company):  ?>
                 <tr>
                     <td><?php echo $company['id']; ?></td>
@@ -102,7 +104,8 @@
                     <td><?php echo $company['created_at']; ?></td>
                 </tr>
 
-                <?php endforeach; ?>
+
+                    <?php endforeach; ?>
                 </table>
             </div>
         </div>
@@ -120,5 +123,6 @@
     ?>
 
 </body>
+<script src="../../public/assets/js/script.js"></script>
 
 </html>

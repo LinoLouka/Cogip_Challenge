@@ -20,6 +20,7 @@
             <input type="text" placeholder="Search...">
         </div>
         <div class="section-companies__table">
+
         <?php
         if (!is_null($companies) && is_array($companies)): ?>
             <table>
@@ -37,6 +38,7 @@
                     <td><?php echo $company['country']; ?></td>
                     <td><?php echo $company['type_id']; ?></td>
                 </tr>
+
 
                     <?php endforeach; ?>
                 </table>
