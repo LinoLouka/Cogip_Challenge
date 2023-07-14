@@ -25,15 +25,15 @@ if (!is_null($invoices) && is_array($invoices)) : ?>
                 <table>
                     <tr>
                         <th>Id</th>
-                        <th>Invoice number</th>
-
                         <th>Name</th>
-                        <th>Dates due</th>
-                        <th>Company</th>
+                        <th>Invoice number</th>  
                         <th>Created at</th>
+                        <th>Dates due</th>
                     </tr>
                     <?php foreach ($invoices as $invoice) : ?>
+
                         <tr>
+                            
                             <td><a href="invoices/<?php echo $invoice['id'] ?>"><?php echo $invoice["id"] ?></a></td>                           
                             <td><?php echo $invoice['name']; ?></td>
                             <td><?php echo $invoice['id_company']; ?></td>
