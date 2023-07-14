@@ -59,19 +59,17 @@
             <?php endif; ?>
         </div>
         <div class="section-contacts__navbar">
-            <p>Page
-                <a class="navpage" href="?page=1">First</a>
-                <?php if ($pagination['currentPage'] > 1) : ?>
-                    <a class="navpage" href="?page=<?php echo $pagination['currentPage'] - 1; ?>">&lt;</a>
-                <?php endif; ?>
-                <?php for ($i = 1; $i <= $pagination['totalPages']; $i++) : ?>
-                    <a class="navpage <?php echo $i == $pagination['currentPage'] ? 'active' : ''; ?>" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
-                <?php endfor; ?>
-                <?php if ($pagination['currentPage'] < $pagination['totalPages']) : ?>
-                    <a class="navpage" href="?page=<?php echo $pagination['currentPage'] + 1; ?>">&gt;</a>
-                <?php endif; ?>
-                <a class="navpage" href="?page=<?php echo $pagination['totalPages']; ?>">Last</a>
-            </p>
+            <a class="navpage" href="?page=1">First</a>
+            <?php if ($pagination['currentPage'] > 1) : ?>
+                <a class="navpage" href="?page=<?php echo $pagination['currentPage'] - 1; ?>">&lt;</a>
+            <?php endif; ?>
+            <?php for ($i = 1; $i <= $pagination['totalPages']; $i++) : ?>
+                <a class="navpage <?php echo $i == $pagination['currentPage'] ? 'active' : ''; ?>" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+            <?php endfor; ?>
+            <?php if ($pagination['currentPage'] < $pagination['totalPages']) : ?>
+                <a class="navpage" href="?page=<?php echo $pagination['currentPage'] + 1; ?>">&gt;</a>
+            <?php endif; ?>
+            <a class="navpage" href="?page=<?php echo $pagination['totalPages']; ?>">Last</a>
         </div>
 
 
