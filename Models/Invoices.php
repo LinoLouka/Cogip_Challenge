@@ -36,11 +36,17 @@ class Invoices
 
     public function Id($id)
     {
-        $request = "SELECT invoices.id, invoices.id_company, companies.name AS company_name 
-              FROM invoices 
-              LEFT JOIN companies ON invoices.id_company = companies.id 
-              WHERE invoices.id = :id";
+        // $request = "SELECT invoices.id, invoices.id_company, companies.name AS company_name 
+        //       FROM invoices 
+        //       LEFT JOIN companies ON invoices.id_company = companies.id 
+        //       WHERE invoices.id = :id";
 
+        // $statement = $this->bdd->prepare($request);
+        // $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        // $statement->execute();
+
+        // return $invoices = $statement->fetch(\PDO::FETCH_ASSOC);
+        $request = 'SELECT * FROM invoices WHERE id = :id';
         $statement = $this->bdd->prepare($request);
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();

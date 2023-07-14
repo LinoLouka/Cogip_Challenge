@@ -70,7 +70,6 @@ footer hr {
 footer .footer h2 {
   font-size: 30px;
   border: 3px solid #f9de4e;
-  width: -moz-min-content;
   width: min-content;
   display: flex;
   flex-direction: column;
@@ -395,4 +394,4 @@ body .bot .bot__title {
   padding-left: 20px;
   font-size: 23px;
   text-transform: uppercase;
-}
+}/*# sourceMappingURL=style.css.map */

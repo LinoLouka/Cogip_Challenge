@@ -35,10 +35,16 @@ class Companies
 
     public function Id($id)
     {
-        $request = "SELECT companies.id, companies.name, types.name AS type_name 
-                FROM companies
-                LEFT JOIN types ON companies.type_id = types.id
-                WHERE companies.id = :id";
+        // $request = "SELECT companies.id, companies.name, types.name AS type_name 
+        //         FROM companies
+        //         LEFT JOIN types ON companies.type_id = types.id
+        //         WHERE companies.id = :id";
+        // $statement = $this->bdd->prepare($request);
+        // $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        // $statement->execute();
+
+        // return $companies = $statement->fetch(\PDO::FETCH_ASSOC);
+        $request = 'SELECT * FROM companies WHERE id = :id';
         $statement = $this->bdd->prepare($request);
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();

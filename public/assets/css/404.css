@@ -1,5 +1,5 @@
 #oopss {
-  background: linear-gradient(-45deg, #F9DE4E, #efe400);
+  background: linear-gradient(-45deg, #f9de4e, #efe400);
   position: fixed;
   left: 0px;
   top: 0;
@@ -54,6 +54,7 @@
 }
 
 #oopss #error-text .back:hover {
+  -webkit-transform: translateY(-13px);
   transform: translateY(-13px);
   box-shadow: 0 35px 90px 4px rgba(0, 0, 0, 0.3), inset 0px 0 0 3px #000;
 }
@@ -69,4 +70,4 @@
   src: url("https://cdn.rawgit.com/ahmedhosna95/upload/ba6564f8/fonts/Shabnam/Shabnam.eot");
   src: url("https://cdn.rawgit.com/ahmedhosna95/upload/ba6564f8/fonts/Shabnam/Shabnam.eot?#iefix") format("embedded-opentype"), url("https://cdn.rawgit.com/ahmedhosna95/upload/ba6564f8/fonts/Shabnam/Shabnam.woff") format("woff"), url("https://cdn.rawgit.com/ahmedhosna95/upload/ba6564f8/fonts/Shabnam/Shabnam.woff2") format("woff2"), url("https://cdn.rawgit.com/ahmedhosna95/upload/ba6564f8/fonts/Shabnam/Shabnam.ttf") format("truetype");
   font-weight: normal;
-}
+}/*# sourceMappingURL=404.css.map */
