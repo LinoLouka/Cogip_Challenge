@@ -8,8 +8,8 @@
             <a type="button" href="contacts">Contacts</a>
         </div>
         <div class="nav-bar__btn">
-            <button type="submit" class="nav-bar__btn--sign">Sign Up</button>
-            <button type="submit" class="nav-bar__btn--login">Login</button>
+            <button type="submit"  class="nav-bar__btn--sign">Sign Up</button>
+            <a type="button" href="dashboard" class="nav-bar__btn--login">Login</a>
         </div>
     </nav>
     <div class="header-title-img">

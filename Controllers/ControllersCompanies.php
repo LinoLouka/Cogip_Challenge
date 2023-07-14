@@ -1,3 +1,4 @@
+
 <?php
 
 namespace App\Controllers;
@@ -12,10 +13,18 @@ Class ControllersCompanies extends Controller
     {
         $modelCompanies = new Companies();
 
-        $companies = $modelCompanies->showCompanies();
+        $totalRecords = $modelCompanies->countCompanies();
+        $perPage = 5;
+        $currentPage = $_GET['page'] ?? 1;
+
+        $startIndex = ($currentPage -1) * $perPage;
+        $companies = $modelCompanies->getCompaniesWithPagination($startIndex, $perPage);
+
+        $pagination = $this->paginate($totalRecords, $currentPage, $perPage);
 
         return $this->view('companies',[
             'companies' => $companies,
+            'pagination' => $pagination,
         ]);
     }
     public function showId($id)
@@ -34,12 +43,31 @@ Class ControllersCompanies extends Controller
         ];
 
        return $this->view('show_company', $data);
-
-
     }
-    
+    private function paginate($totalRecords, $currentPage, $perPage)
+    {
+        $totalPages = ceil($totalRecords / $perPage);
+
+        if ($currentPage < 1) {
+            $currentPage = 1;
+        } elseif ($currentPage > $totalPages) {
+            $currentPage = $totalPages;
+        }
+
+        $startIndex = ($currentPage - 1) * $perPage;
+        $endIndex = min($startIndex + $perPage - 1, $totalRecords - 1);
+
+        return [
+            'totalRecords' => $totalRecords,
+            'totalPages' => $totalPages,
+            'currentPage' => $currentPage,
+            'startIndex' => $startIndex,
+            'endIndex' => $endIndex,
+        ];
+    }
 
 
 }
+
 
 ?>
