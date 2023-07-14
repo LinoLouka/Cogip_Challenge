@@ -15,16 +15,13 @@
     ?>
 
     <section class="section">
-        <h2>Last invoices</h2>
+        <h2>All invoices</h2>
         <div class="section-invoices__searchbar">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Search company" onkeyup="searchInvoices()" id="search_invoices">
         </div>
-
-        <div class="section-invoices__table">
-
-            <?php
-
-            if (!is_null($invoices) && is_array($invoices)) : ?>
+    <div class="section-invoices__table">
+<?php
+if (!is_null($invoices) && is_array($invoices)) : ?>
                 <table>
                     <tr>
                         <th>Id</th>
@@ -51,19 +48,26 @@
 
         </div>
         <div class="section-invoices__navbar">
-            <p>Page
-                <a class="navpage" href="#" target="_top">First</a>
-                <a class="navpage" href="#" target="_top">1</a>
-                <a class="navpage" href="#" target="_top">2</a>
-                <a class="navpage" href="#" target="_top">>></a>
-                <a class="navpage" href="#" target="_top">Last</a>
-            </p>
+            <a class="navpage" href="#" target="_top">
+                < </a>
+                    <a class="navpage" href="#" target="_top">1 </a>
+                    <a class="navpage" href="#" target="_top">2 </a>
+                    <a class="navpage" href="#" target="_top">... </a>
+                    <a class="navpage" href="#" target="_top">9 </a>
+                    <a class="navpage" href="#" target="_top">10 </a>
+                    <a class="navpage" href="#" target="_top">> </a>
         </div>
 
     </section>
     <?php
     require 'footer.php';
     ?>
+
+    
+
+
 </body>
+<script defer src="../public/assets/js/header_remove.js"></script>
+<script defer src="../public/assets/js/invoices.js"></script>
 
 </html>
