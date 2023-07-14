@@ -143,11 +143,21 @@ footer .footer__copyright {
   }
   body header .nav-bar .nav-bar__link {
     margin: auto;
-    font-size: 3vw;
+    font-size: 2.5vw;
     justify-content: flex-start;
   }
   body header .nav-bar .nav-bar__link a {
     margin: 0 10px 0 10px;
+  }
+  body header .nav-bar .nav-bar__btn button {
+    width: 100px;
+    height: 50px;
+  }
+  body header .header-title-img__rectangle img {
+    width: 1800px;
+  }
+  body .section .section-contacts__searchbar {
+    position: sticky;
   }
   body .section .section-invoices h2 {
     font-size: 4vw;
@@ -168,6 +178,50 @@ footer .footer__copyright {
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
+  }
+  body footer section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  body footer section .footer h2 {
+    font-size: 5vw;
+    padding: 5px;
+  }
+  body footer section .footer__infos {
+    margin: auto;
+    flex-direction: row;
+  }
+  body footer section .footer__infos .img-svg {
+    margin: 0 0 10px 0;
+  }
+  body footer section .footer__infos .img-svg img {
+    margin: 0 20px 0 20px;
+  }
+  body footer section .footer__infos .img-phone {
+    margin: 0 0 10px 0;
+  }
+  body footer section .footer__infos .img-phone img {
+    margin: 0 20px 0 20px;
+  }
+  body footer section .footer__infos .img-print {
+    margin: 0 0 10px 0;
+  }
+  body footer section .footer__infos .img-print img {
+    margin: 0 20px 0 20px;
+  }
+  body footer section .footer__infos .logo-social-media {
+    display: flex;
+    margin-top: 20px;
+  }
+  body footer section .footer__infos .logo-social-media img {
+    margin: 0 20px 0 20px;
+  }
+  body footer section .footer__infos .logo-social-media p {
+    color: #c4cdd5;
+    margin: auto;
+  }
+  body footer section .footer__contact ul li a {
+    text-transform: uppercase;
   }
 }
 body {
@@ -190,7 +244,7 @@ body .section .section-contacts__searchbar {
   display: flex;
   flex-direction: column;
   align-items: end;
-  margin-top: 10px;
+  margin: 10px 10px 0 0;
 }
 body .section .section-contacts__searchbar input {
   border: solid 1px gray;
@@ -201,7 +255,7 @@ body .section .section-invoices__searchbar {
   display: flex;
   flex-direction: column;
   align-items: end;
-  margin-top: 10px;
+  margin: 10px 10px 0 0;
 }
 body .section .section-invoices__searchbar input {
   border: solid 1px gray;
@@ -212,7 +266,7 @@ body .section .section-companies__searchbar {
   display: flex;
   flex-direction: column;
   align-items: end;
-  margin-top: 10px;
+  margin: 10px 10px 0 0;
 }
 body .section .section-companies__searchbar input {
   border: solid 1px gray;
@@ -242,20 +296,10 @@ body .section table tr:nth-child(odd) {
 body .section table tr:hover {
   background-color: #ddd;
 }
-body .section .section-invoices h2 {
-  background-image: url(../img/rectangle_title_invoices.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 body .section .section-invoices .section-invoices__img img {
   float: right;
   width: 25%;
   height: auto;
-}
-body .section .section-contacts h2 {
-  background-image: url(../img/rectangle_title_contacts.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 body .section .section-contacts .section-contacts__img img {
   width: 25%;
@@ -264,10 +308,74 @@ body .section .section-contacts .section-contacts__img img {
 body .section .section-companies {
   margin-bottom: 80px;
 }
-body .section .section-companies h2 {
-  background-image: url(../img/rectangle_title_companies.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
+body .section .section-invoices__navbar {
+  display: flex;
+  justify-content: center;
+}
+body .section .section-invoices__navbar a {
+  text-decoration: none;
+  color: black;
+  border: solid 1px #c4cdd5;
+  border-radius: 3px;
+  padding: 7px;
+  margin: 5px;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+}
+body .section .section-invoices__navbar a:first-child, body .section .section-invoices__navbar a:last-child {
+  color: #f9de4e;
+  background-color: #c4cdd5;
+}
+body .section .section-invoices__navbar a:hover {
+  border-color: #f9de4e;
+  color: #f9de4e;
+}
+body .section .section-contacts__navbar {
+  display: flex;
+  justify-content: center;
+}
+body .section .section-contacts__navbar a {
+  text-decoration: none;
+  color: black;
+  border: solid 1px #c4cdd5;
+  border-radius: 3px;
+  padding: 7px;
+  margin: 5px;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+}
+body .section .section-contacts__navbar a:first-child, body .section .section-contacts__navbar a:last-child {
+  color: #f9de4e;
+  background-color: #c4cdd5;
+}
+body .section .section-contacts__navbar a:hover {
+  border-color: #f9de4e;
+  color: #f9de4e;
+}
+body .section .section-companies__navbar {
+  display: flex;
+  justify-content: center;
+}
+body .section .section-companies__navbar a {
+  text-decoration: none;
+  color: black;
+  border: solid 1px #c4cdd5;
+  border-radius: 3px;
+  padding: 7px;
+  margin: 5px;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+}
+body .section .section-companies__navbar a:first-child, body .section .section-companies__navbar a:last-child {
+  color: #f9de4e;
+  background-color: #c4cdd5;
+}
+body .section .section-companies__navbar a:hover {
+  border-color: #f9de4e;
+  color: #f9de4e;
 }
 body .bot {
   display: grid;

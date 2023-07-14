@@ -51,13 +51,14 @@
 
         </div>
         <div class="section-invoices__navbar">
-            <p>Page
-                <a class="navpage" href="#" target="_top">First</a>
-                <a class="navpage" href="#" target="_top">1</a>
-                <a class="navpage" href="#" target="_top">2</a>
-                <a class="navpage" href="#" target="_top">>></a>
-                <a class="navpage" href="#" target="_top">Last</a>
-            </p>
+            <a class="navpage" href="#" target="_top">
+                < </a>
+                    <a class="navpage" href="#" target="_top">1 </a>
+                    <a class="navpage" href="#" target="_top">2 </a>
+                    <a class="navpage" href="#" target="_top">... </a>
+                    <a class="navpage" href="#" target="_top">9 </a>
+                    <a class="navpage" href="#" target="_top">10 </a>
+                    <a class="navpage" href="#" target="_top">> </a>
         </div>
 
     </section>
