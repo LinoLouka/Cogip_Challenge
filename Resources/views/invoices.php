@@ -13,14 +13,15 @@
     <?php require 'header.php'; ?>
 
     <section class="section">
-        <h2>Last invoices</h2>
+        <h2>All invoices</h2>
         <div class="section-invoices__searchbar">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Search company" onkeyup="searchInvoices()" id="search_invoices">
         </div>
 
-        <div class="section-invoices__table">
+    <div class="section-invoices__table">
+<?php
+if (!is_null($invoices) && is_array($invoices)) : ?>
 
-            <?php if (!is_null($invoices) && is_array($invoices)) : ?>
                 <table>
                     <tr>
                         <th>Id</th>
@@ -49,7 +50,7 @@
 
         </div>
         <div class="section-invoices__navbar">
-    <p>Page
+
         <a class="navpage" href="?page=1">First</a>
         <?php if ($pagination['currentPage'] > 1) : ?>
             <a class="navpage" href="?page=<?php echo $pagination['currentPage'] - 1; ?>">&lt;</a>
@@ -61,7 +62,7 @@
             <a class="navpage" href="?page=<?php echo $pagination['currentPage'] + 1; ?>">&gt;</a>
         <?php endif; ?>
         <a class="navpage" href="?page=<?php echo $pagination['totalPages']; ?>">Last</a>
-    </p>
+
 </div>
 
 
@@ -69,5 +70,7 @@
 
     <?php require 'footer.php'; ?>
 </body>
+<script defer src="../public/assets/js/header_remove.js"></script>
+<script defer src="../public/assets/js/invoices.js"></script>
 
 </html>

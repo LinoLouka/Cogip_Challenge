@@ -97,3 +97,4 @@ class Companies
         $statement->execute();
     }
 }
+

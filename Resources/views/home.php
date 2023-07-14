@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,16 +14,6 @@
     <?php
     require 'header.php';
     ?>
-    <section class="header-title-img">
-        <div class="header__title">
-            <h2>MANAGE YOUR
-                CUSTOMERS AND
-                INVOICES EASLY</h2>
-        </div>
-        <div class="header__img">
-            <img src="../public/assets/img/img-header.png" alt="img par défault">
-        </div>
-    </section>
     <section class="section">
         <div class="section-invoices">
             <h2>Last invoices</h2>
@@ -48,7 +39,7 @@
                 </table>
             </div>
             <div class="section-invoices__img">
-                <img src="../public/assets/img/hand.png" alt="hand with clipboard" align="right">
+                <img src="../public/assets/img/hand.png" alt="hand with clipboard">
             </div>
 
         </div>
@@ -77,7 +68,7 @@
                 </table>
             </div>
             <div class="section-contacts__img">
-                <img src="../public/assets/img/lamp.png" alt="lamp" align="left">
+                <img src="../public/assets/img/lamp.png" alt="lamp">
             </div>
 
         </div>
@@ -124,5 +115,6 @@
 
 </body>
 <script src="../../public/assets/js/script.js"></script>
+
 
 </html>

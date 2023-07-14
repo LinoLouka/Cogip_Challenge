@@ -12,4 +12,17 @@
             <a type="button" href="dashboard" class="nav-bar__btn--login">Login</a>
         </div>
     </nav>
+    <div class="header-title-img">
+        <div class="header__title">
+            <h2>MANAGE YOUR
+                CUSTOMERS AND
+                INVOICES EASLY</h2>
+        </div>
+        <div class="header__img">
+            <img src="../public/assets/img/img-header.svg" alt="img par défault">
+        </div>
+    </div>
+    <div class="header-title-img__rectangle">
+        <img src="../public/assets/img/rectangle_header.svg" alt="rectangle blanc header">
+    </div>
 </header>

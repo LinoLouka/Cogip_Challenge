@@ -1,11 +1,11 @@
 <?php
-
 namespace App\Models;
 
 use App\Core\connect;
 
 class Invoices
 {
+
     private $bdd;
 
     public function __construct()
@@ -23,8 +23,10 @@ class Invoices
         return $invoices = $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+
     public function showInvoices()
     {
+
         $request = 'SELECT * FROM invoices';
         $statement = $this->bdd->prepare($request);
         $statement->execute();
@@ -38,6 +40,7 @@ class Invoices
               FROM invoices 
               LEFT JOIN companies ON invoices.id_company = companies.id 
               WHERE invoices.id = :id";
+
         $statement = $this->bdd->prepare($request);
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
@@ -120,4 +123,5 @@ class Invoices
         $statement->execute();
     }
 }
+
 

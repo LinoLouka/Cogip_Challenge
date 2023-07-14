@@ -15,11 +15,12 @@
     ?>
 
     <section class="section">
-        <h2>Last companies</h2>
+        <h2>All companies</h2>
         <div class="section-companies__searchbar">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Search company name" onkeyup="searchCompanies()" id="search_companies">
         </div>
         <div class="section-companies__table">
+
 
         <?php
         if (!is_null($companies) && is_array($companies)): ?>
@@ -48,7 +49,7 @@
 
         </div>
         <div class="section-companies__navbar">
-    <p>Page
+
         <a class="navpage" href="?page=1">First</a>
         <?php if ($pagination['currentPage'] > 1) : ?>
             <a class="navpage" href="?page=<?php echo $pagination['currentPage'] - 1; ?>">&lt;</a>
@@ -60,7 +61,6 @@
             <a class="navpage" href="?page=<?php echo $pagination['currentPage'] + 1; ?>">&gt;</a>
         <?php endif; ?>
         <a class="navpage" href="?page=<?php echo $pagination['totalPages']; ?>">Last</a>
-    </p>
 </div>
 
 
@@ -68,6 +68,9 @@
     <?php
     require 'footer.php';
     ?>
+  
 </body>
+<script defer src="../public/assets/js/header_remove.js"></script>
 
+<script defer src="../public/assets/js/companies.js"></script>
 </html>
