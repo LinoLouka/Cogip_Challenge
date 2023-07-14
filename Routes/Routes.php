@@ -7,6 +7,9 @@ use App\Controllers\HomeController;
 use App\Controllers\ControllersInvoices;
 use App\Controllers\ControllersContacts;
 use App\Controllers\ControllersCompanies;
+use App\Controllers\dashboardController;
+use App\Controllers\authController;
+
 
 $router = new Router();
 
@@ -36,6 +39,28 @@ $router->get('/contacts/{id}', function($id) {
 
 $router->get('/invoices/{id}', function($id) {
     (new ControllersInvoices)->showId($id);
+});
+
+$router->get('/dashboard', function() {
+    (new dashboardController)->index();
+});
+
+$router->post('/dashboard', function() {
+    (new dashboardController)->addCompanies();
+    (new dashboardController)->addContact();
+    (new dashboardController)->addInvoice();
+    (new dashboardController)->editInvoice();
+    (new dashboardController)->editContact();
+    (new dashboardController)->editCompany();
+    (new dashboardController)->deleteCompany();
+    (new dashboardController)->deleteInvoice();
+    (new dashboardController)->deleteContact();
+
+    (new dashboardController)->index();
+});
+
+$router->get('/register', function(){
+    (new authController)->index();
 });
 
 $router->set404(function() {

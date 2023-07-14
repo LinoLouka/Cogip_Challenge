@@ -20,26 +20,25 @@
             <input type="text" placeholder="Search...">
         </div>
         <div class="section-companies__table">
-            <?php
-            if (!is_null($companies) && is_array($companies)) : ?>
-                <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>TVA</th>
-                        <th>Country</th>
-                        <th>Type</th>
-                        <th>Created at</th>
-                    </tr>
-                    <?php foreach ($companies as $company) :  ?>
-                        <tr>
-                            <td><a href="companies/<?php echo $company['id'] ?>"><?php echo $company["id"] ?></a></td>
-                            <td><?php echo $company['name']; ?></td>
-                            <td><?php echo $company['tva']; ?></td>
-                            <td><?php echo $company['country']; ?></td>
-                            <td><?php echo $company['type_id']; ?></td>
-                            <td><?php echo $company['created_at']; ?></td>
-                        </tr>
+
+        <?php
+        if (!is_null($companies) && is_array($companies)): ?>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Country</th>
+                    <th>Type</th>
+                </tr>
+                <?php foreach ($companies as $company):  ?>
+                <tr>
+                    <td><a href="companies/<?php echo $company['id'] ?>"><?php echo $company["id"]?></a></td>
+                    <td><?php echo $company['tva']; ?></td>
+                    <td><?php echo $company['name']; ?></td>
+                    <td><?php echo $company['country']; ?></td>
+                    <td><?php echo $company['type_id']; ?></td>
+                </tr>
+
 
                     <?php endforeach; ?>
                 </table>
@@ -48,15 +47,22 @@
             <?php endif; ?>
 
         </div>
-        <div class="section-invoices__navbar">
-            <p>Page
-                <a class="navpage" href="#" target="_top">First</a>
-                <a class="navpage" href="#" target="_top">1</a>
-                <a class="navpage" href="#" target="_top">2</a>
-                <a class="navpage" href="#" target="_top">>></a>
-                <a class="navpage" href="#" target="_top">Last</a>
-            </p>
-        </div>
+        <div class="section-companies__navbar">
+    <p>Page
+        <a class="navpage" href="?page=1">First</a>
+        <?php if ($pagination['currentPage'] > 1) : ?>
+            <a class="navpage" href="?page=<?php echo $pagination['currentPage'] - 1; ?>">&lt;</a>
+        <?php endif; ?>
+        <?php for ($i = 1; $i <= $pagination['totalPages']; $i++) : ?>
+            <a class="navpage <?php echo $i == $pagination['currentPage'] ? 'active' : ''; ?>" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+        <?php endfor; ?>
+        <?php if ($pagination['currentPage'] < $pagination['totalPages']) : ?>
+            <a class="navpage" href="?page=<?php echo $pagination['currentPage'] + 1; ?>">&gt;</a>
+        <?php endif; ?>
+        <a class="navpage" href="?page=<?php echo $pagination['totalPages']; ?>">Last</a>
+    </p>
+</div>
+
 
     </section>
     <?php

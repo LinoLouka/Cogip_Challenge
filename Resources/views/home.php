@@ -93,15 +93,17 @@
                         <th>Type</th>
                         <th>Created at</th>
                     </tr>
-                    <?php foreach ($companies as $company) :  ?>
-                        <tr>
-                            <td><?php echo $company['id']; ?></td>
-                            <td><?php echo $company['name']; ?></td>
-                            <td><?php echo $company['tva']; ?></td>
-                            <td><?php echo $company['country']; ?></td>
-                            <td><?php echo $company['type_id']; ?></td>
-                            <td><?php echo $company['created_at']; ?></td>
-                        </tr>
+
+                    <?php foreach ($companies as $company):  ?>
+                <tr>
+                    <td><?php echo $company['id']; ?></td>
+                    <td><?php echo $company['tva']; ?></td>
+                    <td><?php echo $company['name']; ?></td>
+                    <td><?php echo $company['country']; ?></td>
+                    <td><?php echo $company['type_id']; ?></td>
+                    <td><?php echo $company['created_at']; ?></td>
+                </tr>
+
 
                     <?php endforeach; ?>
                 </table>
