@@ -1,61 +1,53 @@
 <?php
-$lastname = $firstname = $adresseMail = '';
+$lastname = $firstname = $adresseMail = $hashedPassword = '';
 $lastnameError = $firstnameError = $addressEmailError = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['role'])) {
-        $selectedRole = $_POST['role'];
-        $password = $_POST['password'];
+    $password = $_POST['password'];
 
-        $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_STRING);
-        $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_STRING);
-        $adresseMail = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_STRING);
+    $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_STRING);
+    $adresseMail = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+
+
+
+    $lastnameError = validateLastname($lastname);
+    $firstnameError = validateFirstname($firstname);
+    $addressEmailError = validateEmail($adresseMail);
+
+    if(empty($lastnameError) && empty($firstnameError) && empty($addressEmailError)) {
 
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-        $lastnameError = validateLastname($lastname);
-        $firstnameError = validateFirstname($firstname);
-        $addressEmailError = validateEmail($adresseMail);
-
-        if ($selectedRole !== '') {
-            echo "You selected the role: ";
-
-            switch ($selectedRole) {
-                case '1':
-                    echo "Admin";
-                    break;
-                case '2':
-                    echo "User";
-                    break;
-                default:
-                    break;
-            }
-        } else {
-            echo "You must select a choice";
-        }
     }
 }
+
 function validateLastname($lastname)
 {
     if(empty($lastname)) {
         return "The lastname is required";
     }
-    $minLenght = 2;
-    if(strlen($lastname) < $minLenght) {
-        return "The lastname must be at least $minlenght characters long ";
+    $minLength = 2;
+    if(strlen($lastname) < $minLength) {
+        return "The lastname must be at least $minLength characters long ";
     }
 
     return "";
 }
 
-function validateFirstname($firstname){
+function validateFirstname($firstname)
+{
     if(empty($firstname)) {
         return "The firstname is required";
     }
+    $minLength = 2;
+    if(strlen($firstname) < $minLength) {
+        return "The firstname must be at least $minLength characters long ";
+    }
     return "";
 }
 
-function validateEmail($email) {
+function validateEmail($email)
+{
     if(empty($email)) {
         return "The email is required";
     }
@@ -64,6 +56,7 @@ function validateEmail($email) {
     }
     return "";
 }
+
 ?>
 
 <!DOCTYPE html>
