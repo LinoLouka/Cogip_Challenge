@@ -1,6 +1,7 @@
 <?php
 $lastname = $firstname = $adresseMail = $hashedPassword = '';
 $lastnameError = $firstnameError = $addressEmailError = '';
+$successRegister = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
@@ -18,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if(empty($lastnameError) && empty($firstnameError) && empty($addressEmailError)) {
 
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $successRegister = "Your register is successful";
     }
 }
 
@@ -56,7 +58,7 @@ function validateEmail($email)
     }
     return "";
 }
-
+$formSubmitted = ($_SERVER['REQUEST_METHOD'] === 'POST') && empty($lastnameError) && empty($firstnameError) && empty($addressEmailError);
 ?>
 
 <!DOCTYPE html>
@@ -96,6 +98,10 @@ function validateEmail($email)
 
         <button type="submit" name="submit">Register</button>
     </form>
-
+    <?php if ($formSubmitted && !empty($successRegister)) : ?>
+    <div>
+        <?php echo $successRegister; ?>
+    </div>
+<?php endif; ?>
 </body>
 </html>
