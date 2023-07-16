@@ -59,4 +59,18 @@ class User
 
         return ($count > 0);
     }
+    
+    public function getUserByEmail($email)
+    {
+        $request = 'SELECT u.id, u.first_name, u.last_name, u.email, u.password, r.name AS role_name
+                    FROM users u
+                    JOIN roles r ON u.role_id = r.id
+                    WHERE u.email = :email';
+
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':email', $email, \PDO::PARAM_STR);
+        $statement->execute();
+
+        return $statement->fetch(\PDO::FETCH_ASSOC);
+    }
 }

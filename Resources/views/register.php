@@ -10,8 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_STRING);
     $adresseMail = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 
-
-
     $lastnameError = validateLastname($lastname);
     $firstnameError = validateFirstname($firstname);
     $addressEmailError = validateEmail($adresseMail);
