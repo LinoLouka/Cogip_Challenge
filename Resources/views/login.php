@@ -5,7 +5,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
 }
 
@@ -26,7 +25,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="password">Password : </label>
         <input type="password" id="password" name="password" required>
 
-        <button type="submit">Login : </button>
+        <button type="submit">Login</button>
+<?php       
+session_start();
+    echo $_SESSION['first_name'];
+
+    
+    
+    ?>
 
 </body>
 </html>

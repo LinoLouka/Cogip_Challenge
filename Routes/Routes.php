@@ -9,6 +9,7 @@ use App\Controllers\ControllersContacts;
 use App\Controllers\ControllersCompanies;
 use App\Controllers\dashboardController;
 use App\Controllers\authController;
+use App\Controllers\loginController;
 
 
 $router = new Router();
@@ -43,6 +44,7 @@ $router->get('/invoices/{id}', function($id) {
 
 $router->get('/dashboard', function() {
     (new dashboardController)->index();
+    
 });
 
 $router->post('/dashboard', function() {
@@ -64,6 +66,13 @@ $router->get('/register', function(){
 });
 $router->post('/register', function(){
     (new authController)->register();
+    (new loginController)->index();
+});
+$router->get('/login', function(){
+    (new loginController)->index();
+});
+$router->post('/login', function(){
+    (new loginController)->checkUserEmail();
 });
 
 $router->set404(function() {

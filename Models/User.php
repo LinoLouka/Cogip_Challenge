@@ -74,4 +74,25 @@ class User
 
         return $statement->fetch(\PDO::FETCH_ASSOC);
     }
+    public function checkUser($email, $password)
+    {
+        $request = 'SELECT u.id, u.first_name, u.last_name, u.email, u.password, r.name AS role_name
+        FROM users u
+        JOIN roles r on u.role_id = r.id
+        WHERE u.email = :email';
+
+        $statement = $this->bdd->prepare($request);
+        $statement->bindValue(':email', $email, \PDO::PARAM_STR);
+        $statement->execute();
+        $user = $statement->fetch(\PDO::FETCH_ASSOC);
+        
+
+        if($user && password_verify($password, $user['password'])){
+            return $user;
+        } else {
+            return 'error: user does not exist';
+        }
+
+        
+    }
 }
