@@ -81,15 +81,14 @@ class User
 
         $statement = $this->bdd->prepare($request);
         $statement->bindValue(':email', $email, \PDO::PARAM_STR);
-        $statement->execute();
-        $user = $statement->fetch(\PDO::FETCH_ASSOC);
-        
 
-        if($user && password_verify($password, $user['password'])){
+        if ($statement->execute()){
+            $user = $statement->fetch(\PDO::FETCH_ASSOC);
+            if($user && password_verify($password, $user['password'])){
             return $user;
-        } else{
-            return false;
         }
+        } 
+            return null ;
 
         
     }

@@ -18,31 +18,36 @@ class loginController extends Controller
     public function checkUserEmail()
 {
     session_start();
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $emails = $_POST['email'];
+    $passwords = $_POST['password'];
+
+    $email = filter_var($emails, FILTER_SANITIZE_EMAIL);
+    $password =trim($passwords);
 
     $usermodel = new User();
 
     $User = $usermodel->checkUser($email, $password);
 
     if ($User) {
+        $_SESSION['user_id'] = $User['id'];
+        $_SESSION['user_role'] = $User['role_name'];
         $data = [
             'id' => $User['id'],
             'firstname' => $User['first_name'],
             'lastname' => $User['last_name'],
             'email' => $User['email'],
-            'role' => $User['role_name']
+            'role' => $User['role_name'],
+            'user_id' => $_SESSION['user_id'],
+            'user_role' => $_SESSION['user_role'],
+            
         ];
 
-        $_SESSION['user_id'] = $User['id'];
-        $_SESSION['user_role'] = $User['role_name'];
-        $_SESSION['first_name'] = $User['first_name'];
+        
 
-        header('location: '.__ROOT__.'/home');
+        return $this->view('home', $data);
         exit();
-    } else {
-        $data = ['error' => 'Unknown User'];
-        return $this->view('login', $data);
+    } else  {
+        return $this->view('login');
     }
 }
 
@@ -53,6 +58,7 @@ class loginController extends Controller
                 exit();
             }
         }
+        
 }
 
 

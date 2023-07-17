@@ -25,12 +25,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="password">Password : </label>
         <input type="password" id="password" name="password" required>
 
-        <button type="submit">Login</button>
+        <button type="submit" name="submit">Login</button>
+</form>
 <?php       
 // session_start();
 // $_SESSION['user_id'];
-    if(isset($_POST['submit'])){
-var_dump($data);
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+if(isset($_POST['submit'])){
+    if ($data == null) {
+        echo 'invalid email or incorrect password';
+    }
+}
 }
     
 
