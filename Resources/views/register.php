@@ -13,8 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $lastnameError = validateLastname($lastname);
     $firstnameError = validateFirstname($firstname);
     $addressEmailError = validateEmail($adresseMail);
+    $passwordError = validatePassword($password);
 
-    if(empty($lastnameError) && empty($firstnameError) && empty($addressEmailError)) {
+    if(empty($lastnameError) && empty($firstnameError) && empty($addressEmailError) && empty($passwordError)) {
 
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $successRegister = "Your register is successful";
@@ -30,19 +31,16 @@ function validateLastname($lastname)
     if(strlen($lastname) < $minLength) {
         return "The lastname must be at least $minLength characters long ";
     }
-
     return "";
 }
 
 function validateFirstname($firstname)
 {
-    if(empty($firstname))
-     {
+    if(empty($firstname)) {
         return "The firstname is required";
     }
     $minLength = 2;
-    if(strlen($firstname) < $minLength) 
-    {
+    if(strlen($firstname) < $minLength) {
         return "The firstname must be at least $minLength characters long ";
     }
     return "";
