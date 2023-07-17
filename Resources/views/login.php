@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // $_SESSION['user_id'];
     if(isset($_POST['submit'])){
 var_dump($data);
-    }
+}
     
 
     
