@@ -20,27 +20,36 @@ class authController extends Controller
         $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_STRING);
         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
         $password = $_POST['password'];
-        $confirmPassword = $_POST['confirm_password'];
+        $confirmPassword = $_POST['confirmPassword'];
 
-        $lastnameError = validateLastname($lastname);
-        $firstnameError = validateFirstname($firstname);
-        $addressEmailError = validateEmail($email);
-        $resultValidatePassword = $this->validatePassword($password);
+        $lastnameError = $this->validateLastname($lastname);
+        $firstnameError = $this->validateFirstname($firstname);
+        $addressEmailError = $this->validateEmail($email);
+        $passwordError = $this->validatePassword($password);
+        $confirmPasswordError = $this->verifyPassword($password, $confirmPassword);
 
-        if($resultValidatePassword !== true) {
-            echo $resultValidatePassword;
-            return;
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($lastnameError) && empty($firstnameError) && empty($addressEmailError) && empty($passwordError) && empty($confirmPasswordError)) {
+            $userModel = new User();
+            $userModel->saveUser($firstname, $lastname, $email, $password);
+            $userModel->getUsersRoles();
         }
 
-        if(!$this->verifyPassword($password, $confirmPassword)) {
-            echo "The passwords aren't the same ! ";
-            return;
-        }
-
-        $userModel = new User();
-
-        $userModel->saveUser($firstname, $lastname, $email, $password);
-        $userModel->getUsersRoles();
+        return $this->view(
+            'register',
+            [
+            'lastname' => $lastname,
+            'firstname' => $firstname,
+            'adresseMail' => $email,
+            'password' => $password,
+            'confirmPassword' => $confirmPassword,
+            'lastnameError' => $lastnameError,
+            'firstnameError' => $firstnameError,
+            'addressEmailError' => $addressEmailError,
+            'passwordError' => $passwordError,
+            'confirmPasswordError' => $confirmPasswordError,
+            "name" => 'cogip'
+        ]
+        );
     }
 
     private function validatePassword($password)
@@ -52,11 +61,48 @@ class authController extends Controller
         if(strlen($password) < $minLength) {
             return "The password must be a least $minLength characters long";
         }
-        return true;
     }
 
-    private function verifyPassword($password, $confirm_password)
+    private function verifyPassword($password, $confirmPassword)
     {
-        return $password === $confirm_password;
+        if($password !== $confirmPassword) {
+            return  "The passwords aren't the same!";
+        }
+    }
+
+    private function validateLastname($lastname)
+    {
+        if (empty($lastname)) {
+            return "The lastname is required";
+        }
+        $minLength = 2;
+        if (strlen($lastname) < $minLength) {
+            return "The lastname must be at least $minLength characters long";
+        }
+        return "";
+    }
+
+    private function validateFirstname($firstname)
+    {
+        if (empty($firstname)) {
+            return "The firstname is required";
+        }
+        $minLength = 2;
+        if (strlen($firstname) < $minLength) {
+            return "The firstname must be at least $minLength characters long";
+        }
+        return "";
+    }
+
+    private function validateEmail($email)
+    {
+        if (empty($email)) {
+            return "The email is required";
+        }
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return "The format email isn't valid";
+        }
+        return "";
+
     }
 }
