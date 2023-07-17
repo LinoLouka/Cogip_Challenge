@@ -6,7 +6,6 @@ $successRegister = "";
 $formSubmitted = ($_SERVER['REQUEST_METHOD'] === 'POST') && empty($lastnameError) && empty($firstnameError) && empty($addressEmailError) && empty($passwordError) && empty($confirmPasswordError);
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,11 +59,6 @@ $formSubmitted = ($_SERVER['REQUEST_METHOD'] === 'POST') && empty($lastnameError
 
         <button type="submit" name="submit">Register</button>
     </form>
-    <?php if ($formSubmitted && !empty($successRegister)) : ?>
-    <div>
-        <?php echo $successRegister; ?>
-    </div>
-    <?php endif; ?>
 </body>
 </html>
 
