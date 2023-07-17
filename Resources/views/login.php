@@ -27,8 +27,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <button type="submit">Login</button>
 <?php       
-session_start();
-    echo $_SESSION['first_name'];
+// session_start();
+// $_SESSION['user_id'];
+    if(isset($_POST['submit'])){
+var_dump($data);
+    }
+    
 
     
     
