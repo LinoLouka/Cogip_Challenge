@@ -16,7 +16,6 @@ class authController extends Controller
 
     public function register()
     {
-        $role_id = filter_var($_POST['role'], FILTER_SANITIZE_NUMBER_INT);
         $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_STRING);
         $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_STRING);  
         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
@@ -24,9 +23,9 @@ class authController extends Controller
 
         $userModel = new User();
 
-        $userModel->saveUser($role_id, $firstname, $lastname, $email, $password);
-
+        $userModel->saveUser($firstname, $lastname, $email, $password);
         $userModel->getUsersRoles();
+
     }
 }
 ?>

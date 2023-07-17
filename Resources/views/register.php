@@ -36,11 +36,13 @@ function validateLastname($lastname)
 
 function validateFirstname($firstname)
 {
-    if(empty($firstname)) {
+    if(empty($firstname))
+     {
         return "The firstname is required";
     }
     $minLength = 2;
-    if(strlen($firstname) < $minLength) {
+    if(strlen($firstname) < $minLength) 
+    {
         return "The firstname must be at least $minLength characters long ";
     }
     return "";
@@ -88,11 +90,6 @@ $formSubmitted = ($_SERVER['REQUEST_METHOD'] === 'POST') && empty($lastnameError
         <label for="password">Confirm your password : </label>
         <input type="password" id="confirm_password" name="confirm_password" required>
         <br>
-        <label for="role">Choose your role</label>
-            <select name="role" id="role">
-                <option value="1">User</option>
-                <option value="2">Admin</option>
-            </select>
 
         <button type="submit" name="submit">Register</button>
     </form>

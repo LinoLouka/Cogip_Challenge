@@ -13,14 +13,16 @@ class User
         $this->bdd = connect::getconnectBdd();
     }
 
-    public function saveUser($role_id, $firstname, $lastname, $email, $password)
+    public function saveUser( $firstname, $lastname, $email, $password)
     {
             if($this->isEmailExists($email)) {
                 return false;
             }
 
-            $request = 'INSERT INTO users(role_id, first_name, last_name, email, password, created_at, updated_at)
-                     VALUES (:role_id, :firstname, :lastname, :email, :password, NOW(), NOW())';
+
+
+            $request = 'INSERT INTO users( first_name, last_name, email, password, created_at, updated_at)
+                     VALUES (:firstname, :lastname, :email, :password, NOW(), NOW())';
             $statement = $this->bdd->prepare($request);
 
             $firstname = filter_var($firstname, FILTER_SANITIZE_STRING);
@@ -28,7 +30,6 @@ class User
             $email = filter_var($email, FILTER_SANITIZE_EMAIL);
             $password = password_hash($password, PASSWORD_DEFAULT);
 
-            $statement->bindValue(':role_id', $role_id, \PDO::PARAM_INT);
             $statement->bindValue(':firstname', $firstname, \PDO::PARAM_STR);
             $statement->bindValue(':lastname', $lastname, \PDO::PARAM_STR);
             $statement->bindValue(':email', $email, \PDO::PARAM_STR);
