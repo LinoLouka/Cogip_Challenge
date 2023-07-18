@@ -1,3 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+
+</head>
+<body>
+<header>
+  <div class="dashboard__header">
+    <div class="dashboard__header__first__part">
+      <div class="dashboard__header__first__part__title">
+        <h1>Dashboard</h1>
+        <p>dashboard/</p>
+      </div>
+    </div>
+    <div class="dashboard-img__rectangle">
+      <img src="../public/assets/img/Rectangle 22.svg" alt="rectangle mauve dashboard">
+      <img src="../public/assets/img/img_dashboard.svg" alt="dashboard image">
+      <div class="dashboard__header__info__message">
+        <h2>Welcome back Henry!</h2>
+        <p>You can here add an invoice, a company and some contacts</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <main>
+        <section class="dashboard__sidebar">
+
+            <div class="dashboard__sidebar__burger"></div>
+
+            <div class="dashboard__sidebar__menu">
+                <img src="../public/assets/img/img_contact.svg">
+                <p>Prenom</p>
+                <p>Nom</p>
+                
+                <nav>
+                    <ul>
+                        <li><img src="../public/assets/img/Icon_dashboard.svg"><a href="" class="dashboard__sidebar__menu__dashboard">Dashboard</a></li>
+                        <li><img src="../public/assets/img/Icon_Invoices.svg"><a href="" class="dashboard__sidebar__menu__invoice">Invoices</a></li>
+                        <li><img src="../public/assets/img/Icon_Companies.svg"><a href="" class="dashboard__sidebar__menu__company">Companies</a></li>
+                        <li><img src="../public/assets/img/Icon_contact.svg"><a href="" class="dashboard__sidebar__menu__contact">Contacts</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <img>
+                    <a>Logout</a>
+                </div>
+            </div>
+
+        </section>
+        <article class="container__main">
+            <section class="dashboard__container__statistics">
+                <h3>Statistics</h3>
+            </section>
+
+            <section class="dashboard__container__invoices">
+                <h3>Last invoices</h3>
+                
+            </section>
+            <section class="dashboard__container__contacts">
+                <h3>Last contacts</h3>
+                
+            </section>
+
+            <section class="dashboard__container__company">
+                <h3>Last company</h3>
+                
+            </section>
+        </article>
+        
+            
+        
+    </main>
+ 
+ 
  <?php
 // if($_SERVER['REQUEST_METHOD'] === 'POST'){
 //     $contactSpam1 = $_POST['spam1'];
@@ -36,19 +116,11 @@
 //  $spam2 = $_POST['spam2'];
 //  $spam3 = $_POST['spam3'];
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!-- rajouter icone poubelle pour les boutons delete -->
 
 
-             
-<form method="POST" action="dashboard">
+
+
+        <form method="POST" action="dashboard">
 <table>
     <tr>
         <th>Name</th>
@@ -161,17 +233,6 @@ echo "<br>";
 
         <button type="submit" name="validationInvoice">Validation Invoice</button>
 </form>
-
-
-
-
-
-
-  
-
-
-
-
 </body>
 </html>
   <script>
