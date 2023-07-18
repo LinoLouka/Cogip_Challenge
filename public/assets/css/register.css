@@ -1,0 +1,47 @@
+html {
+  width: auto;
+  height: 100%;
+}
+html body {
+  background: linear-gradient(-45deg, #f9de4e, #efe400);
+  display: flex;
+  flex-direction: column;
+}
+html body form {
+  background-color: #f9de4e;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 900px) {
+  html body form {
+    padding: 50px;
+  }
+}
+html body form button {
+  background-color: #efe400;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+html body form button:hover {
+  background-color: #ffd700;
+  transform: scale(1.05);
+}
+html body form button:hover label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+html body form button:hover input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}/*# sourceMappingURL=register.css.map */
