@@ -59,7 +59,7 @@ $formSubmitted = ($_SERVER['REQUEST_METHOD'] === 'POST') && empty($lastnameError
         } ?></span>
         <br>
 
-        <button type="submit" name="submit">Register</button>
+        <button type="submit" name="submit">REGISTER</button>
         <?php if(isset($_POST['submit'])){
             echo $data['message'];
             echo $data['link'];
