@@ -79,6 +79,7 @@
  
  
  <?php
+ 
 // if($_SERVER['REQUEST_METHOD'] === 'POST'){
 //     $contactSpam1 = $_POST['spam1'];
 //     $contactName = $_POST['contactName'];
