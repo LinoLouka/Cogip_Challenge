@@ -38,28 +38,31 @@
         <h1>Dashboard</h1>
         <p>dashboard/</p>
         </div>
-    <div class="dashboard__head__img">
-      <img class="dashboard__head__img__rectangle" src="../public/assets/img/Rectangle 22.svg" alt="rectangle mauve dashboard">
-      <img class="dashboard__head__img__type" src="../public/assets/img/img_dashboard.svg" alt="dashboard image">
-      <div class="dashboard__head__info__message">
+
+    <div class="dashboard__head__info">
+        <div class="dashboard__head__info__user">
         <h2>Welcome back <?php echo $_SESSION['user_firstname']; ?>!</h2>
         <p>You can here add an invoice, a company and some contacts</p>
-      </div>
+        </div>
+        <img class="dashboard__head__info__img" src="../public/assets/img/img_dashboard.svg" alt="dashboard image">
     </div>
   </div>
 
 
 
-        <article class="container__main">
-            <section class="dashboard__container__statistics">
+        <article class="container">
+            <section class="container__statistics">
                 <h3>Statistics</h3>
-                <div class="dashboard__container__statistics__div__1"></div>
-                <div class="dashboard__container__statistics__div__2"></div>
-                <div class="dashboard__container__statistics__div__"></div>
+                <div class="container__statistics__divs">
+                <div class="container__statistics__divs__1">promis</div>
+                <div class="container__statistics__divs__2">y a des</div>
+                <div class="container__statistics__divs__3">trucs</div>
             </section>
 
-            <section class="dashboard__container__invoices">
+            <section class="container__invoices">
+                <div class="container__invoices__title">
                 <h3>Last invoices</h3>
+                </div>
                     <form method="POST" action="dashboard">
                     <table>
                         <tr>
@@ -79,10 +82,8 @@
                         <?php endforeach; ?>
                     </table>    
                     </form>
-                
-                
             </section>
-            <section class="dashboard__container__contacts">
+            <section class="container__contacts">
                 <h3>Last contacts</h3>
                     <form method="POST" action="dashboard">
                     <table>
@@ -103,7 +104,7 @@
                 
             </section>
 
-            <section class="dashboard__container__company">
+            <section class="container__company">
                 <h3>Last company</h3>
                     <form method="POST" action="dashboard">
                     <table>

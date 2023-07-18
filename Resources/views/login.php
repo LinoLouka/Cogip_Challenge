@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <main>
         <h1>Login</h1>
-            <form method="POST" action="/login">
+            <form method="POST">
                 <div class="email">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
