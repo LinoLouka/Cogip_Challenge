@@ -12,34 +12,55 @@ html body main {
 }
 @media (min-width: 900px) {
   html body main {
-    padding: 0 500px 0 500px;
+    padding: 0 100px 0 100px;
   }
 }
 html body main h1 {
-  text-transform: none;
-  font-size: 40px;
-  font-family: Tahoma, sans-serif;
-  margin: 20px 0 20px 0;
+  text-transform: uppercase;
+  font-size: 45px;
+  font-family: "Tahoma", sans-serif;
+  margin: 20px 0;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 html body main form {
   background-color: #f9de4e;
-  padding: 40px 20px 40px 20px;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
 }
 @media (min-width: 900px) {
   html body main form {
-    padding: 50px 80px 50px 80px;
+    padding: 50px;
   }
 }
 html body main form div {
-  display: flex;
-  flex-direction: column;
   margin-bottom: 20px;
 }
-html body main button {
-  background-color: #efe400;
-  border: black solid 1px;
+html body main form div label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
 }
-html body main button:hover {
-  background-color: whitesmoke;
+html body main form div input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+html body main form button {
+  background-color: #efe400;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+html body main form button:hover {
+  background-color: #ffd700;
+  transform: scale(1.05);
 }/*# sourceMappingURL=login.css.map */

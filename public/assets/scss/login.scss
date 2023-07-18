@@ -1,56 +1,76 @@
-html{
+
+
+html {
     width: auto;
     height: 100%;
-    
-    body{
-        background: linear-gradient(-45deg, #f9de4e, #efe400);
-        display: flex;
-        flex-direction: column;
-        main{
-            margin: 80px 30px 80px 30px;
-            @media  (min-width: 900px){
-                padding: 0 500px 0 500px;
-            }
-
-            h1{
-               
-                text-transform:none;
-                font-size: 40px;
-                font-family:Tahoma, sans-serif;
-                margin:20px 0 20px 0;
-            }
-
-            form{
-            background-color: #f9de4e;
-            padding: 40px 20px 40px 20px;
-    
-            @media (min-width:900px){
-                padding: 50px 80px 50px 80px;
-            }
-
-            div{
-
-                display: flex;
-                flex-direction: column;
-                margin-bottom: 20px;
-
-            }
-}
-
-            button{
-
-                background-color: #efe400;
-                border: black solid 1px;
-              
-                &:hover{
-                    background-color: whitesmoke;
-                    cursor: pointer;
-
-                }
-            }
+  
+    body {
+      background: linear-gradient(-45deg, #f9de4e, #efe400);
+      display: flex;
+      flex-direction: column;
+  
+      main {
+        margin: 80px 30px 80px 30px;
+  
+        @media (min-width: 900px) {
+          padding: 0 100px 0 100px;
         }
+  
+        h1 {
+          text-transform: uppercase;
+          font-size: 45px;
+          font-family: 'Tahoma', sans-serif;
+          margin: 20px 0;
+          color: #fff;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+  
+        form {
+          background-color: #f9de4e;
+          padding: 40px;
+          border-radius: 10px;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+          display: flex;
+          flex-direction: column;
+  
+          @media (min-width: 900px) {
+            padding: 50px;
+          }
+  
+          div {
+            margin-bottom: 20px;
+  
+            label {
+              font-weight: bold;
+              margin-bottom: 5px;
+              color: #333;
+            }
+  
+            input {
+              padding: 10px;
+              border: none;
+              border-radius: 5px;
+              box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            }
+          }
+  
+          button {
+            background-color: #efe400;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+  
+            &:hover {
+              background-color: #ffd700;
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
     }
-}
-        
-        
-    
+  }
+  
