@@ -32,6 +32,9 @@ class dashboardController extends Controller
     {
         $modelInvoices = new Invoices();
         if(isset($_POST['validationInvoice'])) {
+            if($invoiceSpam = $_POST['invoiceSpam']){
+                exit();
+            }
             $id_company = htmlspecialchars($_POST['invoiceNumber'],ENT_QUOTES, 'UTF-8');
             $name = htmlspecialchars($_POST['invoiceName'],ENT_QUOTES, 'UTF-8');
             $message = $modelInvoices->addInvoices($id_company, $name);
@@ -41,6 +44,9 @@ class dashboardController extends Controller
     {
         $modelCompanies = new Companies();
         if (isset($_POST['validationCompany'])) {
+            if($companySpam = $_POST['companySpam']){
+                exit();
+            }
             $name = htmlspecialchars($_POST['companyName'], ENT_QUOTES, 'UTF-8');
             $type = htmlspecialchars($_POST['companyType'], ENT_QUOTES, 'UTF-8');
             $country = htmlspecialchars($_POST['companyCountry'],ENT_QUOTES, 'UTF-8');
@@ -53,6 +59,9 @@ class dashboardController extends Controller
     {
         $modelContacts = new Contacts();
         if(isset($_POST['validationContact'])) {
+          if($contactSpam = $_POST['contactSpam']){
+            exit();
+          }
             $name = htmlspecialchars($_POST['contactName'], ENT_QUOTES, 'UTF-8');
             $phone = htmlspecialchars($_POST['contactPhone'], ENT_QUOTES, 'UTF-8');
             $email = filter_var($_POST['contactMail'], FILTER_SANITIZE_EMAIL);
@@ -64,8 +73,10 @@ class dashboardController extends Controller
     {
         if (isset($_POST['editInvoice'])) {
             $id = $_POST['editInvoice'];
-            $id_company = htmlspecialchars($_POST['id_company'][$id], ENT_QUOTES, 'UTF-8') ?? null;
-            $name = htmlspecialchars($_POST['invoiceName'][$id], ENT_QUOTES, 'UTF-8') ?? null;
+            $id_comp = $_POST['id_company'] ?? null;
+            $nam = $_POST['invoiceName'] ?? null;
+            $id_company = $id_comp ? htmlspecialchars($id_comp[$id], ENT_QUOTES, 'UTF-8') : null;
+            $name = $nam ? htmlspecialchars($nam[$id], ENT_QUOTES, 'UTF-8') : null;
             if ($id_company== null && $name==null ){
                 return;
             }
@@ -77,9 +88,11 @@ class dashboardController extends Controller
     {
         if (isset($_POST['editContact'])) {
             $id = $_POST['editContact'];
-            
-            $name = htmlspecialchars($_POST['contactName'][$id],ENT_QUOTES, 'UTF-8') ?? null;
-            $contactPhone = htmlspecialchars($_POST['contactPhone'][$id],ENT_QUOTES, 'UTF-8') ?? null;
+            $nam = $_POST['contactName'] ?? null;
+            $contactPhon = $_POST['contactPhone'] ?? null;
+
+            $name = $nam ?  htmlspecialchars($nam[$id],ENT_QUOTES, 'UTF-8') : null;
+            $contactPhone = $contactPhon ? htmlspecialchars($contactPhon[$id],ENT_QUOTES, 'UTF-8') : null;
 
             if($name == null && $contactPhone == null) {
                 return;
@@ -92,7 +105,8 @@ class dashboardController extends Controller
     {
         if (isset($_POST['editCompany'])) {
             $id = $_POST['editCompany'];
-            $name = htmlspecialchars($_POST['companyName'][$id], ENT_QUOTES, 'UTF-8') ?? null;
+            $nam = $_POST['companyName'];
+            $name = $nam ? htmlspecialchars($nam[$id], ENT_QUOTES, 'UTF-8') : null;
 
             if ($name == null) {
                 return;
