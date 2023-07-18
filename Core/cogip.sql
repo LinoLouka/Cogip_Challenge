@@ -1,10 +1,9 @@
-
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 10 juil. 2023 à 16:31
+-- Généré le : mar. 18 juil. 2023 à 13:01
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -95,35 +94,36 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `name`, `company_id`, `email`, `phone`, `created_at`, `updated_at`) VALUES
-(1, 'John', 12345, 'john@example.com', '123-456-7890', '2023-07-05', '2023-07-05'),
-(2, 'Jane', 67890, 'jane@example.com', '987-654-3210', '2023-07-05', '2023-07-05'),
-(3, 'Mark', 54321, 'mark@example.com', '555-123-4567', '2023-07-05', '2023-07-05'),
-(4, 'Amy', 98765, 'amy@example.com', '999-888-7777', '2023-07-05', '2023-07-05'),
-(5, 'Peter', 23456, 'peter@example.com', '111-222-3333', '2023-07-05', '2023-07-05'),
-(6, 'Sarah', 87654, 'sarah@example.com', '444-555-6666', '2023-07-05', '2023-07-05'),
-(7, 'Michael', 76543, 'michael@example.com', '777-888-9999', '2023-07-05', '2023-07-05'),
-(8, 'Emily', 43210, 'emily@example.com', '222-333-4444', '2023-07-05', '2023-07-05'),
-(9, 'David', 34567, 'david@example.com', '666-777-8888', '2023-07-05', '2023-07-05'),
-(10, 'Lisa', 87654, 'lisa@example.com', '999-000-1111', '2023-07-05', '2023-07-05'),
-(11, 'Robert', 24680, 'robert@example.com', '111-222-3333', '2023-07-06', '2023-07-06'),
-(12, 'Sophia', 13579, 'sophia@example.com', '999-888-7777', '2023-07-06', '2023-07-06'),
-(13, 'William', 86420, 'william@example.com', '555-123-4567', '2023-07-06', '2023-07-06'),
-(14, 'Olivia', 97531, 'olivia@example.com', '123-456-7890', '2023-07-06', '2023-07-06'),
-(15, 'James', 76890, 'james@example.com', '987-654-3210', '2023-07-06', '2023-07-06'),
-(16, 'Emma', 43210, 'emma@example.com', '222-333-4444', '2023-07-06', '2023-07-06'),
-(17, 'Alexander', 21975, 'alexander@example.com', '777-888-9999', '2023-07-06', '2023-07-06'),
-(18, 'Isabella', 67812, 'isabella@example.com', '666-777-8888', '2023-07-06', '2023-07-06'),
-(19, 'Daniel', 56789, 'daniel@example.com', '999-000-1111', '2023-07-06', '2023-07-06'),
-(20, 'Oliver', 98765, 'oliver@example.com', '111-222-3333', '2023-07-06', '2023-07-06'),
-(21, 'Mia', 87654, 'mia@example.com', '999-888-7777', '2023-07-06', '2023-07-06'),
-(22, 'Ethan', 76543, 'ethan@example.com', '555-123-4567', '2023-07-06', '2023-07-06'),
-(23, 'Ava', 65432, 'ava@example.com', '123-456-7890', '2023-07-06', '2023-07-06'),
-(24, 'Noah', 54321, 'noah@example.com', '987-654-3210', '2023-07-06', '2023-07-06'),
-(25, 'Charlotte', 43210, 'charlotte@example.com', '222-333-4444', '2023-07-06', '2023-07-06'),
-(26, 'Liam', 32109, 'liam@example.com', '777-888-9999', '2023-07-06', '2023-07-06'),
-(27, 'Sophie', 21098, 'sophie@example.com', '666-777-8888', '2023-07-06', '2023-07-06'),
-(28, 'Benjamin', 10987, 'benjamin@example.com', '999-000-1111', '2023-07-06', '2023-07-06'),
-(29, 'Harper', 98765, 'harper@example.com', '111-222-3333', '2023-07-06', '2023-07-06');
+(1, 'John', 1, 'john@example.com', '123-456-7890', '2023-07-05', '2023-07-05'),
+(2, 'Jane', 2, 'jane@example.com', '987-654-3210', '2023-07-05', '2023-07-05'),
+(3, 'Mark', 3, 'mark@example.com', '555-123-4567', '2023-07-05', '2023-07-05'),
+(4, 'Amy', 4, 'amy@example.com', '999-888-7777', '2023-07-05', '2023-07-05'),
+(5, 'Peter', 5, 'peter@example.com', '111-222-3333', '2023-07-05', '2023-07-05'),
+(6, 'Sarah', 6, 'sarah@example.com', '444-555-6666', '2023-07-05', '2023-07-05'),
+(7, 'Michael', 7, 'michael@example.com', '777-888-9999', '2023-07-05', '2023-07-05'),
+(8, 'Emily', 8, 'emily@example.com', '222-333-4444', '2023-07-05', '2023-07-05'),
+(9, 'David', 9, 'david@example.com', '666-777-8888', '2023-07-05', '2023-07-05'),
+(10, 'Lisa', 10, 'lisa@example.com', '999-000-1111', '2023-07-05', '2023-07-05'),
+(11, 'Robert', 11, 'robert@example.com', '111-222-3333', '2023-07-06', '2023-07-06'),
+(12, 'Sophia', 12, 'sophia@example.com', '999-888-7777', '2023-07-06', '2023-07-06'),
+(13, 'William', 13, 'william@example.com', '555-123-4567', '2023-07-06', '2023-07-06'),
+(14, 'Olivia', 14, 'olivia@example.com', '123-456-7890', '2023-07-06', '2023-07-06'),
+(15, 'James', 15, 'james@example.com', '987-654-3210', '2023-07-06', '2023-07-06'),
+(16, 'Emma', 16, 'emma@example.com', '222-333-4444', '2023-07-06', '2023-07-06'),
+(17, 'Alexander', 17, 'alexander@example.com', '777-888-9999', '2023-07-06', '2023-07-06'),
+(18, 'Isabella', 18, 'isabella@example.com', '666-777-8888', '2023-07-06', '2023-07-06'),
+(19, 'Daniel', 19, 'daniel@example.com', '999-000-1111', '2023-07-06', '2023-07-06'),
+(20, 'Oliver', 20, 'oliver@example.com', '111-222-3333', '2023-07-06', '2023-07-06'),
+(21, 'Mia', 21, 'mia@example.com', '999-888-7777', '2023-07-06', '2023-07-06'),
+(22, 'Ethan', 22, 'ethan@example.com', '555-123-4567', '2023-07-06', '2023-07-06'),
+(23, 'Ava', 23, 'ava@example.com', '123-456-7890', '2023-07-06', '2023-07-06'),
+(24, 'Noah', 24, 'noah@example.com', '987-654-3210', '2023-07-06', '2023-07-06'),
+(25, 'Charlotte', 25, 'charlotte@example.com', '222-333-4444', '2023-07-06', '2023-07-06'),
+(26, 'Liam', 26, 'liam@example.com', '777-888-9999', '2023-07-06', '2023-07-06'),
+(27, 'Sophie', 27, 'sophie@example.com', '666-777-8888', '2023-07-06', '2023-07-06'),
+(28, 'Benjamin', 28, 'benjamin@example.com', '999-000-1111', '2023-07-06', '2023-07-06'),
+(29, 'Harper', 29, 'harper@example.com', '111-222-3333', '2023-07-06', '2023-07-06'),
+(30, 'Jocelyne', 30, 'jocelyne@example.com', '121-232-3433', '2023-07-06', '2023-07-06');
 
 -- --------------------------------------------------------
 
@@ -136,7 +136,7 @@ CREATE TABLE `invoices` (
   `id_company` int(11) NOT NULL,
   `created_at` date DEFAULT NULL,
   `updated_at` date DEFAULT NULL,
-  `name` VARCHAR(50) NOT NULL
+  `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -144,36 +144,36 @@ CREATE TABLE `invoices` (
 --
 
 INSERT INTO `invoices` (`id`, `id_company`, `created_at`, `updated_at`, `name`) VALUES
-(1, 101, '2023-06-01', '2023-06-02', 'Société A'),
-(2, 102, '2023-06-02', '2023-06-03', 'Société B'),
-(3, 103, '2023-06-03', '2023-06-04', 'Société C'),
-(4, 101, '2023-06-04', '2023-06-05', 'Société A'),
-(5, 104, '2023-06-05', '2023-06-06', 'Société D'),
-(6, 105, '2023-06-06', '2023-06-07', 'Société E'),
-(7, 102, '2023-06-07', '2023-06-08', 'Société B'),
-(8, 103, '2023-06-08', '2023-06-09', 'Société C'),
-(9, 105, '2023-06-09', '2023-06-10', 'Société E'),
-(10, 104, '2023-06-10', '2023-06-11', 'Société D'),
-(11, 101, '2023-06-11', '2023-06-12', 'Société A'),
-(12, 102, '2023-06-12', '2023-06-13', 'Société B'),
-(13, 103, '2023-06-13', '2023-06-14', 'Société C'),
-(14, 101, '2023-06-14', '2023-06-15', 'Société A'),
-(15, 104, '2023-06-15', '2023-06-16', 'Société D'),
-(16, 105, '2023-06-16', '2023-06-17', 'Société E'),
-(17, 102, '2023-06-17', '2023-06-18', 'Société B'),
-(18, 103, '2023-06-18', '2023-06-19', 'Société C'),
-(19, 105, '2023-06-19', '2023-06-20', 'Société E'),
-(20, 104, '2023-06-20', '2023-06-21', 'Société D'),
-(21, 101, '2023-06-21', '2023-06-22', 'Société A'),
-(22, 102, '2023-06-22', '2023-06-23', 'Société B'),
-(23, 103, '2023-06-23', '2023-06-24', 'Société C'),
-(24, 101, '2023-06-24', '2023-06-25', 'Société A'),
-(25, 104, '2023-06-25', '2023-06-26', 'Société D'),
-(26, 105, '2023-06-26', '2023-06-27', 'Société E'),
-(27, 102, '2023-06-27', '2023-06-28', 'Société B'),
-(28, 103, '2023-06-28', '2023-06-29', 'Société C'),
-(29, 105, '2023-06-29', '2023-06-30', 'Société E'),
-(30, 104, '2023-06-30', '2023-07-01', 'Société D');
+(1, 1, '2023-06-01', '2023-06-02', 'INV20230001'),
+(2, 2, '2023-06-02', '2023-06-03', 'INV20230002'),
+(3, 3, '2023-06-03', '2023-06-04', 'INV20230003'),
+(4, 1, '2023-06-04', '2023-06-05', 'INV20230004'),
+(5, 3, '2023-06-05', '2023-06-06', 'INV20230005'),
+(6, 1, '2023-06-06', '2023-06-07', 'INV20230006'),
+(7, 2, '2023-06-07', '2023-06-08', 'INV20230007'),
+(8, 3, '2023-06-08', '2023-06-09', 'INV20230008'),
+(9, 3, '2023-06-09', '2023-06-10', 'INV20230009'),
+(10, 2, '2023-06-10', '2023-06-11', 'INV20230010'),
+(11, 1, '2023-06-11', '2023-06-12', 'INV20230011'),
+(12, 2, '2023-06-12', '2023-06-13', 'INV20230012'),
+(13, 3, '2023-06-13', '2023-06-14', 'INV20230013'),
+(14, 1, '2023-06-14', '2023-06-15', 'INV20230014'),
+(15, 3, '2023-06-15', '2023-06-16', 'INV20230015'),
+(16, 3, '2023-06-16', '2023-06-17', 'INV20230016'),
+(17, 2, '2023-06-17', '2023-06-18', 'INV20230017'),
+(18, 3, '2023-06-18', '2023-06-19', 'INV20230018'),
+(19, 2, '2023-06-19', '2023-06-20', 'INV20230019'),
+(20, 3, '2023-06-20', '2023-06-21', 'INV20230020'),
+(21, 1, '2023-06-21', '2023-06-22', 'INV20230021'),
+(22, 2, '2023-06-22', '2023-06-23', 'INV20230022'),
+(23, 3, '2023-06-23', '2023-06-24', 'INV20230023'),
+(24, 1, '2023-06-24', '2023-06-25', 'INV20230024'),
+(25, 3, '2023-06-25', '2023-06-26', 'INV20230025'),
+(26, 1, '2023-06-26', '2023-06-27', 'INV20230026'),
+(27, 2, '2023-06-27', '2023-06-28', 'INV20230027'),
+(28, 3, '2023-06-28', '2023-06-29', 'INV20230028'),
+(29, 3, '2023-06-29', '2023-06-30', 'INV20230029'),
+(30, 2, '2023-06-30', '2023-07-01', 'INV20230030');
 
 
 -- --------------------------------------------------------
@@ -189,6 +189,14 @@ CREATE TABLE `permission` (
   `updated_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `permission`
+--
+
+INSERT INTO `permission` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'Permission1', '2023-07-10', '2023-07-10'),
+(2, 'Permission2', '2023-07-10', '2023-07-10');
+
 -- --------------------------------------------------------
 
 --
@@ -199,23 +207,16 @@ CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL DEFAULT 'user',
   `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `updated_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- A rajouter dans myphpadmin pour mettre à jour la table role
--- vu qu'elle a une contrainte
+--
+-- Déchargement des données de la table `roles`
+--
 
--- ALTER TABLE `roles`
--- ALTER COLUMN `name` SET DEFAULT 'user';
-
--- et ensuite : 
-
--- INSERT INTO roles (id, name, created_at, updated_at) VALUES
--- (1, 'user', NOW(), NOW()),
--- (2, 'admin', NOW(), NOW());
-
-
+INSERT INTO `roles` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'user', '2023-07-10', '2023-07-10'),
+(2, 'admin', '2023-07-10', '2023-07-10');
 
 -- --------------------------------------------------------
 
@@ -229,6 +230,14 @@ CREATE TABLE `roles_permission` (
   `permission_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `roles_permission`
+--
+
+INSERT INTO `roles_permission` (`id`, `role_id`, `permission_id`) VALUES
+(1, 1, 1),
+(2, 2, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -241,6 +250,14 @@ CREATE TABLE `types` (
   `created_at` date NOT NULL,
   `updated_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `types`
+--
+
+INSERT INTO `types` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'Type1', '2023-07-10', '2023-07-10'),
+(2, 'Type2', '2023-07-10', '2023-07-10');
 
 -- --------------------------------------------------------
 
@@ -258,6 +275,14 @@ CREATE TABLE `users` (
   `created_at` date DEFAULT NULL,
   `updated_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `role_id`, `first_name`, `last_name`, `email`, `password`, `created_at`, `updated_at`) VALUES
+(1, 1, 'John', 'Doe', 'john@example.com', 'password1', '2023-07-10', '2023-07-10'),
+(2, 2, 'Jane', 'Smith', 'jane@example.com', 'password2', '2023-07-10', '2023-07-10');
 
 --
 -- Index pour les tables déchargées
@@ -328,7 +353,7 @@ ALTER TABLE `companies`
 -- AUTO_INCREMENT pour la table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT pour la table `invoices`
@@ -340,31 +365,31 @@ ALTER TABLE `invoices`
 -- AUTO_INCREMENT pour la table `permission`
 --
 ALTER TABLE `permission`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `roles_permission`
 --
 ALTER TABLE `roles_permission`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `types`
 --
 ALTER TABLE `types`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Contraintes pour les tables déchargées
@@ -387,4 +412,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-

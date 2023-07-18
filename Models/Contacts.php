@@ -38,21 +38,22 @@ class Contacts
 
     public function Id($id)
     {
-        // $request = "SELECT contacts.id, contacts.name, contacts.email, companies.name AS company_name 
-        //       FROM contacts
-        //       LEFT JOIN companies ON contacts.company_id = companies.id
-        //       WHERE contacts.id = :id";
-        // $statement = $this->bdd->prepare($request);
-        // $statement->bindValue(':id', $id, \PDO::PARAM_INT);
-        // $statement->execute();
+        $request = "SELECT contacts.name AS contact_name, companies.name AS company_name
+        FROM contacts
+        JOIN companies ON contacts.company_id = companies.id";
 
-        // return $contacts = $statement->fetch(\PDO::FETCH_ASSOC);
-         $request = 'SELECT * FROM contacts WHERE id = :id';
         $statement = $this->bdd->prepare($request);
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
 
         return $contacts = $statement->fetch(\PDO::FETCH_ASSOC);
+        
+        //  $request = 'SELECT * FROM contacts WHERE id = :id';
+        // $statement = $this->bdd->prepare($request);
+        // $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        // $statement->execute();
+
+        // return $contacts = $statement->fetch(\PDO::FETCH_ASSOC);
     }
 
     public function getContactsWithPagination($startIndex, $perPage)
