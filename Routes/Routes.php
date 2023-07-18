@@ -10,6 +10,7 @@ use App\Controllers\ControllersCompanies;
 use App\Controllers\dashboardController;
 use App\Controllers\authController;
 use App\Controllers\loginController;
+use App\Controllers\logoutController;
 
 
 $router = new Router();
@@ -44,7 +45,9 @@ $router->get('/invoices/{id}', function($id) {
 
 $router->get('/dashboard', function() {
     (new dashboardController)->index();
-    
+});
+$router->get('/logout', function(){
+    (new logoutController)->logout();
 });
 
 $router->post('/dashboard', function() {

@@ -45,8 +45,7 @@ class loginController extends Controller
         ];
 
         
-
-        return $this->view('login', $data);
+        header('location: home');
         exit();
     } else  {
         return $this->view('login');

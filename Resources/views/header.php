@@ -1,17 +1,33 @@
 <header>
     <nav class="nav-bar">
         <h1>COGIP</h1>
-        <?php ?>
         <div class="nav-bar__link">
             <a type="button" href="home">Home</a>
             <a type="button" href="invoices">Invoices</a>
             <a type="button" href="companies">Companies</a>
             <a type="button" href="contacts">Contacts</a>
         </div>
-        <div class="nav-bar__btn">
-            <button type="submit"  class="nav-bar__btn--sign">Sign Up</button>
-            <a type="button" href="dashboard" class="nav-bar__btn--login">Login</a>
-        </div>
+        <!-- <div class="nav-bar__btn"> -->
+            <?php session_start();
+        if ($_SESSION){
+            if($_SESSION['user_role'] == 'user'){
+                echo '<div class="nav-bar__btn">';
+                echo '<a type="submit" href="logout" class="nav-bar__btn--sign" name="logout">Logout</a>';
+                echo '</div>';
+            }
+            if($_SESSION['user_role'] == 'admin'){
+                echo '<div class="nav-bar__btn">';
+                echo '<a type="submit" href="logout" class="nav-bar__btn--sign">Logout</a>';
+                echo '<a type="submit" href="dashboard"  class="nav-bar__btn--login" name="dashboard">dashboard</a>';
+                echo '</div>';
+            }
+        }
+        else {        echo '<div class="nav-bar__btn">';
+                echo '<a type="submit" href="register" class="nav-bar__btn--sign">Sign Up</a>';
+                echo '<a type="button" href="login" class="nav-bar__btn--login">Login</a>';
+                echo '</div>';
+        }
+?>
     </nav>
     <div class="header-title-img">
         <div class="header__title">
