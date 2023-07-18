@@ -32,6 +32,8 @@ class loginController extends Controller
         $link = '<a href="home">return to menu</a>';
         $_SESSION['user_id'] = $User['id'];
         $_SESSION['user_role'] = $User['role_name'];
+        $_SESSION['user_firstname'] = $User['first_name'];
+        $_SESSION['user_lastname'] = $User['last_name'];
         $data = [
             'id' => $User['id'],
             'firstname' => $User['first_name'],

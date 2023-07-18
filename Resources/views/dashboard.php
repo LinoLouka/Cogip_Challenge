@@ -3,188 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
-
+<?php session_start();?>
 </head>
 <body>
-<header>
-  <div class="dashboard__header">
-    <div class="dashboard__header__first__part">
-      <div class="dashboard__header__first__part__title">
+<header class="header__side">
+    <div class="header__side__header">
+        <img class="header__side__header__img" src="../public/assets/img/img_contact.svg">
+        <p><?php echo  $_SESSION['user_firstname']; ?></p>
+        <p class="header__side__header__p"><?php echo  $_SESSION['user_lastname']; ?></p>
+    </div>
+    <section class="dashboard__side">
+        <div class="dashboard__side__nav">        
+                <nav>
+                    <ul>
+                        <li class="dashboard__side__nav__dashboard"><img src="../public/assets/img/Icon_dashboard.svg"><a href="" >Dashboard</a></li>
+                        <li class="dashboard__side__nav__invoice"><img src="../public/assets/img/Icon_Invoices.svg"><a href="" >Invoices</a></li>
+                        <li class="dashboard__side__nav__company"><img src="../public/assets/img/Icon_Companies.svg"><a href="" >Companies</a></li>
+                        <li class="dashboard__side__nav__contact"><img src="../public/assets/img/Icon_contact.svg"><a href="" >Contacts</a></li>
+                    </ul>
+                </nav>
+    </div>
+    <div class="dashboard__side__logout">
+            <img src="../public/assets/img/img_contact.svg">
+            <a href="">Logout</a>
+    </div>
+    </section>
+</header>
+<main>
+    <div class="dashboard__head">
+      <div class="dashboard__head__title">
         <h1>Dashboard</h1>
         <p>dashboard/</p>
-      </div>
-    </div>
-    <div class="dashboard-img__rectangle">
-      <img src="../public/assets/img/Rectangle 22.svg" alt="rectangle mauve dashboard">
-      <img src="../public/assets/img/img_dashboard.svg" alt="dashboard image">
-      <div class="dashboard__header__info__message">
-        <h2>Welcome back Henry!</h2>
+        </div>
+    <div class="dashboard__head__img">
+      <img class="dashboard__head__img__rectangle" src="../public/assets/img/Rectangle 22.svg" alt="rectangle mauve dashboard">
+      <img class="dashboard__head__img__type" src="../public/assets/img/img_dashboard.svg" alt="dashboard image">
+      <div class="dashboard__head__info__message">
+        <h2>Welcome back <?php echo $_SESSION['user_firstname']; ?>!</h2>
         <p>You can here add an invoice, a company and some contacts</p>
       </div>
     </div>
   </div>
-</header>
 
-    <main>
-        <section class="dashboard__sidebar">
 
-            <div class="dashboard__sidebar__burger"></div>
 
-            <div class="dashboard__sidebar__menu">
-                <img src="../public/assets/img/img_contact.svg">
-                <p>Prenom</p>
-                <p>Nom</p>
-                
-                <nav>
-                    <ul>
-                        <li><img src="../public/assets/img/Icon_dashboard.svg"><a href="" class="dashboard__sidebar__menu__dashboard">Dashboard</a></li>
-                        <li><img src="../public/assets/img/Icon_Invoices.svg"><a href="" class="dashboard__sidebar__menu__invoice">Invoices</a></li>
-                        <li><img src="../public/assets/img/Icon_Companies.svg"><a href="" class="dashboard__sidebar__menu__company">Companies</a></li>
-                        <li><img src="../public/assets/img/Icon_contact.svg"><a href="" class="dashboard__sidebar__menu__contact">Contacts</a></li>
-                    </ul>
-                </nav>
-                <div>
-                    <img>
-                    <a>Logout</a>
-                </div>
-            </div>
-
-        </section>
         <article class="container__main">
             <section class="dashboard__container__statistics">
                 <h3>Statistics</h3>
+                <div class="dashboard__container__statistics__div__1"></div>
+                <div class="dashboard__container__statistics__div__2"></div>
+                <div class="dashboard__container__statistics__div__"></div>
             </section>
 
             <section class="dashboard__container__invoices">
                 <h3>Last invoices</h3>
+                    <form method="POST" action="dashboard">
+                    <table>
+                        <tr>
+                            <th>Invoice number</th>
+                            <th>Dates due</th>
+                            <th>Name</th>
+                        </tr>
+                        <?php foreach ($invoices as $invoice): ?>
+
+                            <tr onclick='SaveBtnInvoice(this, "<?php echo $invoice["id"] ?>")'>
+                            
+                                <td onclick='InvoiceIdCompany(this, "<?php echo $invoice["id"] ?>")' ><?php echo $invoice['id_company']; ?></td>
+                                <td><?php echo $invoice['created_at']; ?></td>
+                                <td onclick='InvoiceName(this, "<?php echo $invoice["id"] ?>")'><?php echo $invoice['name']; ?></td>
+
+                            </tr>
+                        <?php endforeach; ?>
+                    </table>    
+                    </form>
+                
                 
             </section>
             <section class="dashboard__container__contacts">
                 <h3>Last contacts</h3>
+                    <form method="POST" action="dashboard">
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Mail</th>
+                        </tr>
+                        <?php foreach ($contacts as $contact):  ?>
+                        <tr onclick='SaveBtnContact(this, "<?php echo $contact["id"] ?>")'>     
+                            <td onclick='ContactName(this, "<?php echo $contact["id"] ?>")' ><?php echo $contact['name']; ?></td>
+                            <td onclick='ContactPhone(this, "<?php echo $contact["id"] ?>")' ><?php echo $contact['phone']; ?></td>
+                            <td><?php echo $contact['email']; ?></td>
+                        </tr>           
+                        <?php endforeach; ?>
+                    </table>
+                    </form>
                 
             </section>
 
             <section class="dashboard__container__company">
                 <h3>Last company</h3>
+                    <form method="POST" action="dashboard">
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>TVA</th>   
+                            <th>Country</th>
+                        </tr>
+                        <?php foreach ($companies as $company):  ?>
+
+                        <tr onclick='SaveBtnCompany(this, "<?php echo $company["id"] ?>")'>  
+                            
+                            <td onclick='CompanyName(this, "<?php echo $company["id"] ?>")' ><?php echo $company['name']; ?></td>
+                            <td><?php echo $company['tva']; ?></td>
+                            <td><?php echo $company['country']; ?></td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
+                    </form>        
                 
             </section>
         </article>
-        
-            
-        
-    </main>
- 
- 
- <?php
- 
-// if($_SERVER['REQUEST_METHOD'] === 'POST'){
-//     $contactSpam1 = $_POST['spam1'];
-//     $contactName = $_POST['contactName'];
-//     $contactPhone = $_POST['contactPhone'];
-//     $contactMail = $_POST['contactMail'];
-//     $contactCompanyId = $_POST['contactCompanyId'];
-//     $sanitizedContactName = htmlspecialchars($contactName, ENT_QUOTES, 'UTF-8');
-//     $sanitizedContactPhone = htmlspecialchars($contactPhone, ENT_QUOTES, 'UTF-8');
-//     $sanitizedContactMail = htmlspecialchars($contactMail, FILTER_SANITIZE_MAIL);
-//     $sanitizedContactCompanyId = htmlspecialchars($contactCompanyId, ENT_QUOTES, 'UTF-8');
-//     $check = true;
-
-//     if($contactSpam1){
-//         exit();
-//     }
-//     if ($sanitizedContactCompanyId !== $contactCompanyId){
-//         $check = false;
-//     }
-//     if($sanitizedContactMail !== $contactMail){
-//         $check = false;
-//     }
-//     if($sanitizedContactName !== $contactName)
-//     {
-//         $check = false;
-//     }
-//     if($sanitizedContactPhone !== $contactPhone){
-//         $check = false;
-//     }
-//     if ($check == false){
-//         echo 'please, remove the specialcharacters from your inputs';
-//     }
-
-
-// }
-//  $spam2 = $_POST['spam2'];
-//  $spam3 = $_POST['spam3'];
-?>
-
-
-
-
-        <form method="POST" action="dashboard">
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Phone</th>
-        <th>Mail</th>
-    </tr>
-    <?php foreach ($contacts as $contact):  ?>
-    <tr onclick='SaveBtnContact(this, "<?php echo $contact["id"] ?>")'>     
-        <td onclick='ContactName(this, "<?php echo $contact["id"] ?>")' ><?php echo $contact['name']; ?></td>
-        <td onclick='ContactPhone(this, "<?php echo $contact["id"] ?>")' ><?php echo $contact['phone']; ?></td>
-        <td><?php echo $contact['email']; ?></td>
-    </tr>           
-    <?php endforeach; ?>
-</table>
-</form>
-                   
-<form method="POST" action="dashboard">
-<table>
-    <tr>
-        <th>Name</th>
-        <th>TVA</th>   
-        <th>Country</th>
-    </tr>
-    <?php foreach ($companies as $company):  ?>
-
-    <tr onclick='SaveBtnCompany(this, "<?php echo $company["id"] ?>")'>  
-        
-        <td onclick='CompanyName(this, "<?php echo $company["id"] ?>")' ><?php echo $company['name']; ?></td>
-        <td><?php echo $company['tva']; ?></td>
-        <td><?php echo $company['country']; ?></td>
-    </tr>
-    <?php endforeach; ?>
-</table>
-</form>                 
-                    
-                   
-<form method="POST" action="dashboard">
-<table>
-    <tr>
-        <th>Invoice number</th>
-        <th>Dates due</th>
-        <th>Name</th>
-    </tr>
-    <?php foreach ($invoices as $invoice): ?>
-
-        <tr onclick='SaveBtnInvoice(this, "<?php echo $invoice["id"] ?>")'>
-          
-            <td onclick='InvoiceIdCompany(this, "<?php echo $invoice["id"] ?>")' ><?php echo $invoice['id_company']; ?></td>
-            <td><?php echo $invoice['created_at']; ?></td>
-            <td onclick='InvoiceName(this, "<?php echo $invoice["id"] ?>")'><?php echo $invoice['name']; ?></td>
-
-        </tr>
-    <?php endforeach; ?>
-</table>    
-</form>
-
-
-
-<?php
-echo "<br>";
-echo "<br>";
-echo "<br>";
-?>
+        <section>
 <!-- mettre dans une autre section -->
         <!-- fonction add Contacts -->
 <form method="POST" action="dashboard">
@@ -200,13 +142,14 @@ echo "<br>";
 
     <button type="submit" name="validationContact">Validation contact</button>
 </form>
+</section>
 <?php
 echo "<br>";
 echo "<br>";
 echo "<br>";
 ?>
 
-
+<section>
     <!-- mettre dans une autre section -->
         <!-- fonction add Companies -->
 <form method="POST" action="dashboard">
@@ -222,7 +165,8 @@ echo "<br>";
 
         <button type="submit" name="validationCompany">Validation Company</button>
 </form>
-
+</section>
+<section>
     <!-- mettre dans une section -->
     <!-- fonction add invoices -->
 <form method="POST" action="dashboard">
@@ -234,6 +178,7 @@ echo "<br>";
 
         <button type="submit" name="validationInvoice">Validation Invoice</button>
 </form>
+</section>
 </body>
 </html>
   <script>
@@ -375,3 +320,67 @@ function ContactPhone(cell, id){
     });
 }
 </script>
+
+        
+            
+        
+</main>
+ 
+ 
+ <?php
+ 
+// if($_SERVER['REQUEST_METHOD'] === 'POST'){
+//     $contactSpam1 = $_POST['spam1'];
+//     $contactName = $_POST['contactName'];
+//     $contactPhone = $_POST['contactPhone'];
+//     $contactMail = $_POST['contactMail'];
+//     $contactCompanyId = $_POST['contactCompanyId'];
+//     $sanitizedContactName = htmlspecialchars($contactName, ENT_QUOTES, 'UTF-8');
+//     $sanitizedContactPhone = htmlspecialchars($contactPhone, ENT_QUOTES, 'UTF-8');
+//     $sanitizedContactMail = htmlspecialchars($contactMail, FILTER_SANITIZE_MAIL);
+//     $sanitizedContactCompanyId = htmlspecialchars($contactCompanyId, ENT_QUOTES, 'UTF-8');
+//     $check = true;
+
+//     if($contactSpam1){
+//         exit();
+//     }
+//     if ($sanitizedContactCompanyId !== $contactCompanyId){
+//         $check = false;
+//     }
+//     if($sanitizedContactMail !== $contactMail){
+//         $check = false;
+//     }
+//     if($sanitizedContactName !== $contactName)
+//     {
+//         $check = false;
+//     }
+//     if($sanitizedContactPhone !== $contactPhone){
+//         $check = false;
+//     }
+//     if ($check == false){
+//         echo 'please, remove the specialcharacters from your inputs';
+//     }
+
+
+// }
+//  $spam2 = $_POST['spam2'];
+//  $spam3 = $_POST['spam3'];
+?>
+
+
+
+
+ 
+                   
+         
+                    
+                   
+
+
+
+
+<?php
+echo "<br>";
+echo "<br>";
+echo "<br>";
+?>
