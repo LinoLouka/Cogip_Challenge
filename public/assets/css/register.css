@@ -34,12 +34,12 @@ html body form button:hover {
   background-color: #ffd700;
   transform: scale(1.05);
 }
-html body form button:hover label {
+html body form label {
   font-weight: bold;
   margin-bottom: 5px;
   color: #333;
 }
-html body form button:hover input {
+html body form input {
   padding: 10px;
   border: none;
   border-radius: 5px;
