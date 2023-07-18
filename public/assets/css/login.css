@@ -1,0 +1,45 @@
+html {
+  width: auto;
+  height: 100%;
+}
+html body {
+  background: linear-gradient(-45deg, #f9de4e, #efe400);
+  display: flex;
+  flex-direction: column;
+}
+html body main {
+  margin: 80px 30px 80px 30px;
+}
+@media (min-width: 900px) {
+  html body main {
+    padding: 0 500px 0 500px;
+  }
+}
+html body main h1 {
+  text-transform: none;
+  font-size: 40px;
+  font-family: Tahoma, sans-serif;
+  margin: 20px 0 20px 0;
+}
+html body main form {
+  background-color: #f9de4e;
+  padding: 40px 20px 40px 20px;
+}
+@media (min-width: 900px) {
+  html body main form {
+    padding: 50px 80px 50px 80px;
+  }
+}
+html body main form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+html body main button {
+  background-color: #efe400;
+  border: black solid 1px;
+}
+html body main button:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+}/*# sourceMappingURL=login.css.map */
