@@ -32,6 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // $_SESSION['user_id'];
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 if(isset($_POST['submit'])){
+    if($data){
+        echo 'You are Connected';
+        echo $data['link'];
+    }
     if ($data == null) {
         echo 'invalid email or incorrect password';
     }

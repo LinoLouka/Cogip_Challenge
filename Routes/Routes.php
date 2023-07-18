@@ -66,7 +66,7 @@ $router->get('/register', function(){
 });
 $router->post('/register', function(){
     (new authController)->register();
-    (new loginController)->index();
+    // (new loginController)->index();
 });
 $router->get('/login', function(){
     (new loginController)->index();

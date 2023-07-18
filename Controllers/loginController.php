@@ -29,6 +29,7 @@ class loginController extends Controller
     $User = $usermodel->checkUser($email, $password);
 
     if ($User) {
+        $link = '<a href="home">return to menu</a>';
         $_SESSION['user_id'] = $User['id'];
         $_SESSION['user_role'] = $User['role_name'];
         $data = [
@@ -39,25 +40,18 @@ class loginController extends Controller
             'role' => $User['role_name'],
             'user_id' => $_SESSION['user_id'],
             'user_role' => $_SESSION['user_role'],
+            'link' => $link
             
         ];
 
         
 
-        return $this->view('home', $data);
+        return $this->view('login', $data);
         exit();
     } else  {
         return $this->view('login');
     }
 }
-
-        public function checkSession($location){
-            if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])){
-                echo 'you are connected';
-            }else{
-                exit();
-            }
-        }
         
 }
 

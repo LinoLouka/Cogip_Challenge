@@ -32,6 +32,8 @@ class authController extends Controller
             $userModel = new User();
             $userModel->saveUser($firstname, $lastname, $email, $password);
             $userModel->getUsersRoles();
+            $message = 'You are now register, please return to login';
+            $link= '<a href="login">Go to login</a>';
         }
 
         return $this->view(
@@ -47,7 +49,8 @@ class authController extends Controller
             'addressEmailError' => $addressEmailError,
             'passwordError' => $passwordError,
             'confirmPasswordError' => $confirmPasswordError,
-            "name" => 'cogip'
+            'link' => $link,
+            'message' => $message
         ]
         );
     }
