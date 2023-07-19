@@ -38,15 +38,15 @@ class Contacts
 
     public function Id($id)
     {
-        $request = "SELECT contacts.name AS contact_name, companies.name AS company_name
+        $request = "SELECT contacts.*, companies.name AS company_name 
         FROM contacts
-        JOIN companies ON contacts.company_id = companies.id";
-
+        LEFT JOIN companies ON contacts.company_id = companies.id
+        WHERE contacts.id = :id";
         $statement = $this->bdd->prepare($request);
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
 
-        return $contacts = $statement->fetch(\PDO::FETCH_ASSOC);
+        return $statement->fetch(\PDO::FETCH_ASSOC);
     }
 
     public function getContactsWithPagination($startIndex, $perPage)
