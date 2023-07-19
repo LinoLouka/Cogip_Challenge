@@ -101,7 +101,6 @@ body {
       }
     }
     li:hover {
-      margin: 0;
       border-right: 3px solid #9698d6;
     }
   }
@@ -165,7 +164,7 @@ main {
 }
 .container {
   width: 100%;
-  display: none;
+  display: flex;
   flex-direction: row;
   &__1,
   &__2 {
@@ -380,7 +379,7 @@ main {
 }
 .formulaire__contact {
   width: 97.5%;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
