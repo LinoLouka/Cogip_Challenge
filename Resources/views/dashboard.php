@@ -9,6 +9,7 @@
 <?php session_start();?>
 </head>
 <body>
+<section class="section">
 <header class="header__side">
     <div class="header__side__header">
         <img class="header__side__header__img" src="../public/assets/img/img_contact.svg">
@@ -51,6 +52,7 @@
 
 
         <article class="container">
+            <section class="container__1">
             <section class="container__statistics">
                 <h3>Statistics</h3>
                 <div class="container__statistics__divs">
@@ -58,8 +60,33 @@
                 <div class="container__statistics__divs__2">y a des</div>
                 <div class="container__statistics__divs__3">trucs</div>
             </section>
+             <section class="container__contacts">
+            
+                <div class="container__contacts__title">
+                <h3>Last contacts</h3>
+                </div>
+                    <form method="POST" action="dashboard">
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Mail</th>
+                        </tr>
+                        <?php foreach ($contacts as $contact):  ?>
+                        <tr onclick='SaveBtnContact(this, "<?php echo $contact["id"] ?>")'>     
+                            <td onclick='ContactName(this, "<?php echo $contact["id"] ?>")' ><?php echo $contact['name']; ?></td>
+                            <td onclick='ContactPhone(this, "<?php echo $contact["id"] ?>")' ><?php echo $contact['phone']; ?></td>
+                            <td><?php echo $contact['email']; ?></td>
+                        </tr>           
+                        <?php endforeach; ?>
+                    </table>
+                    </form>
+            </section>
 
-            <section class="container__invoices">
+            
+            </section>
+<section class="container__2">
+    <section class="container__invoices">
                 <div class="container__invoices__title">
                 <h3>Last invoices</h3>
                 </div>
@@ -83,29 +110,11 @@
                     </table>    
                     </form>
             </section>
-            <section class="container__contacts">
-                <h3>Last contacts</h3>
-                    <form method="POST" action="dashboard">
-                    <table>
-                        <tr>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Mail</th>
-                        </tr>
-                        <?php foreach ($contacts as $contact):  ?>
-                        <tr onclick='SaveBtnContact(this, "<?php echo $contact["id"] ?>")'>     
-                            <td onclick='ContactName(this, "<?php echo $contact["id"] ?>")' ><?php echo $contact['name']; ?></td>
-                            <td onclick='ContactPhone(this, "<?php echo $contact["id"] ?>")' ><?php echo $contact['phone']; ?></td>
-                            <td><?php echo $contact['email']; ?></td>
-                        </tr>           
-                        <?php endforeach; ?>
-                    </table>
-                    </form>
-                
-            </section>
-
+           
             <section class="container__company">
+                <div class="container__company__title">
                 <h3>Last company</h3>
+                </div>
                     <form method="POST" action="dashboard">
                     <table>
                         <tr>
@@ -126,59 +135,47 @@
                     </form>        
                 
             </section>
+            </section>
         </article>
-        <section>
-<!-- mettre dans une autre section -->
+        <section class="formulaire__contact">
         <!-- fonction add Contacts -->
+        <h3 class="formulaire__contact__title">New contact</h3>
 <form method="POST" action="dashboard">
-    <label for="contactName">Contact name:</label>
-        <input name="contactName" type="text" value="" required>
-    <label for="contactPhone">Contact phone:</label>
-        <input name="contactPhone" type="text" value="" required>
-    <label for="contactMail">Contact mail:</label>
-        <input name="contactMail" value="" type="email" required>
-    <label for="contactCompanyId">Contact company:</label>
-        <input name="contactCompanyId" value="" type="number" required>
+        <input name="contactName" type="text" value="" placeholder="Contact Name" required>
+        <input name="contactPhone" type="text" value="" placeholder="Contact Phone" required>
+        <input name="contactMail" value="" placeholder="Contact Mail" type="email" required>
+        <input name="contactCompanyId" value="" placeholder="Contact Company" type="number" required>
     <input type="hidden" name="contactSpam" class="spam" value="">
 
-    <button type="submit" name="validationContact">Validation contact</button>
+    <button type="submit" name="validationContact">Save</button>
 </form>
-</section>
-<?php
-echo "<br>";
-echo "<br>";
-echo "<br>";
-?>
-
-<section>
-    <!-- mettre dans une autre section -->
+</section >
+<section class="formulaire__company">
         <!-- fonction add Companies -->
+        <h3 class="formulaire__company__title">New company</h3>
 <form method="POST" action="dashboard">
-    <label for="companyName">Company name:</label>
-        <input name="companyName" type="text" value="" required>
-    <label for="companyType">Company type:</label>
-        <input name="companyType" type="number" value="" required>
-    <label for="companyCountry">Country of the company:</label>
-        <input name="companyCountry" type="text" value="" required>
-    <label for="companyTVA">TVA:</label>
-        <input name="companyTVA" type="text" value="" required>
+        <input name="companyName" type="text" value=""  placeholder="Company Name" required >
+        <input name="companyType" type="number" value="" placeholder="Company type" required>
+        <input name="companyCountry" type="text" value="" placeholder="Company Country" required>
+        <input name="companyTVA" type="text" value="" placeholder="Company TVA" required>
         <input type="hidden" name="companySpam" class="spam" value="">
 
-        <button type="submit" name="validationCompany">Validation Company</button>
+        <button type="submit" name="validationCompany">Save</button>
 </form>
 </section>
-<section>
-    <!-- mettre dans une section -->
+<section class ="formulaire__invoices">
     <!-- fonction add invoices -->
+    <h3 class="formulaire__invoices__title">New invoice</h3>
 <form method="POST" action="dashboard">
-    <label for="invoiceNumber">Invoice number:</label>
-        <input name="invoiceNumber" type="text" value="" required>
-    <label for="invoiceName">Invoice Company name:</label>
-        <input name="invoiceName" type="text" value="" required>
+        <input name="invoiceNumber" type="text" value="" placeholder="Invoice Number" required>
+        <input name="invoiceName" type="text" value="" placeholder="Invoice Name" required>
         <input type="hidden" name="invoiceSpam" class="spam" value="">
 
-        <button type="submit" name="validationInvoice">Validation Invoice</button>
+        <button type="submit" name="validationInvoice">Save</button>
 </form>
+</section>
+
+        </main>
 </section>
 </body>
 </html>
@@ -325,7 +322,7 @@ function ContactPhone(cell, id){
         
             
         
-</main>
+
  
  
  <?php
