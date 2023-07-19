@@ -30,15 +30,22 @@ header .nav-bar .nav-bar__btn button {
   border-style: none;
   font-size: 16px;
 }
-header .nav-bar .nav-bar__btn .nav-bar__btn--login {
+header .nav-bar .nav-bar__btn .nav-bar__btn--login,
+header .nav-bar .nav-bar__btn .nav-bar__btn--sign {
+  display: inline-block;
   background-color: #f9de4e;
+  border: none;
   border-radius: 20px;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
   cursor: pointer;
 }
-header .nav-bar .nav-bar__btn .nav-bar__btn--sign {
-  border: #f9de4e;
-  border-radius: 20px;
-  cursor: pointer;
+header .nav-bar .nav-bar__btn .nav-bar__btn--login:hover,
+header .nav-bar .nav-bar__btn .nav-bar__btn--sign:hover {
+  background-color: #ffd700;
 }
 header .header-title-img {
   display: grid;
