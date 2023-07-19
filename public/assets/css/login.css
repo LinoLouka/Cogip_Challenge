@@ -1,0 +1,54 @@
+body {
+  background: linear-gradient(-45deg, #f9de4e, #efe400);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body main {
+  margin: 80px 30px 80px 30px;
+}
+body main h1 {
+  text-transform: uppercase;
+  font-size: 45px;
+  font-family: "Tahoma", sans-serif;
+  margin: 20px 0;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+body main form {
+  background-color: #f9de4e;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+body main form div {
+  margin-bottom: 20px;
+}
+body main form div label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+body main form div input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+body main form button {
+  background-color: #efe400;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+body main form button:hover {
+  background-color: #ffd700;
+  transform: scale(1.05);
+}/*# sourceMappingURL=login.css.map */

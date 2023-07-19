@@ -1,0 +1,40 @@
+body {
+  background: linear-gradient(-45deg, #f9de4e, #efe400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body form {
+  background-color: #f9de4e;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+body form button {
+  background-color: #efe400;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+body form button:hover {
+  background-color: #ffd700;
+  transform: scale(1.5);
+}
+body form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+body form input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}/*# sourceMappingURL=register.css.map */
