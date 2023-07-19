@@ -36,15 +36,14 @@ class Invoices
 
     public function Id($id)
     {
-        $request = "SELECT invoices.name AS invoice_name, companies.name AS company_name, invoices.created_at
-        FROM invoices
-        JOIN companies ON invoices.id_company = companies.id";
-
+        $request = "SELECT invoices.*, companies.name AS company_name FROM invoices 
+        LEFT JOIN companies ON invoices.id_company = companies.id 
+        WHERE invoices.id = :id";
         $statement = $this->bdd->prepare($request);
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
 
-        return $invoices = $statement->fetch(\PDO::FETCH_ASSOC);
+        return $statement->fetch(\PDO::FETCH_ASSOC);
     }
 
 
