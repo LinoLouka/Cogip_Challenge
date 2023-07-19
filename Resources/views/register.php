@@ -11,6 +11,8 @@ $formSubmitted = ($_SERVER['REQUEST_METHOD'] === 'POST') && empty($lastnameError
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/register.css">
     <title>Register</title>
     <style>
         .error {
@@ -57,7 +59,7 @@ $formSubmitted = ($_SERVER['REQUEST_METHOD'] === 'POST') && empty($lastnameError
         } ?></span>
         <br>
 
-        <button type="submit" name="submit">Register</button>
+        <button type="submit" name="submit">REGISTER</button>
         <?php if(isset($_POST['submit'])){
             echo $data['message'];
             echo $data['link'];
