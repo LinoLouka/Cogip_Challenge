@@ -9,6 +9,7 @@ class authController extends Controller
 {
     public function index()
     {
+        // Display the registration view with data
         return $this->view('register', [
             "name" => "cogip"
         ]);
@@ -16,18 +17,23 @@ class authController extends Controller
 
     public function register()
     {
+        // Retrieve form data
         $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_STRING);
         $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_STRING);
         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
         $password = $_POST['password'];
         $confirmPassword = $_POST['confirmPassword'];
 
+        // Validate form inputs
         $lastnameError = $this->validateLastname($lastname);
         $firstnameError = $this->validateFirstname($firstname);
         $addressEmailError = $this->validateEmail($email);
         $passwordError = $this->validatePassword($password);
         $confirmPasswordError = $this->verifyPassword($password, $confirmPassword);
+        $message = "Please enter right informations";
+        $link = "";
 
+        // Process registration if the form is submitted and all validations pass
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($lastnameError) && empty($firstnameError) && empty($addressEmailError) && empty($passwordError) && empty($confirmPasswordError)) {
             $userModel = new User();
             $userModel->saveUser($firstname, $lastname, $email, $password);
@@ -36,6 +42,7 @@ class authController extends Controller
             $link= '<a href="login">Go to login</a>';
         }
 
+        // Render the registration view with form data and error messages
         return $this->view(
             'register',
             [
@@ -55,6 +62,7 @@ class authController extends Controller
         );
     }
 
+    // This method validates the password field
     private function validatePassword($password)
     {
         if(empty($password)) {
@@ -66,6 +74,7 @@ class authController extends Controller
         }
     }
 
+    // This method verifies that the password and confirm password fields match
     private function verifyPassword($password, $confirmPassword)
     {
         if($password !== $confirmPassword) {
@@ -73,6 +82,7 @@ class authController extends Controller
         }
     }
 
+    // This method validates the lastname field
     private function validateLastname($lastname)
     {
         if (empty($lastname)) {
@@ -85,6 +95,7 @@ class authController extends Controller
         return "";
     }
 
+    // This method validates the firstname field
     private function validateFirstname($firstname)
     {
         if (empty($firstname)) {
@@ -97,6 +108,7 @@ class authController extends Controller
         return "";
     }
 
+    // This method validates the email field
     private function validateEmail($email)
     {
         if (empty($email)) {

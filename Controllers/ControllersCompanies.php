@@ -7,6 +7,7 @@ use App\Models\Companies;
 Class ControllersCompanies extends Controller
 {
 
+     // The show method displays a paginated list of contacts
     public function show()
     {
         $modelCompanies = new Companies();

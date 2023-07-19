@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 use App\Core\Controller;
@@ -6,6 +7,7 @@ use App\Models\Contacts;
 
 class ControllersContacts extends Controller
 {
+    // The show method displays a paginated list of contacts
     public function show()
     {
         $modelContact = new Contacts();
@@ -24,6 +26,8 @@ class ControllersContacts extends Controller
             'pagination' => $pagination,
         ]);
     }
+
+    // The showId method displays details of a specific contact by ID
     public function showId($id)
     {
 
@@ -31,6 +35,7 @@ class ControllersContacts extends Controller
 
         $contacts = $modelContacts->Id($id);
 
+        // Prepare the data to be passed to the 'show_contact' view
         $data = [
             'company_id' => $contacts['company_id'],
             'email' => $contacts['email'],
@@ -39,9 +44,11 @@ class ControllersContacts extends Controller
             'created_at' => $contacts['created_at']
         ];
 
+        // Render the 'show_contact' view with the contact data
         return $this->view('show_contact', $data);
     }
 
+    // This method generates pagination data based on total records, current page, and items per page
     private function paginate($totalRecords, $currentPage, $perPage)
     {
         $totalPages = ceil($totalRecords / $perPage);
@@ -52,6 +59,7 @@ class ControllersContacts extends Controller
             $currentPage = $totalPages;
         }
 
+        // Calculate the start and end index for the current page's contacts
         $startIndex = ($currentPage - 1) * $perPage;
         $endIndex = min($startIndex + $perPage - 1, $totalRecords - 1);
 
@@ -64,4 +72,3 @@ class ControllersContacts extends Controller
         ];
     }
 }
-

@@ -20,16 +20,16 @@
         <div class="dashboard__side__nav">        
                 <nav>
                     <ul>
-                        <li class="dashboard__side__nav__dashboard"><img src="../public/assets/img/Icon_dashboard.svg"><a href="" >Dashboard</a></li>
-                        <li class="dashboard__side__nav__invoice"><img src="../public/assets/img/Icon_Invoices.svg"><a href="" >Invoices</a></li>
-                        <li class="dashboard__side__nav__company"><img src="../public/assets/img/Icon_Companies.svg"><a href="" >Companies</a></li>
-                        <li class="dashboard__side__nav__contact"><img src="../public/assets/img/Icon_contact.svg"><a href="" >Contacts</a></li>
+                        <li class="dashboard__side__nav__dashboard"><img src="../public/assets/img/Icon_dashboard.svg"><a onclick="showDiv()" class ="dashboard__side__nav__dashboard__a" >Dashboard</a></li>
+                        <li class="dashboard__side__nav__invoice"><img src="../public/assets/img/Icon_Invoices.svg"><a onclick="showDiv()" class="dashboard__side__nav__invoices__a" >Invoices</a></li>
+                        <li class="dashboard__side__nav__company"><img src="../public/assets/img/Icon_Companies.svg"><a onclick="showDiv()" class="dashboard__side__nav__company__a" >Companies</a></li>
+                        <li class="dashboard__side__nav__contact"><img src="../public/assets/img/Icon_contact.svg"><a onclick="showDiv()" class="dashboard__side__nav__contact__a" >Contacts</a></li>
                     </ul>
                 </nav>
     </div>
     <div class="dashboard__side__logout">
             <img src="../public/assets/img/img_contact.svg">
-            <a href="">Logout</a>
+            <a href="logout">Logout</a>
     </div>
     </section>
 </header>
@@ -315,6 +315,46 @@ function ContactPhone(cell, id){
     input.addEventListener('blur', ()=>{
         cell.innertext = input.value;
         console.log(input.value);
+    });
+}
+function showDiv (){
+    let dashboard = document.querySelector('.dashboard__side__nav__dashboard__a');
+    let invoices = document.querySelector('.dashboard__side__nav__invoices__a');
+    let company = document.querySelector('.dashboard__side__nav__company__a');
+    let contacts =document.querySelector('.dashboard__side__nav__contact__a');
+
+    let dashboardDiv = document.querySelector('.container');
+    let invoicesDiv = document.querySelector('.formulaire__invoices');
+    let companyDiv = document.querySelector('.formulaire__company');
+    let contactsDiv = document.querySelector('.formulaire__contact');
+
+    dashboard.addEventListener('click', () => {
+        dashboardDiv.style.display ='flex';
+        invoicesDiv.style.display = 'none';
+        companyDiv.style.display = 'none';
+        contactsDiv.style.display = 'none';
+        console.log("dashboard clicked");
+    });
+    invoices.addEventListener('click', () => {
+        dashboardDiv.style.display = 'none';
+        invoicesDiv.style.display = 'flex';
+        companyDiv.style.display = 'none';
+        contactsDiv.style.display = 'none';
+        console.log("dashboard clicked");
+    });
+    company.addEventListener('click', () => {
+        dashboardDiv.style.display = 'none';
+        invoicesDiv.style.display = 'none';
+        companyDiv.style.display = 'flex';
+        contactsDiv.style.display = 'none';
+        console.log("dashboard clicked");
+    });
+    contacts.addEventListener('click', () => {
+        dashboardDiv.style.display = 'none';
+        invoicesDiv.style.display = 'none';
+        companyDiv.style.display = 'none';
+        contactsDiv.style.display = 'flex';
+        console.log("dashboard clicked");
     });
 }
 </script>
