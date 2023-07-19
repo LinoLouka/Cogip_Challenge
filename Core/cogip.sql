@@ -280,9 +280,10 @@ CREATE TABLE `users` (
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `role_id`, `first_name`, `last_name`, `email`, `password`, `created_at`, `updated_at`) VALUES
-(1, 1, 'John', 'Doe', 'john@example.com', 'password1', '2023-07-10', '2023-07-10'),
-(2, 2, 'Jane', 'Smith', 'jane@example.com', 'password2', '2023-07-10', '2023-07-10');
+INSERT INTO users (id, role_id, first_name, last_name, email, password, created_at, updated_at)
+VALUES (1, 1, 'John', 'Doe', 'john@example.com', '$2y$10$Rm78PPcj6uPyDcFcYK64Zu0GHbP46EZ59xY', '2023-07-10', '2023-07-10'),
+       (2, 2, 'Jane', 'Smith', 'jane@example.com', '$2y$10$Sx9rsKT.D4bNfz6xWwR65OuG7OBUe0eJbvh9bTSk02gAC1h2qGn9G', '2023-07-10', '2023-07-10');
+
 
 --
 -- Index pour les tables déchargées
