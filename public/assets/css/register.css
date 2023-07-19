@@ -1,13 +1,11 @@
-html {
-  width: auto;
-  height: 100%;
-}
-html body {
+body {
   background: linear-gradient(-45deg, #f9de4e, #efe400);
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
 }
-html body form {
+body form {
   background-color: #f9de4e;
   padding: 40px;
   border-radius: 10px;
@@ -15,12 +13,7 @@ html body form {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 900px) {
-  html body form {
-    padding: 50px;
-  }
-}
-html body form button {
+body form button {
   background-color: #efe400;
   color: #333;
   border: none;
@@ -30,16 +23,16 @@ html body form button {
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }
-html body form button:hover {
+body form button:hover {
   background-color: #ffd700;
   transform: scale(1.5);
 }
-html body form label {
+body form label {
   font-weight: bold;
   margin-bottom: 5px;
   color: #333;
 }
-html body form input {
+body form input {
   padding: 10px;
   border: none;
   border-radius: 5px;

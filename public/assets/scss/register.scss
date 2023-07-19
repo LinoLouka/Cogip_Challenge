@@ -1,23 +1,22 @@
-html {
-    width: auto;
-    height: 100%;
-  
+// @media  (min-width: 900px){
+
     body {
       background: linear-gradient(-45deg, #f9de4e, #efe400);
-      display: flex;
+      display:flex;
+      align-items: center;
+      justify-content: center;
       flex-direction: column;
   
       form {
+        
         background-color: #f9de4e;
         padding: 40px;
         border-radius: 10px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-        display: flex;
+        display:flex;
         flex-direction: column;
-  
-        @media (min-width: 900px) {
-          padding: 50px;
-        }
+      
+
   
         button {
           background-color: #efe400;
@@ -49,5 +48,4 @@ html {
         }
       }
     }
-  }
   

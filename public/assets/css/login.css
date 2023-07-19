@@ -1,21 +1,14 @@
-html {
-  width: auto;
-  height: 100%;
-}
-html body {
+body {
   background: linear-gradient(-45deg, #f9de4e, #efe400);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-html body main {
+body main {
   margin: 80px 30px 80px 30px;
 }
-@media (min-width: 900px) {
-  html body main {
-    padding: 0 100px 0 100px;
-  }
-}
-html body main h1 {
+body main h1 {
   text-transform: uppercase;
   font-size: 45px;
   font-family: "Tahoma", sans-serif;
@@ -23,7 +16,7 @@ html body main h1 {
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-html body main form {
+body main form {
   background-color: #f9de4e;
   padding: 40px;
   border-radius: 10px;
@@ -31,26 +24,21 @@ html body main form {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 900px) {
-  html body main form {
-    padding: 50px;
-  }
-}
-html body main form div {
+body main form div {
   margin-bottom: 20px;
 }
-html body main form div label {
+body main form div label {
   font-weight: bold;
   margin-bottom: 5px;
   color: #333;
 }
-html body main form div input {
+body main form div input {
   padding: 10px;
   border: none;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
-html body main form button {
+body main form button {
   background-color: #efe400;
   color: #333;
   border: none;
@@ -60,7 +48,7 @@ html body main form button {
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }
-html body main form button:hover {
+body main form button:hover {
   background-color: #ffd700;
   transform: scale(1.05);
 }/*# sourceMappingURL=login.css.map */
