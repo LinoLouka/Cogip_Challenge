@@ -16,6 +16,7 @@ header .nav-bar .nav-bar__link {
   justify-content: space-around;
   margin: 10px;
   font-size: 4vw;
+  text-decoration: none;
 }
 header .nav-bar .nav-bar__link a {
   text-decoration: none;
@@ -31,10 +32,13 @@ header .nav-bar .nav-bar__btn button {
 }
 header .nav-bar .nav-bar__btn .nav-bar__btn--login {
   background-color: #f9de4e;
+  border-radius: 20px;
+  cursor: pointer;
 }
 header .nav-bar .nav-bar__btn .nav-bar__btn--sign {
-  border: solid 5px #f9de4e;
+  border: #f9de4e;
   border-radius: 20px;
+  cursor: pointer;
 }
 header .header-title-img {
   display: grid;
@@ -70,6 +74,7 @@ footer hr {
 footer .footer h2 {
   font-size: 30px;
   border: 3px solid #f9de4e;
+  width: -moz-min-content;
   width: min-content;
   display: flex;
   flex-direction: column;

@@ -29,7 +29,7 @@
     </div>
     <div class="dashboard__side__logout">
             <img src="../public/assets/img/img_contact.svg">
-            <a href="">Logout</a>
+            <a href="logout">Logout</a>
     </div>
     </section>
 </header>

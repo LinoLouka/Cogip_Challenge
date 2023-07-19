@@ -12,6 +12,8 @@ header {
       justify-content: space-around;
       margin: 10px;
       font-size: 4vw;
+      text-decoration: none;
+
       a {
         text-decoration: none;
         color: black;
@@ -28,10 +30,13 @@ header {
       }
       .nav-bar__btn--login {
         background-color: #f9de4e;
+        border-radius: 20px;
+        cursor: pointer;
       }
       .nav-bar__btn--sign {
-        border: solid 5px #f9de4e;
+        border: #f9de4e;
         border-radius: 20px;
+        cursor: pointer;
       }
     }
   }
