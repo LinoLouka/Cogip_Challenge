@@ -21,12 +21,15 @@ header {
       }
       a:hover {
         outline: solid 2px black;
+        
       }
     }
     .nav-bar__btn {
       button {
         border-style: none;
         font-size: 16px;
+        
+        
       }
       .nav-bar__btn--login {
         background-color: #f9de4e;

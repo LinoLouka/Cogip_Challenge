@@ -15,11 +15,6 @@ body {
 }
 
 .header__side {
-<<<<<<< HEAD
-  height: -moz-fit-content;
-  height: fit-content;
-=======
->>>>>>> 1473bd14cb2bf4bdc0f68ae8658b92992ac8cb53
   width: 20%;
   border: 1px solid #e0e0e0;
   max-width: 285px;
@@ -404,6 +399,12 @@ main {
   background-color: #f5f5f5;
   border: 0;
 }
+.formulaire__contact form input::-moz-placeholder {
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: 100;
+  line-height: 24.2px;
+}
 .formulaire__contact form input::placeholder {
   font-size: 20px;
   font-family: "Inter", sans-serif;
@@ -461,6 +462,12 @@ main {
   background-color: #f5f5f5;
   border: 0;
 }
+.formulaire__company form input::-moz-placeholder {
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: 100;
+  line-height: 24.2px;
+}
 .formulaire__company form input::placeholder {
   font-size: 20px;
   font-family: "Inter", sans-serif;
@@ -517,6 +524,12 @@ main {
   margin-top: 40px;
   background-color: #f5f5f5;
   border: 0;
+}
+.formulaire__invoices form input::-moz-placeholder {
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: 100;
+  line-height: 24.2px;
 }
 .formulaire__invoices form input::placeholder {
   font-size: 20px;

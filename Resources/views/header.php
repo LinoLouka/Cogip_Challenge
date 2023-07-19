@@ -23,8 +23,8 @@
             }
         }
         else {        echo '<div class="nav-bar__btn">';
-                echo '<button type="submit" class="nav-bar__btn--sign"  href="register">Sign Up</button>';
-                echo '<button type="submit" class="nav-bar__btn--login"  href="login">Login</button>';
+                echo '<a type="submit" href="register" class="nav-bar__btn--sign">Sign Up</a>';
+                echo '<a type="submit" href="login" class="nav-bar__btn--login">Login</a>';
                 echo '</div>';
         }
 ?>
