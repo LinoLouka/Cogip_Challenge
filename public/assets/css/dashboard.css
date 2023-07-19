@@ -9,6 +9,7 @@ body {
 }
 
 .header__side {
+  height: -moz-fit-content;
   height: fit-content;
   width: 20%;
   border: 1px solid #e0e0e0;
