@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 18 juil. 2023 à 13:01
+-- Généré le : mer. 19 juil. 2023 à 14:34
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -175,7 +175,6 @@ INSERT INTO `invoices` (`id`, `id_company`, `created_at`, `updated_at`, `name`) 
 (29, 3, '2023-06-29', '2023-06-30', 'INV20230029'),
 (30, 2, '2023-06-30', '2023-07-01', 'INV20230030');
 
-
 -- --------------------------------------------------------
 
 --
@@ -267,11 +266,11 @@ INSERT INTO `types` (`id`, `name`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `role_id` int(11) DEFAULT NULL,
+  `role_id` int(11) DEFAULT 1,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `created_at` date DEFAULT NULL,
   `updated_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -281,8 +280,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `first_name`, `last_name`, `email`, `password`, `created_at`, `updated_at`) VALUES
-(1, 1, 'John', 'Doe', 'john@example.com', 'password1', '2023-07-10', '2023-07-10'),
-(2, 2, 'Jane', 'Smith', 'jane@example.com', 'password2', '2023-07-10', '2023-07-10');
+(8, 2, 'admin', 'admin', 'admin@gmail.com', '$2y$10$09WSCxqD0lOLzWkixP/4ouny9sBNta3mqUH2dywMVeGAK.hU16xmG', '2023-07-19', '2023-07-19');
 
 --
 -- Index pour les tables déchargées
@@ -389,7 +387,7 @@ ALTER TABLE `types`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Contraintes pour les tables déchargées

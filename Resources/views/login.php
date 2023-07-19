@@ -30,30 +30,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" required>
                 </div>
-                <button type="submit">Submit</button>
-        </form>
-    </main>
-</body>
-</html>
-<?php       
+                <button type="submit" name="submit">Submit</button>
+                <?php       
 // session_start();
 // $_SESSION['user_id'];
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 if(isset($_POST['submit'])){
-    if($data){
-        echo 'You are Connected';
-        echo $data['link'];
-    }
     if ($data == null) {
         echo 'invalid email or incorrect password';
     }
 }
 }
-    
+?>
+        </form>
+    </main>
+</body>
+</html>
 
-    
-    
-    ?>
 
 </body>
 </html>

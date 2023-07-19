@@ -22,7 +22,7 @@ class User
             return false;
         }
 
-        $request = 'INSERT INTO users( first_name, last_name, email, password, created_at, updated_at)
+        $request = 'INSERT INTO users(first_name, last_name, email, password, created_at, updated_at)
                      VALUES (:firstname, :lastname, :email, :password, NOW(), NOW())';
         $statement = $this->bdd->prepare($request);
 
