@@ -77,13 +77,13 @@ We use a project management tool "Trello" to track tasks, issues and milestones.
   
 <img src="https://skillicons.dev/icons?i=vscode" alt="VSCode" height="60" width="60" />
 
-<img src="https://github.com/DelphineLecorney/Template-readme/blob/main/PICTURES_read_me_/html5.jpeg" alt="html5" height="60" width="60" />
+<img src="https://skillicons.dev/icons?i=html" alt="html5" height="60" width="60" />
 
-<img src="https://github.com/DelphineLecorney/Template-readme/blob/main/PICTURES_read_me_/css.jpg" alt="css" height="60" width="60" />
+<img src="https://skillicons.dev/icons?i=css" alt="css" height="60" width="60" />
 
-<img src="https://github.com/DelphineLecorney/Template-readme/blob/main/PICTURES_read_me_/php_logo.jpg" alt="PHP" height="60" width="60" />
+<img src="https://skillicons.dev/icons?i=php" alt="PHP" height="60" width="60" />
 
-<img src="https://github.com/DelphineLecorney/Template-readme/blob/main/PICTURES_read_me_/myphpadmin.png" alt="phpmyadmin" height="60" width="60" />
+<img src="" alt="phpmyadmin" height="60" width="60" />
 
 </p>
 
