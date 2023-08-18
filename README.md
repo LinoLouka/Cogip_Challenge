@@ -1,7 +1,7 @@
 <br>
 <h1 align="center">⭐️ Cogip (MVC) ⭐️</h1>
 
-<h2 align="center">Hi , We're Delphine, Ethan, Ismaël et Louka.  👋</h2>
+<h2 align="center">Hi , We're Delphine, Ethan, Ismaël and Louka.  👋</h2>
 
 <h3 align="center">This repository is a PHP exercise carried out during Becode training  </h3> <br>
 <h3 align="center">"Copig Challenge" consolidation challenge to last 10 days</h3>
